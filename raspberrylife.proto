@@ -1,6 +1,7 @@
 // =============================================================================
 // Optional parameters for java compilation
 // =============================================================================
+
 option java_package = "protobuf";
 option java_outer_classname = "RBLproto";
 
