@@ -2,16 +2,16 @@
 // Optional parameters for java compilation
 // =============================================================================
 option java_package = "protobuf";
-option java_outer_classname = "RBHproto";
+option java_outer_classname = "RBLproto";
 
 // =============================================================================
-// General RBHMessage
+// General RBLMessage
 // =============================================================================
-message RBHMessage {
+message RBLMessage {
 	required string id = 1;
-    required MessageType mType = 2 [default = PLAIN_TEXT];
+	required MessageType mType = 2 [default = PLAIN_TEXT];
 
-    optional PlainText plainText = 3;
+	optional PlainText plainText = 3;
 	optional RegisterInstructionObserver registerInstructionObserver = 4;
 	optional RunInstruction runInstruction = 5;
 	optional RegisterDataField registerDataField = 6;
@@ -20,44 +20,44 @@ message RBHMessage {
 	optional GetDataSet getDataSet = 9;
 
 
-    enum MessageType {
-        PLAIN_TEXT = 0;
-        REGISTER_INSTRUCTION_OBSERVER = 1;
-        RUN_INSTRUCTION = 2;
-	    REGISTER_DATA_FIELD = 3;
-	    UPDATE_DATA_FIELD = 4;
-	    GET_DATA_SET = 5;
-	    DATA_SET = 6;
+	enum MessageType {
+		PLAIN_TEXT = 0;
+		REGISTER_INSTRUCTION_OBSERVER = 1;
+		RUN_INSTRUCTION = 2;
+		REGISTER_DATA_FIELD = 3;
+		UPDATE_DATA_FIELD = 4;
+		GET_DATA_SET = 5;
+		DATA_SET = 6;
 
-	    // All Auth-Types use PlainText as message content
-        AUTH_REQUEST = 7;
-        AUTH_DENIED = 8;
-        AUTH_ACCEPT = 9;
-    }
+		// All Auth-Types use PlainText as message content
+		AUTH_REQUEST = 7;
+		AUTH_DENIED = 8;
+		AUTH_ACCEPT = 9;
+	}
 // =============================================================================
 // General
 // =============================================================================
 
-    // Plaintext subtype for general purpose
-    message PlainText {
-        required string text = 1;
-    }
+	// Plaintext subtype for general purpose
+	message PlainText {
+		required string text = 1;
+	}
 
 // =============================================================================
 // Instruction subtypes
 // =============================================================================
-    message Instruction {
 
-        // Name of the instruction
-	    required string instructionID = 1;
-	    repeated string stringParameters = 2;
-	    repeated int32 intParameters = 3;
-    }
+	message Instruction {
+		// Name of the instruction
+		required string instructionID = 1;
+		repeated string stringParameters = 2;
+		repeated int32 intParameters = 3;
+  }
 
-    message RegisterInstructionObserver {
-        required string moduleID = 1;
-        required Instruction instruction = 2;
-    }
+	message RegisterInstructionObserver {
+		required string moduleID = 1;
+		required Instruction instruction = 2;
+	}
 
     message RunInstruction {
 	    required string targetID = 1;
@@ -118,4 +118,4 @@ message RBHMessage {
 	    repeated Data data = 3;
     }
 
-} // close RBHMessage
+} // close RBLMessage
