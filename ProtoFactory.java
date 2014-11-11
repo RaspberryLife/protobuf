@@ -1,18 +1,22 @@
 package protobuf;
 
 import java.util.List;
-import protobuf.RBLproto.*;
+
+import protobuf.RblProto.*;
 
 /**
  * Created by Peter Mösenthin.
+ *
+ * The ProtoFactory was created for easy access to Protobuf messages
+ * to even further reduce code to send messages.
  */
 public class ProtoFactory {
 
     public static final RBLMessage.DataType DATA_TYPE_FLOAT =
             RBLMessage.DataType.FLOAT;
-    public static final RBLproto.RBLMessage.DataType DATA_TYPE_INTEGER =
+    public static final RBLMessage.DataType DATA_TYPE_INTEGER =
             RBLMessage.DataType.INTEGER;
-    public static final RBLproto.RBLMessage.DataType DATA_TYPE_STRING =
+    public static final RBLMessage.DataType DATA_TYPE_STRING =
             RBLMessage.DataType.STRING;
 
 
@@ -35,7 +39,7 @@ public class ProtoFactory {
     }
 
     public static RBLMessage.Instruction.Builder buildInstructionMessage(
-            String instructionId,
+            int instructionId,
             List<String> stringParameters,
             List<Integer> intParameters){
          RBLMessage.Instruction.Builder instruction =
@@ -50,34 +54,21 @@ public class ProtoFactory {
         return instruction;
     }
 
-    public static RBLMessage buildRegisterInstructionObserverMessage(
-            String id,
-            String moduleId,
-            RBLMessage.Instruction.Builder instruction){
-        return createBaseMessage(
-                id,
-                RBLMessage.MessageType.REGISTER_INSTRUCTION_OBSERVER)
-                .setRegisterInstructionObserver(
-                        RBLMessage.RegisterInstructionObserver.newBuilder()
-                        .setModuleID(moduleId)
-                        .setInstruction(instruction)
-                )
-                .build();
-    }
 
     public static RBLMessage buildRunInstructionMessage(
             String id,
-            String targetId,
+            RBLMessage.ModelType modelType,
+            int targetModuleId,
             RBLMessage.Instruction.Builder instruction){
         return createBaseMessage(
                 id,
                 RBLMessage.MessageType.RUN_INSTRUCTION)
                 .setRunInstruction(RBLMessage.RunInstruction.newBuilder()
-                        .setTargetID(targetId)
+                        .setTargetModulID(targetModuleId)
+                        .setModeltype(modelType)
                         .setInstruction(instruction)
 
-                )
-                .build();
+                ).build();
     }
 
     public static RBLMessage buildRegisterDataFieldMessage(
@@ -164,13 +155,13 @@ public class ProtoFactory {
             List<? super Object> dataList,
             RBLMessage.DataType dataType){
         RBLMessage.Builder message =
-                createBaseMessage(id, RBLproto.RBLMessage.MessageType.DATA_SET);
-        RBLMessage.DataSet.Builder dataSet = RBLproto.RBLMessage
+                createBaseMessage(id, RBLMessage.MessageType.DATA_SET);
+        RBLMessage.DataSet.Builder dataSet = RBLMessage
                 .DataSet
                 .newBuilder();
         dataSet.setModulID(modulId);
         dataSet.setFieldID(fieldId);
-        RBLMessage.Data.Builder data = RBLproto.RBLMessage.Data
+        RBLMessage.Data.Builder data = RBLMessage.Data
                 .newBuilder();
         if(dataType == RBLMessage.DataType.FLOAT){
             data.setDType(dataType);
@@ -202,7 +193,7 @@ public class ProtoFactory {
             String key){
         return createBaseMessage(id, RBLMessage.MessageType.AUTH_REQUEST)
                 .setPlainText(
-                        RBLproto.RBLMessage.PlainText.newBuilder()
+                        RBLMessage.PlainText.newBuilder()
                         .setText(key))
                 .build();
     }
