@@ -48,18 +48,18 @@ message RBLMessage {
 		// All auth messages use PlainText as message content
 		AUTH = 7;
 	}
-	
+
 	enum ModuleType{
 		MODULE_TEMP = 0;
 		MODULE_OUTLET = 1;
 	}
-	
+
 	enum ActuatorType {
 		SYSTEM = 0;
 		CLIENT = 1;
 		MODULE = 2;
 	}
-	
+
 	enum DataType {
 		INTEGER = 0;
 		FLOAT = 1;
@@ -83,7 +83,7 @@ message RBLMessage {
 		required int32 instructionId = 1;
 		repeated string stringParameters = 2;
 		repeated int32 intParameters = 3;
-		
+
 		// Module
 		optional ModuleType moduleType = 20;
 		optional int32 moduleId = 21;
@@ -91,7 +91,8 @@ message RBLMessage {
 
 	message RunInstruction {
 		required ActuatorType actuatorType = 1;
-		required Instruction instruction = 2;
+		required Actuator actuator = 2;
+		required Instruction instruction = 3;
 	}
 
 
@@ -106,7 +107,7 @@ message RBLMessage {
 		required Actuator receiver = 3;
 		required Condition condition = 4;
 	}
-	
+
 	message Actuator {
 		required ActuatorType actuatorType = 1;
 		required int32 actuatorId = 2;
@@ -145,7 +146,7 @@ message RBLMessage {
 		// same as startDateTime
 		optional string endDateTime = 3;
 	}
-	
+
 	message Data {
 		required int32 fieldId = 1;
 		repeated string stringData = 2;
