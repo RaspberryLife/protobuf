@@ -99,7 +99,7 @@ public final class RblProto {
      * <code>optional .RBLMessage.RunInstruction runInstruction = 31;</code>
      *
      * <pre>
-     * Range 31 - 50 : Instruction messages
+     * Range 31 - 50 : Functional messages
      * </pre>
      */
     boolean hasRunInstruction();
@@ -107,7 +107,7 @@ public final class RblProto {
      * <code>optional .RBLMessage.RunInstruction runInstruction = 31;</code>
      *
      * <pre>
-     * Range 31 - 50 : Instruction messages
+     * Range 31 - 50 : Functional messages
      * </pre>
      */
     protobuf.RblProto.RBLMessage.RunInstruction getRunInstruction();
@@ -115,10 +115,24 @@ public final class RblProto {
      * <code>optional .RBLMessage.RunInstruction runInstruction = 31;</code>
      *
      * <pre>
-     * Range 31 - 50 : Instruction messages
+     * Range 31 - 50 : Functional messages
      * </pre>
      */
     protobuf.RblProto.RBLMessage.RunInstructionOrBuilder getRunInstructionOrBuilder();
+
+    // optional .RBLMessage.Logic logic = 32;
+    /**
+     * <code>optional .RBLMessage.Logic logic = 32;</code>
+     */
+    boolean hasLogic();
+    /**
+     * <code>optional .RBLMessage.Logic logic = 32;</code>
+     */
+    protobuf.RblProto.RBLMessage.Logic getLogic();
+    /**
+     * <code>optional .RBLMessage.Logic logic = 32;</code>
+     */
+    protobuf.RblProto.RBLMessage.LogicOrBuilder getLogicOrBuilder();
 
     // optional .RBLMessage.GetData getData = 51;
     /**
@@ -289,9 +303,22 @@ public final class RblProto {
               bitField0_ |= 0x00000020;
               break;
             }
+            case 258: {
+              protobuf.RblProto.RBLMessage.Logic.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000040) == 0x00000040)) {
+                subBuilder = logic_.toBuilder();
+              }
+              logic_ = input.readMessage(protobuf.RblProto.RBLMessage.Logic.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(logic_);
+                logic_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000040;
+              break;
+            }
             case 410: {
               protobuf.RblProto.RBLMessage.GetData.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000040) == 0x00000040)) {
+              if (((bitField0_ & 0x00000080) == 0x00000080)) {
                 subBuilder = getData_.toBuilder();
               }
               getData_ = input.readMessage(protobuf.RblProto.RBLMessage.GetData.PARSER, extensionRegistry);
@@ -299,12 +326,12 @@ public final class RblProto {
                 subBuilder.mergeFrom(getData_);
                 getData_ = subBuilder.buildPartial();
               }
-              bitField0_ |= 0x00000040;
+              bitField0_ |= 0x00000080;
               break;
             }
             case 418: {
               protobuf.RblProto.RBLMessage.SetData.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000080) == 0x00000080)) {
+              if (((bitField0_ & 0x00000100) == 0x00000100)) {
                 subBuilder = setData_.toBuilder();
               }
               setData_ = input.readMessage(protobuf.RblProto.RBLMessage.SetData.PARSER, extensionRegistry);
@@ -312,12 +339,12 @@ public final class RblProto {
                 subBuilder.mergeFrom(setData_);
                 setData_ = subBuilder.buildPartial();
               }
-              bitField0_ |= 0x00000080;
+              bitField0_ |= 0x00000100;
               break;
             }
             case 426: {
               protobuf.RblProto.RBLMessage.Data.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000100) == 0x00000100)) {
+              if (((bitField0_ & 0x00000200) == 0x00000200)) {
                 subBuilder = data_.toBuilder();
               }
               data_ = input.readMessage(protobuf.RblProto.RBLMessage.Data.PARSER, extensionRegistry);
@@ -325,7 +352,7 @@ public final class RblProto {
                 subBuilder.mergeFrom(data_);
                 data_ = subBuilder.buildPartial();
               }
-              bitField0_ |= 0x00000100;
+              bitField0_ |= 0x00000200;
               break;
             }
           }
@@ -8902,7 +8929,7 @@ public final class RblProto {
      * <code>optional .RBLMessage.RunInstruction runInstruction = 31;</code>
      *
      * <pre>
-     * Range 31 - 50 : Instruction messages
+     * Range 31 - 50 : Functional messages
      * </pre>
      */
     public boolean hasRunInstruction() {
@@ -8912,7 +8939,7 @@ public final class RblProto {
      * <code>optional .RBLMessage.RunInstruction runInstruction = 31;</code>
      *
      * <pre>
-     * Range 31 - 50 : Instruction messages
+     * Range 31 - 50 : Functional messages
      * </pre>
      */
     public protobuf.RblProto.RBLMessage.RunInstruction getRunInstruction() {
@@ -8922,11 +8949,33 @@ public final class RblProto {
      * <code>optional .RBLMessage.RunInstruction runInstruction = 31;</code>
      *
      * <pre>
-     * Range 31 - 50 : Instruction messages
+     * Range 31 - 50 : Functional messages
      * </pre>
      */
     public protobuf.RblProto.RBLMessage.RunInstructionOrBuilder getRunInstructionOrBuilder() {
       return runInstruction_;
+    }
+
+    // optional .RBLMessage.Logic logic = 32;
+    public static final int LOGIC_FIELD_NUMBER = 32;
+    private protobuf.RblProto.RBLMessage.Logic logic_;
+    /**
+     * <code>optional .RBLMessage.Logic logic = 32;</code>
+     */
+    public boolean hasLogic() {
+      return ((bitField0_ & 0x00000040) == 0x00000040);
+    }
+    /**
+     * <code>optional .RBLMessage.Logic logic = 32;</code>
+     */
+    public protobuf.RblProto.RBLMessage.Logic getLogic() {
+      return logic_;
+    }
+    /**
+     * <code>optional .RBLMessage.Logic logic = 32;</code>
+     */
+    public protobuf.RblProto.RBLMessage.LogicOrBuilder getLogicOrBuilder() {
+      return logic_;
     }
 
     // optional .RBLMessage.GetData getData = 51;
@@ -8940,7 +8989,7 @@ public final class RblProto {
      * </pre>
      */
     public boolean hasGetData() {
-      return ((bitField0_ & 0x00000040) == 0x00000040);
+      return ((bitField0_ & 0x00000080) == 0x00000080);
     }
     /**
      * <code>optional .RBLMessage.GetData getData = 51;</code>
@@ -8970,7 +9019,7 @@ public final class RblProto {
      * <code>optional .RBLMessage.SetData setData = 52;</code>
      */
     public boolean hasSetData() {
-      return ((bitField0_ & 0x00000080) == 0x00000080);
+      return ((bitField0_ & 0x00000100) == 0x00000100);
     }
     /**
      * <code>optional .RBLMessage.SetData setData = 52;</code>
@@ -8992,7 +9041,7 @@ public final class RblProto {
      * <code>optional .RBLMessage.Data data = 53;</code>
      */
     public boolean hasData() {
-      return ((bitField0_ & 0x00000100) == 0x00000100);
+      return ((bitField0_ & 0x00000200) == 0x00000200);
     }
     /**
      * <code>optional .RBLMessage.Data data = 53;</code>
@@ -9014,6 +9063,7 @@ public final class RblProto {
       messageNumber_ = 0;
       plainText_ = protobuf.RblProto.RBLMessage.PlainText.getDefaultInstance();
       runInstruction_ = protobuf.RblProto.RBLMessage.RunInstruction.getDefaultInstance();
+      logic_ = protobuf.RblProto.RBLMessage.Logic.getDefaultInstance();
       getData_ = protobuf.RblProto.RBLMessage.GetData.getDefaultInstance();
       setData_ = protobuf.RblProto.RBLMessage.SetData.getDefaultInstance();
       data_ = protobuf.RblProto.RBLMessage.Data.getDefaultInstance();
@@ -9043,6 +9093,12 @@ public final class RblProto {
       }
       if (hasRunInstruction()) {
         if (!getRunInstruction().isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      if (hasLogic()) {
+        if (!getLogic().isInitialized()) {
           memoizedIsInitialized = 0;
           return false;
         }
@@ -9091,12 +9147,15 @@ public final class RblProto {
         output.writeMessage(31, runInstruction_);
       }
       if (((bitField0_ & 0x00000040) == 0x00000040)) {
-        output.writeMessage(51, getData_);
+        output.writeMessage(32, logic_);
       }
       if (((bitField0_ & 0x00000080) == 0x00000080)) {
-        output.writeMessage(52, setData_);
+        output.writeMessage(51, getData_);
       }
       if (((bitField0_ & 0x00000100) == 0x00000100)) {
+        output.writeMessage(52, setData_);
+      }
+      if (((bitField0_ & 0x00000200) == 0x00000200)) {
         output.writeMessage(53, data_);
       }
       getUnknownFields().writeTo(output);
@@ -9134,13 +9193,17 @@ public final class RblProto {
       }
       if (((bitField0_ & 0x00000040) == 0x00000040)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(51, getData_);
+          .computeMessageSize(32, logic_);
       }
       if (((bitField0_ & 0x00000080) == 0x00000080)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(52, setData_);
+          .computeMessageSize(51, getData_);
       }
       if (((bitField0_ & 0x00000100) == 0x00000100)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(52, setData_);
+      }
+      if (((bitField0_ & 0x00000200) == 0x00000200)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(53, data_);
       }
@@ -9260,6 +9323,7 @@ public final class RblProto {
         if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
           getPlainTextFieldBuilder();
           getRunInstructionFieldBuilder();
+          getLogicFieldBuilder();
           getGetDataFieldBuilder();
           getSetDataFieldBuilder();
           getDataFieldBuilder();
@@ -9291,24 +9355,30 @@ public final class RblProto {
           runInstructionBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000020);
+        if (logicBuilder_ == null) {
+          logic_ = protobuf.RblProto.RBLMessage.Logic.getDefaultInstance();
+        } else {
+          logicBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000040);
         if (getDataBuilder_ == null) {
           getData_ = protobuf.RblProto.RBLMessage.GetData.getDefaultInstance();
         } else {
           getDataBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000080);
         if (setDataBuilder_ == null) {
           setData_ = protobuf.RblProto.RBLMessage.SetData.getDefaultInstance();
         } else {
           setDataBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000100);
         if (dataBuilder_ == null) {
           data_ = protobuf.RblProto.RBLMessage.Data.getDefaultInstance();
         } else {
           dataBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000200);
         return this;
       }
 
@@ -9372,21 +9442,29 @@ public final class RblProto {
         if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
           to_bitField0_ |= 0x00000040;
         }
+        if (logicBuilder_ == null) {
+          result.logic_ = logic_;
+        } else {
+          result.logic_ = logicBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000080) == 0x00000080)) {
+          to_bitField0_ |= 0x00000080;
+        }
         if (getDataBuilder_ == null) {
           result.getData_ = getData_;
         } else {
           result.getData_ = getDataBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00000080) == 0x00000080)) {
-          to_bitField0_ |= 0x00000080;
+        if (((from_bitField0_ & 0x00000100) == 0x00000100)) {
+          to_bitField0_ |= 0x00000100;
         }
         if (setDataBuilder_ == null) {
           result.setData_ = setData_;
         } else {
           result.setData_ = setDataBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00000100) == 0x00000100)) {
-          to_bitField0_ |= 0x00000100;
+        if (((from_bitField0_ & 0x00000200) == 0x00000200)) {
+          to_bitField0_ |= 0x00000200;
         }
         if (dataBuilder_ == null) {
           result.data_ = data_;
@@ -9429,6 +9507,9 @@ public final class RblProto {
         if (other.hasRunInstruction()) {
           mergeRunInstruction(other.getRunInstruction());
         }
+        if (other.hasLogic()) {
+          mergeLogic(other.getLogic());
+        }
         if (other.hasGetData()) {
           mergeGetData(other.getGetData());
         }
@@ -9463,6 +9544,12 @@ public final class RblProto {
         }
         if (hasRunInstruction()) {
           if (!getRunInstruction().isInitialized()) {
+            
+            return false;
+          }
+        }
+        if (hasLogic()) {
+          if (!getLogic().isInitialized()) {
             
             return false;
           }
@@ -9871,7 +9958,7 @@ public final class RblProto {
        * <code>optional .RBLMessage.RunInstruction runInstruction = 31;</code>
        *
        * <pre>
-       * Range 31 - 50 : Instruction messages
+       * Range 31 - 50 : Functional messages
        * </pre>
        */
       public boolean hasRunInstruction() {
@@ -9881,7 +9968,7 @@ public final class RblProto {
        * <code>optional .RBLMessage.RunInstruction runInstruction = 31;</code>
        *
        * <pre>
-       * Range 31 - 50 : Instruction messages
+       * Range 31 - 50 : Functional messages
        * </pre>
        */
       public protobuf.RblProto.RBLMessage.RunInstruction getRunInstruction() {
@@ -9895,7 +9982,7 @@ public final class RblProto {
        * <code>optional .RBLMessage.RunInstruction runInstruction = 31;</code>
        *
        * <pre>
-       * Range 31 - 50 : Instruction messages
+       * Range 31 - 50 : Functional messages
        * </pre>
        */
       public Builder setRunInstruction(protobuf.RblProto.RBLMessage.RunInstruction value) {
@@ -9915,7 +10002,7 @@ public final class RblProto {
        * <code>optional .RBLMessage.RunInstruction runInstruction = 31;</code>
        *
        * <pre>
-       * Range 31 - 50 : Instruction messages
+       * Range 31 - 50 : Functional messages
        * </pre>
        */
       public Builder setRunInstruction(
@@ -9933,7 +10020,7 @@ public final class RblProto {
        * <code>optional .RBLMessage.RunInstruction runInstruction = 31;</code>
        *
        * <pre>
-       * Range 31 - 50 : Instruction messages
+       * Range 31 - 50 : Functional messages
        * </pre>
        */
       public Builder mergeRunInstruction(protobuf.RblProto.RBLMessage.RunInstruction value) {
@@ -9956,7 +10043,7 @@ public final class RblProto {
        * <code>optional .RBLMessage.RunInstruction runInstruction = 31;</code>
        *
        * <pre>
-       * Range 31 - 50 : Instruction messages
+       * Range 31 - 50 : Functional messages
        * </pre>
        */
       public Builder clearRunInstruction() {
@@ -9973,7 +10060,7 @@ public final class RblProto {
        * <code>optional .RBLMessage.RunInstruction runInstruction = 31;</code>
        *
        * <pre>
-       * Range 31 - 50 : Instruction messages
+       * Range 31 - 50 : Functional messages
        * </pre>
        */
       public protobuf.RblProto.RBLMessage.RunInstruction.Builder getRunInstructionBuilder() {
@@ -9985,7 +10072,7 @@ public final class RblProto {
        * <code>optional .RBLMessage.RunInstruction runInstruction = 31;</code>
        *
        * <pre>
-       * Range 31 - 50 : Instruction messages
+       * Range 31 - 50 : Functional messages
        * </pre>
        */
       public protobuf.RblProto.RBLMessage.RunInstructionOrBuilder getRunInstructionOrBuilder() {
@@ -9999,7 +10086,7 @@ public final class RblProto {
        * <code>optional .RBLMessage.RunInstruction runInstruction = 31;</code>
        *
        * <pre>
-       * Range 31 - 50 : Instruction messages
+       * Range 31 - 50 : Functional messages
        * </pre>
        */
       private com.google.protobuf.SingleFieldBuilder<
@@ -10016,6 +10103,123 @@ public final class RblProto {
         return runInstructionBuilder_;
       }
 
+      // optional .RBLMessage.Logic logic = 32;
+      private protobuf.RblProto.RBLMessage.Logic logic_ = protobuf.RblProto.RBLMessage.Logic.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          protobuf.RblProto.RBLMessage.Logic, protobuf.RblProto.RBLMessage.Logic.Builder, protobuf.RblProto.RBLMessage.LogicOrBuilder> logicBuilder_;
+      /**
+       * <code>optional .RBLMessage.Logic logic = 32;</code>
+       */
+      public boolean hasLogic() {
+        return ((bitField0_ & 0x00000040) == 0x00000040);
+      }
+      /**
+       * <code>optional .RBLMessage.Logic logic = 32;</code>
+       */
+      public protobuf.RblProto.RBLMessage.Logic getLogic() {
+        if (logicBuilder_ == null) {
+          return logic_;
+        } else {
+          return logicBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .RBLMessage.Logic logic = 32;</code>
+       */
+      public Builder setLogic(protobuf.RblProto.RBLMessage.Logic value) {
+        if (logicBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          logic_ = value;
+          onChanged();
+        } else {
+          logicBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000040;
+        return this;
+      }
+      /**
+       * <code>optional .RBLMessage.Logic logic = 32;</code>
+       */
+      public Builder setLogic(
+          protobuf.RblProto.RBLMessage.Logic.Builder builderForValue) {
+        if (logicBuilder_ == null) {
+          logic_ = builderForValue.build();
+          onChanged();
+        } else {
+          logicBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000040;
+        return this;
+      }
+      /**
+       * <code>optional .RBLMessage.Logic logic = 32;</code>
+       */
+      public Builder mergeLogic(protobuf.RblProto.RBLMessage.Logic value) {
+        if (logicBuilder_ == null) {
+          if (((bitField0_ & 0x00000040) == 0x00000040) &&
+              logic_ != protobuf.RblProto.RBLMessage.Logic.getDefaultInstance()) {
+            logic_ =
+              protobuf.RblProto.RBLMessage.Logic.newBuilder(logic_).mergeFrom(value).buildPartial();
+          } else {
+            logic_ = value;
+          }
+          onChanged();
+        } else {
+          logicBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000040;
+        return this;
+      }
+      /**
+       * <code>optional .RBLMessage.Logic logic = 32;</code>
+       */
+      public Builder clearLogic() {
+        if (logicBuilder_ == null) {
+          logic_ = protobuf.RblProto.RBLMessage.Logic.getDefaultInstance();
+          onChanged();
+        } else {
+          logicBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000040);
+        return this;
+      }
+      /**
+       * <code>optional .RBLMessage.Logic logic = 32;</code>
+       */
+      public protobuf.RblProto.RBLMessage.Logic.Builder getLogicBuilder() {
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return getLogicFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .RBLMessage.Logic logic = 32;</code>
+       */
+      public protobuf.RblProto.RBLMessage.LogicOrBuilder getLogicOrBuilder() {
+        if (logicBuilder_ != null) {
+          return logicBuilder_.getMessageOrBuilder();
+        } else {
+          return logic_;
+        }
+      }
+      /**
+       * <code>optional .RBLMessage.Logic logic = 32;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          protobuf.RblProto.RBLMessage.Logic, protobuf.RblProto.RBLMessage.Logic.Builder, protobuf.RblProto.RBLMessage.LogicOrBuilder> 
+          getLogicFieldBuilder() {
+        if (logicBuilder_ == null) {
+          logicBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              protobuf.RblProto.RBLMessage.Logic, protobuf.RblProto.RBLMessage.Logic.Builder, protobuf.RblProto.RBLMessage.LogicOrBuilder>(
+                  logic_,
+                  getParentForChildren(),
+                  isClean());
+          logic_ = null;
+        }
+        return logicBuilder_;
+      }
+
       // optional .RBLMessage.GetData getData = 51;
       private protobuf.RblProto.RBLMessage.GetData getData_ = protobuf.RblProto.RBLMessage.GetData.getDefaultInstance();
       private com.google.protobuf.SingleFieldBuilder<
@@ -10028,7 +10232,7 @@ public final class RblProto {
        * </pre>
        */
       public boolean hasGetData() {
-        return ((bitField0_ & 0x00000040) == 0x00000040);
+        return ((bitField0_ & 0x00000080) == 0x00000080);
       }
       /**
        * <code>optional .RBLMessage.GetData getData = 51;</code>
@@ -10061,7 +10265,7 @@ public final class RblProto {
         } else {
           getDataBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         return this;
       }
       /**
@@ -10079,7 +10283,7 @@ public final class RblProto {
         } else {
           getDataBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         return this;
       }
       /**
@@ -10091,7 +10295,7 @@ public final class RblProto {
        */
       public Builder mergeGetData(protobuf.RblProto.RBLMessage.GetData value) {
         if (getDataBuilder_ == null) {
-          if (((bitField0_ & 0x00000040) == 0x00000040) &&
+          if (((bitField0_ & 0x00000080) == 0x00000080) &&
               getData_ != protobuf.RblProto.RBLMessage.GetData.getDefaultInstance()) {
             getData_ =
               protobuf.RblProto.RBLMessage.GetData.newBuilder(getData_).mergeFrom(value).buildPartial();
@@ -10102,7 +10306,7 @@ public final class RblProto {
         } else {
           getDataBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         return this;
       }
       /**
@@ -10119,7 +10323,7 @@ public final class RblProto {
         } else {
           getDataBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000080);
         return this;
       }
       /**
@@ -10130,7 +10334,7 @@ public final class RblProto {
        * </pre>
        */
       public protobuf.RblProto.RBLMessage.GetData.Builder getGetDataBuilder() {
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
         return getGetDataFieldBuilder().getBuilder();
       }
@@ -10177,7 +10381,7 @@ public final class RblProto {
        * <code>optional .RBLMessage.SetData setData = 52;</code>
        */
       public boolean hasSetData() {
-        return ((bitField0_ & 0x00000080) == 0x00000080);
+        return ((bitField0_ & 0x00000100) == 0x00000100);
       }
       /**
        * <code>optional .RBLMessage.SetData setData = 52;</code>
@@ -10202,7 +10406,7 @@ public final class RblProto {
         } else {
           setDataBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         return this;
       }
       /**
@@ -10216,7 +10420,7 @@ public final class RblProto {
         } else {
           setDataBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         return this;
       }
       /**
@@ -10224,7 +10428,7 @@ public final class RblProto {
        */
       public Builder mergeSetData(protobuf.RblProto.RBLMessage.SetData value) {
         if (setDataBuilder_ == null) {
-          if (((bitField0_ & 0x00000080) == 0x00000080) &&
+          if (((bitField0_ & 0x00000100) == 0x00000100) &&
               setData_ != protobuf.RblProto.RBLMessage.SetData.getDefaultInstance()) {
             setData_ =
               protobuf.RblProto.RBLMessage.SetData.newBuilder(setData_).mergeFrom(value).buildPartial();
@@ -10235,7 +10439,7 @@ public final class RblProto {
         } else {
           setDataBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         return this;
       }
       /**
@@ -10248,14 +10452,14 @@ public final class RblProto {
         } else {
           setDataBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000100);
         return this;
       }
       /**
        * <code>optional .RBLMessage.SetData setData = 52;</code>
        */
       public protobuf.RblProto.RBLMessage.SetData.Builder getSetDataBuilder() {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
         return getSetDataFieldBuilder().getBuilder();
       }
@@ -10294,7 +10498,7 @@ public final class RblProto {
        * <code>optional .RBLMessage.Data data = 53;</code>
        */
       public boolean hasData() {
-        return ((bitField0_ & 0x00000100) == 0x00000100);
+        return ((bitField0_ & 0x00000200) == 0x00000200);
       }
       /**
        * <code>optional .RBLMessage.Data data = 53;</code>
@@ -10319,7 +10523,7 @@ public final class RblProto {
         } else {
           dataBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         return this;
       }
       /**
@@ -10333,7 +10537,7 @@ public final class RblProto {
         } else {
           dataBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         return this;
       }
       /**
@@ -10341,7 +10545,7 @@ public final class RblProto {
        */
       public Builder mergeData(protobuf.RblProto.RBLMessage.Data value) {
         if (dataBuilder_ == null) {
-          if (((bitField0_ & 0x00000100) == 0x00000100) &&
+          if (((bitField0_ & 0x00000200) == 0x00000200) &&
               data_ != protobuf.RblProto.RBLMessage.Data.getDefaultInstance()) {
             data_ =
               protobuf.RblProto.RBLMessage.Data.newBuilder(data_).mergeFrom(value).buildPartial();
@@ -10352,7 +10556,7 @@ public final class RblProto {
         } else {
           dataBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         return this;
       }
       /**
@@ -10365,14 +10569,14 @@ public final class RblProto {
         } else {
           dataBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000200);
         return this;
       }
       /**
        * <code>optional .RBLMessage.Data data = 53;</code>
        */
       public protobuf.RblProto.RBLMessage.Data.Builder getDataBuilder() {
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         onChanged();
         return getDataFieldBuilder().getBuilder();
       }
@@ -10478,49 +10682,50 @@ public final class RblProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\023raspberrylife.proto\"\361\014\n\nRBLMessage\022\n\n\002" +
+      "\n\023raspberrylife.proto\"\223\r\n\nRBLMessage\022\n\n\002" +
       "id\030\001 \002(\t\0228\n\013messageType\030\002 \002(\0162\027.RBLMessa" +
       "ge.MessageType:\nPLAIN_TEXT\022,\n\013messageFla" +
       "g\030\003 \002(\0162\027.RBLMessage.MessageFlag\022\025\n\rmess" +
       "ageNumber\030\004 \001(\005\022(\n\tplainText\030\025 \001(\0132\025.RBL" +
       "Message.PlainText\0222\n\016runInstruction\030\037 \001(" +
-      "\0132\032.RBLMessage.RunInstruction\022$\n\007getData" +
-      "\0303 \001(\0132\023.RBLMessage.GetData\022$\n\007setData\0304" +
-      " \001(\0132\023.RBLMessage.SetData\022\036\n\004data\0305 \001(\0132" +
-      "\020.RBLMessage.Data\032\031\n\tPlainText\022\014\n\004text\030\001",
-      " \002(\t\032\223\001\n\013Instruction\022\025\n\rinstructionId\030\001 " +
-      "\002(\005\022\030\n\020stringParameters\030\002 \003(\t\022\025\n\rintPara" +
-      "meters\030\003 \003(\005\022*\n\nmoduleType\030\024 \001(\0162\026.RBLMe" +
-      "ssage.ModuleType\022\020\n\010moduleId\030\025 \001(\005\032f\n\016Ru" +
-      "nInstruction\022&\n\010actuator\030\001 \002(\0132\024.RBLMess" +
-      "age.Actuator\022,\n\013instruction\030\002 \002(\0132\027.RBLM" +
-      "essage.Instruction\032\220\001\n\005Logic\022\014\n\004name\030\001 \002" +
-      "(\t\022\'\n\tinitiator\030\002 \002(\0132\024.RBLMessage.Actua" +
-      "tor\022&\n\010receiver\030\003 \002(\0132\024.RBLMessage.Actua" +
-      "tor\022(\n\tcondition\030\004 \002(\0132\025.RBLMessage.Cond",
-      "ition\032N\n\010Actuator\022.\n\014actuatorType\030\001 \002(\0162" +
-      "\030.RBLMessage.ActuatorType\022\022\n\nactuatorId\030" +
-      "\002 \002(\005\032Z\n\tCondition\022\017\n\007fieldId\030\001 \002(\005\022\025\n\rt" +
-      "hresholdOver\030\002 \001(\005\022\026\n\016thresholdUnder\030\003 \001" +
-      "(\005\022\r\n\005state\030\004 \001(\010\032b\n\007SetData\022&\n\010actuator" +
-      "\030\001 \002(\0132\024.RBLMessage.Actuator\022\017\n\007fieldId\030" +
-      "\002 \002(\005\022\036\n\004data\030\003 \002(\0132\020.RBLMessage.Data\032d\n" +
-      "\007GetData\022&\n\010actuator\030\001 \002(\0132\024.RBLMessage." +
-      "Actuator\022\017\n\007fieldId\030\002 \002(\005\022 \n\005range\030\003 \001(\013" +
-      "2\021.RBLMessage.Range\032B\n\005Range\022\r\n\005count\030\001 ",
-      "\001(\005\022\025\n\rstartDateTime\030\002 \001(\t\022\023\n\013endDateTim" +
-      "e\030\003 \001(\t\032y\n\004Data\022\017\n\007fieldId\030\001 \002(\005\022&\n\010data" +
-      "Type\030\002 \002(\0162\024.RBLMessage.DataType\022\022\n\nstri" +
-      "ngData\030\003 \003(\t\022\021\n\tint32Data\030\004 \003(\005\022\021\n\tfloat" +
-      "Data\030\005 \003(\002\"(\n\013MessageFlag\022\013\n\007REQUEST\020\000\022\014" +
-      "\n\010RESPONSE\020\001\"m\n\013MessageType\022\016\n\nPLAIN_TEX" +
-      "T\020\000\022\023\n\017RUN_INSTRUCTION\020\001\022\014\n\010GET_DATA\020\002\022\014" +
-      "\n\010SET_DATA\020\003\022\010\n\004DATA\020\004\022\t\n\005LOGIC\020\005\022\010\n\004AUT" +
-      "H\020\007\"0\n\nModuleType\022\017\n\013MODULE_TEMP\020\000\022\021\n\rMO" +
-      "DULE_OUTLET\020\001\"2\n\014ActuatorType\022\n\n\006SYSTEM\020",
-      "\000\022\n\n\006CLIENT\020\001\022\n\n\006MODULE\020\002\".\n\010DataType\022\013\n" +
-      "\007INTEGER\020\000\022\t\n\005FLOAT\020\001\022\n\n\006STRING\020\002B\024\n\010pro" +
-      "tobufB\010RblProto"
+      "\0132\032.RBLMessage.RunInstruction\022 \n\005logic\030 " +
+      " \001(\0132\021.RBLMessage.Logic\022$\n\007getData\0303 \001(\013" +
+      "2\023.RBLMessage.GetData\022$\n\007setData\0304 \001(\0132\023" +
+      ".RBLMessage.SetData\022\036\n\004data\0305 \001(\0132\020.RBLM",
+      "essage.Data\032\031\n\tPlainText\022\014\n\004text\030\001 \002(\t\032\223" +
+      "\001\n\013Instruction\022\025\n\rinstructionId\030\001 \002(\005\022\030\n" +
+      "\020stringParameters\030\002 \003(\t\022\025\n\rintParameters" +
+      "\030\003 \003(\005\022*\n\nmoduleType\030\024 \001(\0162\026.RBLMessage." +
+      "ModuleType\022\020\n\010moduleId\030\025 \001(\005\032f\n\016RunInstr" +
+      "uction\022&\n\010actuator\030\001 \002(\0132\024.RBLMessage.Ac" +
+      "tuator\022,\n\013instruction\030\002 \002(\0132\027.RBLMessage" +
+      ".Instruction\032\220\001\n\005Logic\022\014\n\004name\030\001 \002(\t\022\'\n\t" +
+      "initiator\030\002 \002(\0132\024.RBLMessage.Actuator\022&\n" +
+      "\010receiver\030\003 \002(\0132\024.RBLMessage.Actuator\022(\n",
+      "\tcondition\030\004 \002(\0132\025.RBLMessage.Condition\032" +
+      "N\n\010Actuator\022.\n\014actuatorType\030\001 \002(\0162\030.RBLM" +
+      "essage.ActuatorType\022\022\n\nactuatorId\030\002 \002(\005\032" +
+      "Z\n\tCondition\022\017\n\007fieldId\030\001 \002(\005\022\025\n\rthresho" +
+      "ldOver\030\002 \001(\005\022\026\n\016thresholdUnder\030\003 \001(\005\022\r\n\005" +
+      "state\030\004 \001(\010\032b\n\007SetData\022&\n\010actuator\030\001 \002(\013" +
+      "2\024.RBLMessage.Actuator\022\017\n\007fieldId\030\002 \002(\005\022" +
+      "\036\n\004data\030\003 \002(\0132\020.RBLMessage.Data\032d\n\007GetDa" +
+      "ta\022&\n\010actuator\030\001 \002(\0132\024.RBLMessage.Actuat" +
+      "or\022\017\n\007fieldId\030\002 \002(\005\022 \n\005range\030\003 \001(\0132\021.RBL",
+      "Message.Range\032B\n\005Range\022\r\n\005count\030\001 \001(\005\022\025\n" +
+      "\rstartDateTime\030\002 \001(\t\022\023\n\013endDateTime\030\003 \001(" +
+      "\t\032y\n\004Data\022\017\n\007fieldId\030\001 \002(\005\022&\n\010dataType\030\002" +
+      " \002(\0162\024.RBLMessage.DataType\022\022\n\nstringData" +
+      "\030\003 \003(\t\022\021\n\tint32Data\030\004 \003(\005\022\021\n\tfloatData\030\005" +
+      " \003(\002\"(\n\013MessageFlag\022\013\n\007REQUEST\020\000\022\014\n\010RESP" +
+      "ONSE\020\001\"m\n\013MessageType\022\016\n\nPLAIN_TEXT\020\000\022\023\n" +
+      "\017RUN_INSTRUCTION\020\001\022\014\n\010GET_DATA\020\002\022\014\n\010SET_" +
+      "DATA\020\003\022\010\n\004DATA\020\004\022\t\n\005LOGIC\020\005\022\010\n\004AUTH\020\007\"0\n" +
+      "\nModuleType\022\017\n\013MODULE_TEMP\020\000\022\021\n\rMODULE_O",
+      "UTLET\020\001\"2\n\014ActuatorType\022\n\n\006SYSTEM\020\000\022\n\n\006C" +
+      "LIENT\020\001\022\n\n\006MODULE\020\002\".\n\010DataType\022\013\n\007INTEG" +
+      "ER\020\000\022\t\n\005FLOAT\020\001\022\n\n\006STRING\020\002B\024\n\010protobufB" +
+      "\010RblProto"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
       new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -10532,7 +10737,7 @@ public final class RblProto {
           internal_static_RBLMessage_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_RBLMessage_descriptor,
-              new java.lang.String[] { "Id", "MessageType", "MessageFlag", "MessageNumber", "PlainText", "RunInstruction", "GetData", "SetData", "Data", });
+              new java.lang.String[] { "Id", "MessageType", "MessageFlag", "MessageNumber", "PlainText", "RunInstruction", "Logic", "GetData", "SetData", "Data", });
           internal_static_RBLMessage_PlainText_descriptor =
             internal_static_RBLMessage_descriptor.getNestedTypes().get(0);
           internal_static_RBLMessage_PlainText_fieldAccessorTable = new

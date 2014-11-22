@@ -19,8 +19,9 @@ message RBLMessage {
 	// Range 21 - 30 : Basic messages
 	optional PlainText plainText = 21;
 
-	// Range 31 - 50 : Instruction messages
+	// Range 31 - 50 : Functional messages
 	optional RunInstruction runInstruction = 31;
+	optional Logic logic = 32;
 
 	// Range 51 - 70 : Data operation messages
 	optional GetData getData = 51;
