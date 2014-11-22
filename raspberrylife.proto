@@ -90,9 +90,8 @@ message RBLMessage {
 	}
 
 	message RunInstruction {
-		required ActuatorType actuatorType = 1;
-		required Actuator actuator = 2;
-		required Instruction instruction = 3;
+		required Actuator actuator = 1;
+		required Instruction instruction = 2;
 	}
 
 
