@@ -7870,51 +7870,61 @@ public final class RblProto {
        */
       int getFieldId();
 
-      // repeated string stringData = 2;
+      // required .RBLMessage.DataType dataType = 2;
       /**
-       * <code>repeated string stringData = 2;</code>
+       * <code>required .RBLMessage.DataType dataType = 2;</code>
+       */
+      boolean hasDataType();
+      /**
+       * <code>required .RBLMessage.DataType dataType = 2;</code>
+       */
+      protobuf.RblProto.RBLMessage.DataType getDataType();
+
+      // repeated string stringData = 3;
+      /**
+       * <code>repeated string stringData = 3;</code>
        */
       java.util.List<java.lang.String>
       getStringDataList();
       /**
-       * <code>repeated string stringData = 2;</code>
+       * <code>repeated string stringData = 3;</code>
        */
       int getStringDataCount();
       /**
-       * <code>repeated string stringData = 2;</code>
+       * <code>repeated string stringData = 3;</code>
        */
       java.lang.String getStringData(int index);
       /**
-       * <code>repeated string stringData = 2;</code>
+       * <code>repeated string stringData = 3;</code>
        */
       com.google.protobuf.ByteString
           getStringDataBytes(int index);
 
-      // repeated int32 int32Data = 3;
+      // repeated int32 int32Data = 4;
       /**
-       * <code>repeated int32 int32Data = 3;</code>
+       * <code>repeated int32 int32Data = 4;</code>
        */
       java.util.List<java.lang.Integer> getInt32DataList();
       /**
-       * <code>repeated int32 int32Data = 3;</code>
+       * <code>repeated int32 int32Data = 4;</code>
        */
       int getInt32DataCount();
       /**
-       * <code>repeated int32 int32Data = 3;</code>
+       * <code>repeated int32 int32Data = 4;</code>
        */
       int getInt32Data(int index);
 
-      // repeated float floatData = 4;
+      // repeated float floatData = 5;
       /**
-       * <code>repeated float floatData = 4;</code>
+       * <code>repeated float floatData = 5;</code>
        */
       java.util.List<java.lang.Float> getFloatDataList();
       /**
-       * <code>repeated float floatData = 4;</code>
+       * <code>repeated float floatData = 5;</code>
        */
       int getFloatDataCount();
       /**
-       * <code>repeated float floatData = 4;</code>
+       * <code>repeated float floatData = 5;</code>
        */
       float getFloatData(int index);
     }
@@ -7974,28 +7984,39 @@ public final class RblProto {
                 fieldId_ = input.readInt32();
                 break;
               }
-              case 18: {
-                if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+              case 16: {
+                int rawValue = input.readEnum();
+                protobuf.RblProto.RBLMessage.DataType value = protobuf.RblProto.RBLMessage.DataType.valueOf(rawValue);
+                if (value == null) {
+                  unknownFields.mergeVarintField(2, rawValue);
+                } else {
+                  bitField0_ |= 0x00000002;
+                  dataType_ = value;
+                }
+                break;
+              }
+              case 26: {
+                if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
                   stringData_ = new com.google.protobuf.LazyStringArrayList();
-                  mutable_bitField0_ |= 0x00000002;
+                  mutable_bitField0_ |= 0x00000004;
                 }
                 stringData_.add(input.readBytes());
                 break;
               }
-              case 24: {
-                if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+              case 32: {
+                if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
                   int32Data_ = new java.util.ArrayList<java.lang.Integer>();
-                  mutable_bitField0_ |= 0x00000004;
+                  mutable_bitField0_ |= 0x00000008;
                 }
                 int32Data_.add(input.readInt32());
                 break;
               }
-              case 26: {
+              case 34: {
                 int length = input.readRawVarint32();
                 int limit = input.pushLimit(length);
-                if (!((mutable_bitField0_ & 0x00000004) == 0x00000004) && input.getBytesUntilLimit() > 0) {
+                if (!((mutable_bitField0_ & 0x00000008) == 0x00000008) && input.getBytesUntilLimit() > 0) {
                   int32Data_ = new java.util.ArrayList<java.lang.Integer>();
-                  mutable_bitField0_ |= 0x00000004;
+                  mutable_bitField0_ |= 0x00000008;
                 }
                 while (input.getBytesUntilLimit() > 0) {
                   int32Data_.add(input.readInt32());
@@ -8003,20 +8024,20 @@ public final class RblProto {
                 input.popLimit(limit);
                 break;
               }
-              case 37: {
-                if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+              case 45: {
+                if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
                   floatData_ = new java.util.ArrayList<java.lang.Float>();
-                  mutable_bitField0_ |= 0x00000008;
+                  mutable_bitField0_ |= 0x00000010;
                 }
                 floatData_.add(input.readFloat());
                 break;
               }
-              case 34: {
+              case 42: {
                 int length = input.readRawVarint32();
                 int limit = input.pushLimit(length);
-                if (!((mutable_bitField0_ & 0x00000008) == 0x00000008) && input.getBytesUntilLimit() > 0) {
+                if (!((mutable_bitField0_ & 0x00000010) == 0x00000010) && input.getBytesUntilLimit() > 0) {
                   floatData_ = new java.util.ArrayList<java.lang.Float>();
-                  mutable_bitField0_ |= 0x00000008;
+                  mutable_bitField0_ |= 0x00000010;
                 }
                 while (input.getBytesUntilLimit() > 0) {
                   floatData_.add(input.readFloat());
@@ -8032,13 +8053,13 @@ public final class RblProto {
           throw new com.google.protobuf.InvalidProtocolBufferException(
               e.getMessage()).setUnfinishedMessage(this);
         } finally {
-          if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+          if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
             stringData_ = new com.google.protobuf.UnmodifiableLazyStringList(stringData_);
           }
-          if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+          if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
             int32Data_ = java.util.Collections.unmodifiableList(int32Data_);
           }
-          if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+          if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
             floatData_ = java.util.Collections.unmodifiableList(floatData_);
           }
           this.unknownFields = unknownFields.build();
@@ -8089,77 +8110,93 @@ public final class RblProto {
         return fieldId_;
       }
 
-      // repeated string stringData = 2;
-      public static final int STRINGDATA_FIELD_NUMBER = 2;
+      // required .RBLMessage.DataType dataType = 2;
+      public static final int DATATYPE_FIELD_NUMBER = 2;
+      private protobuf.RblProto.RBLMessage.DataType dataType_;
+      /**
+       * <code>required .RBLMessage.DataType dataType = 2;</code>
+       */
+      public boolean hasDataType() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>required .RBLMessage.DataType dataType = 2;</code>
+       */
+      public protobuf.RblProto.RBLMessage.DataType getDataType() {
+        return dataType_;
+      }
+
+      // repeated string stringData = 3;
+      public static final int STRINGDATA_FIELD_NUMBER = 3;
       private com.google.protobuf.LazyStringList stringData_;
       /**
-       * <code>repeated string stringData = 2;</code>
+       * <code>repeated string stringData = 3;</code>
        */
       public java.util.List<java.lang.String>
           getStringDataList() {
         return stringData_;
       }
       /**
-       * <code>repeated string stringData = 2;</code>
+       * <code>repeated string stringData = 3;</code>
        */
       public int getStringDataCount() {
         return stringData_.size();
       }
       /**
-       * <code>repeated string stringData = 2;</code>
+       * <code>repeated string stringData = 3;</code>
        */
       public java.lang.String getStringData(int index) {
         return stringData_.get(index);
       }
       /**
-       * <code>repeated string stringData = 2;</code>
+       * <code>repeated string stringData = 3;</code>
        */
       public com.google.protobuf.ByteString
           getStringDataBytes(int index) {
         return stringData_.getByteString(index);
       }
 
-      // repeated int32 int32Data = 3;
-      public static final int INT32DATA_FIELD_NUMBER = 3;
+      // repeated int32 int32Data = 4;
+      public static final int INT32DATA_FIELD_NUMBER = 4;
       private java.util.List<java.lang.Integer> int32Data_;
       /**
-       * <code>repeated int32 int32Data = 3;</code>
+       * <code>repeated int32 int32Data = 4;</code>
        */
       public java.util.List<java.lang.Integer>
           getInt32DataList() {
         return int32Data_;
       }
       /**
-       * <code>repeated int32 int32Data = 3;</code>
+       * <code>repeated int32 int32Data = 4;</code>
        */
       public int getInt32DataCount() {
         return int32Data_.size();
       }
       /**
-       * <code>repeated int32 int32Data = 3;</code>
+       * <code>repeated int32 int32Data = 4;</code>
        */
       public int getInt32Data(int index) {
         return int32Data_.get(index);
       }
 
-      // repeated float floatData = 4;
-      public static final int FLOATDATA_FIELD_NUMBER = 4;
+      // repeated float floatData = 5;
+      public static final int FLOATDATA_FIELD_NUMBER = 5;
       private java.util.List<java.lang.Float> floatData_;
       /**
-       * <code>repeated float floatData = 4;</code>
+       * <code>repeated float floatData = 5;</code>
        */
       public java.util.List<java.lang.Float>
           getFloatDataList() {
         return floatData_;
       }
       /**
-       * <code>repeated float floatData = 4;</code>
+       * <code>repeated float floatData = 5;</code>
        */
       public int getFloatDataCount() {
         return floatData_.size();
       }
       /**
-       * <code>repeated float floatData = 4;</code>
+       * <code>repeated float floatData = 5;</code>
        */
       public float getFloatData(int index) {
         return floatData_.get(index);
@@ -8167,6 +8204,7 @@ public final class RblProto {
 
       private void initFields() {
         fieldId_ = 0;
+        dataType_ = protobuf.RblProto.RBLMessage.DataType.INTEGER;
         stringData_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         int32Data_ = java.util.Collections.emptyList();
         floatData_ = java.util.Collections.emptyList();
@@ -8180,6 +8218,10 @@ public final class RblProto {
           memoizedIsInitialized = 0;
           return false;
         }
+        if (!hasDataType()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
         memoizedIsInitialized = 1;
         return true;
       }
@@ -8190,14 +8232,17 @@ public final class RblProto {
         if (((bitField0_ & 0x00000001) == 0x00000001)) {
           output.writeInt32(1, fieldId_);
         }
+        if (((bitField0_ & 0x00000002) == 0x00000002)) {
+          output.writeEnum(2, dataType_.getNumber());
+        }
         for (int i = 0; i < stringData_.size(); i++) {
-          output.writeBytes(2, stringData_.getByteString(i));
+          output.writeBytes(3, stringData_.getByteString(i));
         }
         for (int i = 0; i < int32Data_.size(); i++) {
-          output.writeInt32(3, int32Data_.get(i));
+          output.writeInt32(4, int32Data_.get(i));
         }
         for (int i = 0; i < floatData_.size(); i++) {
-          output.writeFloat(4, floatData_.get(i));
+          output.writeFloat(5, floatData_.get(i));
         }
         getUnknownFields().writeTo(output);
       }
@@ -8211,6 +8256,10 @@ public final class RblProto {
         if (((bitField0_ & 0x00000001) == 0x00000001)) {
           size += com.google.protobuf.CodedOutputStream
             .computeInt32Size(1, fieldId_);
+        }
+        if (((bitField0_ & 0x00000002) == 0x00000002)) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeEnumSize(2, dataType_.getNumber());
         }
         {
           int dataSize = 0;
@@ -8354,12 +8403,14 @@ public final class RblProto {
           super.clear();
           fieldId_ = 0;
           bitField0_ = (bitField0_ & ~0x00000001);
-          stringData_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+          dataType_ = protobuf.RblProto.RBLMessage.DataType.INTEGER;
           bitField0_ = (bitField0_ & ~0x00000002);
-          int32Data_ = java.util.Collections.emptyList();
+          stringData_ = com.google.protobuf.LazyStringArrayList.EMPTY;
           bitField0_ = (bitField0_ & ~0x00000004);
-          floatData_ = java.util.Collections.emptyList();
+          int32Data_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000008);
+          floatData_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000010);
           return this;
         }
 
@@ -8392,20 +8443,24 @@ public final class RblProto {
             to_bitField0_ |= 0x00000001;
           }
           result.fieldId_ = fieldId_;
-          if (((bitField0_ & 0x00000002) == 0x00000002)) {
+          if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+            to_bitField0_ |= 0x00000002;
+          }
+          result.dataType_ = dataType_;
+          if (((bitField0_ & 0x00000004) == 0x00000004)) {
             stringData_ = new com.google.protobuf.UnmodifiableLazyStringList(
                 stringData_);
-            bitField0_ = (bitField0_ & ~0x00000002);
-          }
-          result.stringData_ = stringData_;
-          if (((bitField0_ & 0x00000004) == 0x00000004)) {
-            int32Data_ = java.util.Collections.unmodifiableList(int32Data_);
             bitField0_ = (bitField0_ & ~0x00000004);
           }
-          result.int32Data_ = int32Data_;
+          result.stringData_ = stringData_;
           if (((bitField0_ & 0x00000008) == 0x00000008)) {
-            floatData_ = java.util.Collections.unmodifiableList(floatData_);
+            int32Data_ = java.util.Collections.unmodifiableList(int32Data_);
             bitField0_ = (bitField0_ & ~0x00000008);
+          }
+          result.int32Data_ = int32Data_;
+          if (((bitField0_ & 0x00000010) == 0x00000010)) {
+            floatData_ = java.util.Collections.unmodifiableList(floatData_);
+            bitField0_ = (bitField0_ & ~0x00000010);
           }
           result.floatData_ = floatData_;
           result.bitField0_ = to_bitField0_;
@@ -8427,10 +8482,13 @@ public final class RblProto {
           if (other.hasFieldId()) {
             setFieldId(other.getFieldId());
           }
+          if (other.hasDataType()) {
+            setDataType(other.getDataType());
+          }
           if (!other.stringData_.isEmpty()) {
             if (stringData_.isEmpty()) {
               stringData_ = other.stringData_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000004);
             } else {
               ensureStringDataIsMutable();
               stringData_.addAll(other.stringData_);
@@ -8440,7 +8498,7 @@ public final class RblProto {
           if (!other.int32Data_.isEmpty()) {
             if (int32Data_.isEmpty()) {
               int32Data_ = other.int32Data_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000008);
             } else {
               ensureInt32DataIsMutable();
               int32Data_.addAll(other.int32Data_);
@@ -8450,7 +8508,7 @@ public final class RblProto {
           if (!other.floatData_.isEmpty()) {
             if (floatData_.isEmpty()) {
               floatData_ = other.floatData_;
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000010);
             } else {
               ensureFloatDataIsMutable();
               floatData_.addAll(other.floatData_);
@@ -8463,6 +8521,10 @@ public final class RblProto {
 
         public final boolean isInitialized() {
           if (!hasFieldId()) {
+            
+            return false;
+          }
+          if (!hasDataType()) {
             
             return false;
           }
@@ -8521,42 +8583,78 @@ public final class RblProto {
           return this;
         }
 
-        // repeated string stringData = 2;
+        // required .RBLMessage.DataType dataType = 2;
+        private protobuf.RblProto.RBLMessage.DataType dataType_ = protobuf.RblProto.RBLMessage.DataType.INTEGER;
+        /**
+         * <code>required .RBLMessage.DataType dataType = 2;</code>
+         */
+        public boolean hasDataType() {
+          return ((bitField0_ & 0x00000002) == 0x00000002);
+        }
+        /**
+         * <code>required .RBLMessage.DataType dataType = 2;</code>
+         */
+        public protobuf.RblProto.RBLMessage.DataType getDataType() {
+          return dataType_;
+        }
+        /**
+         * <code>required .RBLMessage.DataType dataType = 2;</code>
+         */
+        public Builder setDataType(protobuf.RblProto.RBLMessage.DataType value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          bitField0_ |= 0x00000002;
+          dataType_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>required .RBLMessage.DataType dataType = 2;</code>
+         */
+        public Builder clearDataType() {
+          bitField0_ = (bitField0_ & ~0x00000002);
+          dataType_ = protobuf.RblProto.RBLMessage.DataType.INTEGER;
+          onChanged();
+          return this;
+        }
+
+        // repeated string stringData = 3;
         private com.google.protobuf.LazyStringList stringData_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         private void ensureStringDataIsMutable() {
-          if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+          if (!((bitField0_ & 0x00000004) == 0x00000004)) {
             stringData_ = new com.google.protobuf.LazyStringArrayList(stringData_);
-            bitField0_ |= 0x00000002;
+            bitField0_ |= 0x00000004;
            }
         }
         /**
-         * <code>repeated string stringData = 2;</code>
+         * <code>repeated string stringData = 3;</code>
          */
         public java.util.List<java.lang.String>
             getStringDataList() {
           return java.util.Collections.unmodifiableList(stringData_);
         }
         /**
-         * <code>repeated string stringData = 2;</code>
+         * <code>repeated string stringData = 3;</code>
          */
         public int getStringDataCount() {
           return stringData_.size();
         }
         /**
-         * <code>repeated string stringData = 2;</code>
+         * <code>repeated string stringData = 3;</code>
          */
         public java.lang.String getStringData(int index) {
           return stringData_.get(index);
         }
         /**
-         * <code>repeated string stringData = 2;</code>
+         * <code>repeated string stringData = 3;</code>
          */
         public com.google.protobuf.ByteString
             getStringDataBytes(int index) {
           return stringData_.getByteString(index);
         }
         /**
-         * <code>repeated string stringData = 2;</code>
+         * <code>repeated string stringData = 3;</code>
          */
         public Builder setStringData(
             int index, java.lang.String value) {
@@ -8569,7 +8667,7 @@ public final class RblProto {
           return this;
         }
         /**
-         * <code>repeated string stringData = 2;</code>
+         * <code>repeated string stringData = 3;</code>
          */
         public Builder addStringData(
             java.lang.String value) {
@@ -8582,7 +8680,7 @@ public final class RblProto {
           return this;
         }
         /**
-         * <code>repeated string stringData = 2;</code>
+         * <code>repeated string stringData = 3;</code>
          */
         public Builder addAllStringData(
             java.lang.Iterable<java.lang.String> values) {
@@ -8592,16 +8690,16 @@ public final class RblProto {
           return this;
         }
         /**
-         * <code>repeated string stringData = 2;</code>
+         * <code>repeated string stringData = 3;</code>
          */
         public Builder clearStringData() {
           stringData_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
           onChanged();
           return this;
         }
         /**
-         * <code>repeated string stringData = 2;</code>
+         * <code>repeated string stringData = 3;</code>
          */
         public Builder addStringDataBytes(
             com.google.protobuf.ByteString value) {
@@ -8614,35 +8712,35 @@ public final class RblProto {
           return this;
         }
 
-        // repeated int32 int32Data = 3;
+        // repeated int32 int32Data = 4;
         private java.util.List<java.lang.Integer> int32Data_ = java.util.Collections.emptyList();
         private void ensureInt32DataIsMutable() {
-          if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+          if (!((bitField0_ & 0x00000008) == 0x00000008)) {
             int32Data_ = new java.util.ArrayList<java.lang.Integer>(int32Data_);
-            bitField0_ |= 0x00000004;
+            bitField0_ |= 0x00000008;
            }
         }
         /**
-         * <code>repeated int32 int32Data = 3;</code>
+         * <code>repeated int32 int32Data = 4;</code>
          */
         public java.util.List<java.lang.Integer>
             getInt32DataList() {
           return java.util.Collections.unmodifiableList(int32Data_);
         }
         /**
-         * <code>repeated int32 int32Data = 3;</code>
+         * <code>repeated int32 int32Data = 4;</code>
          */
         public int getInt32DataCount() {
           return int32Data_.size();
         }
         /**
-         * <code>repeated int32 int32Data = 3;</code>
+         * <code>repeated int32 int32Data = 4;</code>
          */
         public int getInt32Data(int index) {
           return int32Data_.get(index);
         }
         /**
-         * <code>repeated int32 int32Data = 3;</code>
+         * <code>repeated int32 int32Data = 4;</code>
          */
         public Builder setInt32Data(
             int index, int value) {
@@ -8652,7 +8750,7 @@ public final class RblProto {
           return this;
         }
         /**
-         * <code>repeated int32 int32Data = 3;</code>
+         * <code>repeated int32 int32Data = 4;</code>
          */
         public Builder addInt32Data(int value) {
           ensureInt32DataIsMutable();
@@ -8661,7 +8759,7 @@ public final class RblProto {
           return this;
         }
         /**
-         * <code>repeated int32 int32Data = 3;</code>
+         * <code>repeated int32 int32Data = 4;</code>
          */
         public Builder addAllInt32Data(
             java.lang.Iterable<? extends java.lang.Integer> values) {
@@ -8671,44 +8769,44 @@ public final class RblProto {
           return this;
         }
         /**
-         * <code>repeated int32 int32Data = 3;</code>
+         * <code>repeated int32 int32Data = 4;</code>
          */
         public Builder clearInt32Data() {
           int32Data_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000008);
           onChanged();
           return this;
         }
 
-        // repeated float floatData = 4;
+        // repeated float floatData = 5;
         private java.util.List<java.lang.Float> floatData_ = java.util.Collections.emptyList();
         private void ensureFloatDataIsMutable() {
-          if (!((bitField0_ & 0x00000008) == 0x00000008)) {
+          if (!((bitField0_ & 0x00000010) == 0x00000010)) {
             floatData_ = new java.util.ArrayList<java.lang.Float>(floatData_);
-            bitField0_ |= 0x00000008;
+            bitField0_ |= 0x00000010;
            }
         }
         /**
-         * <code>repeated float floatData = 4;</code>
+         * <code>repeated float floatData = 5;</code>
          */
         public java.util.List<java.lang.Float>
             getFloatDataList() {
           return java.util.Collections.unmodifiableList(floatData_);
         }
         /**
-         * <code>repeated float floatData = 4;</code>
+         * <code>repeated float floatData = 5;</code>
          */
         public int getFloatDataCount() {
           return floatData_.size();
         }
         /**
-         * <code>repeated float floatData = 4;</code>
+         * <code>repeated float floatData = 5;</code>
          */
         public float getFloatData(int index) {
           return floatData_.get(index);
         }
         /**
-         * <code>repeated float floatData = 4;</code>
+         * <code>repeated float floatData = 5;</code>
          */
         public Builder setFloatData(
             int index, float value) {
@@ -8718,7 +8816,7 @@ public final class RblProto {
           return this;
         }
         /**
-         * <code>repeated float floatData = 4;</code>
+         * <code>repeated float floatData = 5;</code>
          */
         public Builder addFloatData(float value) {
           ensureFloatDataIsMutable();
@@ -8727,7 +8825,7 @@ public final class RblProto {
           return this;
         }
         /**
-         * <code>repeated float floatData = 4;</code>
+         * <code>repeated float floatData = 5;</code>
          */
         public Builder addAllFloatData(
             java.lang.Iterable<? extends java.lang.Float> values) {
@@ -8737,11 +8835,11 @@ public final class RblProto {
           return this;
         }
         /**
-         * <code>repeated float floatData = 4;</code>
+         * <code>repeated float floatData = 5;</code>
          */
         public Builder clearFloatData() {
           floatData_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000010);
           onChanged();
           return this;
         }
@@ -10478,7 +10576,7 @@ public final class RblProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\023raspberrylife.proto\"\372\014\n\nRBLMessage\022\n\n\002" +
+      "\n\023raspberrylife.proto\"\242\r\n\nRBLMessage\022\n\n\002" +
       "id\030\001 \002(\t\0228\n\013messageType\030\002 \002(\0162\027.RBLMessa" +
       "ge.MessageType:\nPLAIN_TEXT\022,\n\013messageFla" +
       "g\030\003 \002(\0162\027.RBLMessage.MessageFlag\022\025\n\rmess" +
@@ -10510,14 +10608,15 @@ public final class RblProto {
       "LMessage.Actuator\022\017\n\007fieldId\030\002 \002(\005\022 \n\005ra",
       "nge\030\003 \001(\0132\021.RBLMessage.Range\032B\n\005Range\022\r\n" +
       "\005count\030\001 \001(\005\022\025\n\rstartDateTime\030\002 \001(\t\022\023\n\013e" +
-      "ndDateTime\030\003 \001(\t\032Q\n\004Data\022\017\n\007fieldId\030\001 \002(" +
-      "\005\022\022\n\nstringData\030\002 \003(\t\022\021\n\tint32Data\030\003 \003(\005" +
-      "\022\021\n\tfloatData\030\004 \003(\002\"(\n\013MessageFlag\022\013\n\007RE" +
+      "ndDateTime\030\003 \001(\t\032y\n\004Data\022\017\n\007fieldId\030\001 \002(" +
+      "\005\022&\n\010dataType\030\002 \002(\0162\024.RBLMessage.DataTyp" +
+      "e\022\022\n\nstringData\030\003 \003(\t\022\021\n\tint32Data\030\004 \003(\005" +
+      "\022\021\n\tfloatData\030\005 \003(\002\"(\n\013MessageFlag\022\013\n\007RE" +
       "QUEST\020\000\022\014\n\010RESPONSE\020\001\"m\n\013MessageType\022\016\n\n" +
       "PLAIN_TEXT\020\000\022\023\n\017RUN_INSTRUCTION\020\001\022\014\n\010GET" +
       "_DATA\020\002\022\014\n\010SET_DATA\020\003\022\010\n\004DATA\020\004\022\t\n\005LOGIC" +
-      "\020\005\022\010\n\004AUTH\020\007\"0\n\nModuleType\022\017\n\013MODULE_TEM" +
-      "P\020\000\022\021\n\rMODULE_OUTLET\020\001\"2\n\014ActuatorType\022\n",
+      "\020\005\022\010\n\004AUTH\020\007\"0\n\nModuleType\022\017\n\013MODULE_TEM",
+      "P\020\000\022\021\n\rMODULE_OUTLET\020\001\"2\n\014ActuatorType\022\n" +
       "\n\006SYSTEM\020\000\022\n\n\006CLIENT\020\001\022\n\n\006MODULE\020\002\".\n\010Da" +
       "taType\022\013\n\007INTEGER\020\000\022\t\n\005FLOAT\020\001\022\n\n\006STRING" +
       "\020\002B\024\n\010protobufB\010RblProto"
@@ -10592,7 +10691,7 @@ public final class RblProto {
           internal_static_RBLMessage_Data_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_RBLMessage_Data_descriptor,
-              new java.lang.String[] { "FieldId", "StringData", "Int32Data", "FloatData", });
+              new java.lang.String[] { "FieldId", "DataType", "StringData", "Int32Data", "FloatData", });
           return null;
         }
       };

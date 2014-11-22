@@ -149,9 +149,10 @@ message RBLMessage {
 
 	message Data {
 		required int32 fieldId = 1;
-		repeated string stringData = 2;
-		repeated int32 int32Data = 3;
-		repeated float floatData = 4;
+		required DataType dataType = 2;
+		repeated string stringData = 3;
+		repeated int32 int32Data = 4;
+		repeated float floatData = 5;
 	}
 
 
