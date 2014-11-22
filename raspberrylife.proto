@@ -119,8 +119,6 @@ message RBLMessage {
 		optional bool state = 4;
 	}
 
-
-
 // =============================================================================
 // Data subtypes
 // =============================================================================
@@ -130,7 +128,7 @@ message RBLMessage {
 		required int32 fieldId = 2;
 		required Data data = 3;
 	}
-	
+
 	message GetData {
 		required Actuator actuator = 1;
 		required int32 fieldId = 2;
