@@ -30,7 +30,7 @@ message RBLMessage {
 
 
 // =============================================================================
-// Enums
+// Enumerations
 // =============================================================================
 
 	enum MessageFlag{
@@ -46,7 +46,7 @@ message RBLMessage {
 		DATA = 4;
 		LOGIC = 5;
 
-		// All auth messages use PlainText as message content
+		// All authentication messages use PlainText as message content
 		AUTH = 7;
 	}
 
@@ -137,13 +137,13 @@ message RBLMessage {
 	}
 
 	message Range {
-		//leaving this empty will result in a fixed number of results e.g. 50
+		// Leaving this empty will result in a fixed number of results e.g. 50
 		optional int32 count = 1;
 
-		//specify date as follows: "YYYY-MM-DD hh:mm:ss"
+		// Specify date as follows: "YYYY-MM-DD hh:mm:ss"
 		optional string startDateTime = 2;
 
-		// same as startDateTime
+		// Same as startDateTime
 		optional string endDateTime = 3;
 	}
 
@@ -157,4 +157,4 @@ message RBLMessage {
 
 
 
-} // close RBLMessage
+} // Close RBLMessage
