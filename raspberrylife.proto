@@ -52,8 +52,13 @@ message RBLMessage {
 	}
 
 	enum ModuleType{
-		MODULE_TEMP = 0;
-		MODULE_OUTLET = 1;
+		MODULE_OUTLET = 0;
+		MODULE_TEMP = 1;
+		MODULE_PIR = 3;
+		MODULE_REED = 2;
+		MODULE_LUMINOSITY = 4;
+		MODULE_RELAY = 5;
+		MODULE_PIR_AND_RELAY = 6;
 	}
 
 	enum ActuatorType {
@@ -76,6 +81,11 @@ message RBLMessage {
 		required string text = 1;
 	}
 
+	message Actuator {
+		required ActuatorType actuatorType = 1;
+		required int32 actuatorId = 2;
+	}
+
 // =============================================================================
 // Instruction subtypes
 // =============================================================================
@@ -83,8 +93,7 @@ message RBLMessage {
 	message Instruction {
 		// Name of the instruction
 		required int32 instructionId = 1;
-		repeated string stringParameters = 2;
-		repeated int32 intParameters = 3;
+		repeated string parameters = 2;
 
 		// Module
 		optional ModuleType moduleType = 20;
@@ -96,22 +105,19 @@ message RBLMessage {
 		required Instruction instruction = 2;
 	}
 
-
-
 // =============================================================================
 // Logic subtypes
 // =============================================================================
 
 	message Logic {
 		required string name = 1;
-		required Actuator initiator = 2;
-		required Actuator receiver = 3;
-		required Condition condition = 4;
-	}
+		// Every condition will be mapped to an initiator
+		repeated Actuator initiator = 2;
+		repeated Condition condition = 4;
 
-	message Actuator {
-		required ActuatorType actuatorType = 1;
-		required int32 actuatorId = 2;
+		// Every trigger will be mapped to a receiver
+		repeated Actuator receiver = 3;
+		repeated Trigger trigger = 5;
 	}
 
 	message Condition {
@@ -119,6 +125,11 @@ message RBLMessage {
 		optional int32 thresholdOver = 2;
 		optional int32 thresholdUnder = 3;
 		optional bool state = 4;
+	}
+
+	message Trigger {
+		required int32 instructionId = 1;
+		repeated string parameters = 2;
 	}
 
 // =============================================================================
