@@ -129,55 +129,29 @@ public final class RblProto {
     protobuf.RblProto.RBLMessage.LogicOrBuilder getLogicOrBuilder();
 
     /**
-     * <code>optional .RBLMessage.GetData getData = 51;</code>
+     * <code>optional .RBLMessage.DataSet dataSet = 51;</code>
      *
      * <pre>
      * Range 51 - 70 : Data operation messages
      * </pre>
      */
-    boolean hasGetData();
+    boolean hasDataSet();
     /**
-     * <code>optional .RBLMessage.GetData getData = 51;</code>
+     * <code>optional .RBLMessage.DataSet dataSet = 51;</code>
      *
      * <pre>
      * Range 51 - 70 : Data operation messages
      * </pre>
      */
-    protobuf.RblProto.RBLMessage.GetData getGetData();
+    protobuf.RblProto.RBLMessage.DataSet getDataSet();
     /**
-     * <code>optional .RBLMessage.GetData getData = 51;</code>
+     * <code>optional .RBLMessage.DataSet dataSet = 51;</code>
      *
      * <pre>
      * Range 51 - 70 : Data operation messages
      * </pre>
      */
-    protobuf.RblProto.RBLMessage.GetDataOrBuilder getGetDataOrBuilder();
-
-    /**
-     * <code>optional .RBLMessage.SetData setData = 52;</code>
-     */
-    boolean hasSetData();
-    /**
-     * <code>optional .RBLMessage.SetData setData = 52;</code>
-     */
-    protobuf.RblProto.RBLMessage.SetData getSetData();
-    /**
-     * <code>optional .RBLMessage.SetData setData = 52;</code>
-     */
-    protobuf.RblProto.RBLMessage.SetDataOrBuilder getSetDataOrBuilder();
-
-    /**
-     * <code>optional .RBLMessage.Data data = 53;</code>
-     */
-    boolean hasData();
-    /**
-     * <code>optional .RBLMessage.Data data = 53;</code>
-     */
-    protobuf.RblProto.RBLMessage.Data getData();
-    /**
-     * <code>optional .RBLMessage.Data data = 53;</code>
-     */
-    protobuf.RblProto.RBLMessage.DataOrBuilder getDataOrBuilder();
+    protobuf.RblProto.RBLMessage.DataSetOrBuilder getDataSetOrBuilder();
   }
   /**
    * Protobuf type {@code RBLMessage}
@@ -310,42 +284,16 @@ public final class RblProto {
               break;
             }
             case 410: {
-              protobuf.RblProto.RBLMessage.GetData.Builder subBuilder = null;
+              protobuf.RblProto.RBLMessage.DataSet.Builder subBuilder = null;
               if (((bitField0_ & 0x00000080) == 0x00000080)) {
-                subBuilder = getData_.toBuilder();
+                subBuilder = dataSet_.toBuilder();
               }
-              getData_ = input.readMessage(protobuf.RblProto.RBLMessage.GetData.PARSER, extensionRegistry);
+              dataSet_ = input.readMessage(protobuf.RblProto.RBLMessage.DataSet.PARSER, extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(getData_);
-                getData_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(dataSet_);
+                dataSet_ = subBuilder.buildPartial();
               }
               bitField0_ |= 0x00000080;
-              break;
-            }
-            case 418: {
-              protobuf.RblProto.RBLMessage.SetData.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000100) == 0x00000100)) {
-                subBuilder = setData_.toBuilder();
-              }
-              setData_ = input.readMessage(protobuf.RblProto.RBLMessage.SetData.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(setData_);
-                setData_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000100;
-              break;
-            }
-            case 426: {
-              protobuf.RblProto.RBLMessage.Data.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000200) == 0x00000200)) {
-                subBuilder = data_.toBuilder();
-              }
-              data_ = input.readMessage(protobuf.RblProto.RBLMessage.Data.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(data_);
-                data_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000200;
               break;
             }
           }
@@ -484,84 +432,58 @@ public final class RblProto {
     public enum MessageType
         implements com.google.protobuf.ProtocolMessageEnum {
       /**
-       * <code>PLAIN_TEXT = 0;</code>
+       * <code>AUTH = 0;</code>
        */
-      PLAIN_TEXT(0, 0),
+      AUTH(0, 0),
       /**
-       * <code>RUN_INSTRUCTION = 1;</code>
+       * <code>PLAIN_TEXT = 1;</code>
        */
-      RUN_INSTRUCTION(1, 1),
+      PLAIN_TEXT(1, 1),
       /**
-       * <code>GET_DATA = 2;</code>
+       * <code>RUN_INSTRUCTION = 2;</code>
        */
-      GET_DATA(2, 2),
+      RUN_INSTRUCTION(2, 2),
       /**
-       * <code>SET_DATA = 3;</code>
+       * <code>DATASET = 3;</code>
        */
-      SET_DATA(3, 3),
+      DATASET(3, 3),
       /**
-       * <code>DATA = 4;</code>
+       * <code>LOGIC = 4;</code>
        */
-      DATA(4, 4),
-      /**
-       * <code>LOGIC = 5;</code>
-       */
-      LOGIC(5, 5),
-      /**
-       * <code>AUTH = 6;</code>
-       *
-       * <pre>
-       * All authentication messages use PlainText as message content
-       * </pre>
-       */
-      AUTH(6, 6),
+      LOGIC(4, 4),
       ;
 
       /**
-       * <code>PLAIN_TEXT = 0;</code>
+       * <code>AUTH = 0;</code>
        */
-      public static final int PLAIN_TEXT_VALUE = 0;
+      public static final int AUTH_VALUE = 0;
       /**
-       * <code>RUN_INSTRUCTION = 1;</code>
+       * <code>PLAIN_TEXT = 1;</code>
        */
-      public static final int RUN_INSTRUCTION_VALUE = 1;
+      public static final int PLAIN_TEXT_VALUE = 1;
       /**
-       * <code>GET_DATA = 2;</code>
+       * <code>RUN_INSTRUCTION = 2;</code>
        */
-      public static final int GET_DATA_VALUE = 2;
+      public static final int RUN_INSTRUCTION_VALUE = 2;
       /**
-       * <code>SET_DATA = 3;</code>
+       * <code>DATASET = 3;</code>
        */
-      public static final int SET_DATA_VALUE = 3;
+      public static final int DATASET_VALUE = 3;
       /**
-       * <code>DATA = 4;</code>
+       * <code>LOGIC = 4;</code>
        */
-      public static final int DATA_VALUE = 4;
-      /**
-       * <code>LOGIC = 5;</code>
-       */
-      public static final int LOGIC_VALUE = 5;
-      /**
-       * <code>AUTH = 6;</code>
-       *
-       * <pre>
-       * All authentication messages use PlainText as message content
-       * </pre>
-       */
-      public static final int AUTH_VALUE = 6;
+      public static final int LOGIC_VALUE = 4;
 
 
       public final int getNumber() { return value; }
 
       public static MessageType valueOf(int value) {
         switch (value) {
-          case 0: return PLAIN_TEXT;
-          case 1: return RUN_INSTRUCTION;
-          case 2: return GET_DATA;
-          case 3: return SET_DATA;
-          case 4: return DATA;
-          case 5: return LOGIC;
-          case 6: return AUTH;
+          case 0: return AUTH;
+          case 1: return PLAIN_TEXT;
+          case 2: return RUN_INSTRUCTION;
+          case 3: return DATASET;
+          case 4: return LOGIC;
           default: return null;
         }
       }
@@ -741,6 +663,106 @@ public final class RblProto {
     }
 
     /**
+     * Protobuf enum {@code RBLMessage.CrudType}
+     */
+    public enum CrudType
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>CREATE = 0;</code>
+       */
+      CREATE(0, 0),
+      /**
+       * <code>RETRIEVE = 1;</code>
+       */
+      RETRIEVE(1, 1),
+      /**
+       * <code>UPDATE = 2;</code>
+       */
+      UPDATE(2, 2),
+      /**
+       * <code>DELETE = 3;</code>
+       */
+      DELETE(3, 3),
+      ;
+
+      /**
+       * <code>CREATE = 0;</code>
+       */
+      public static final int CREATE_VALUE = 0;
+      /**
+       * <code>RETRIEVE = 1;</code>
+       */
+      public static final int RETRIEVE_VALUE = 1;
+      /**
+       * <code>UPDATE = 2;</code>
+       */
+      public static final int UPDATE_VALUE = 2;
+      /**
+       * <code>DELETE = 3;</code>
+       */
+      public static final int DELETE_VALUE = 3;
+
+
+      public final int getNumber() { return value; }
+
+      public static CrudType valueOf(int value) {
+        switch (value) {
+          case 0: return CREATE;
+          case 1: return RETRIEVE;
+          case 2: return UPDATE;
+          case 3: return DELETE;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<CrudType>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static com.google.protobuf.Internal.EnumLiteMap<CrudType>
+          internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<CrudType>() {
+              public CrudType findValueByNumber(int number) {
+                return CrudType.valueOf(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        return getDescriptor().getValues().get(index);
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return protobuf.RblProto.RBLMessage.getDescriptor().getEnumTypes().get(3);
+      }
+
+      private static final CrudType[] VALUES = values();
+
+      public static CrudType valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int index;
+      private final int value;
+
+      private CrudType(int index, int value) {
+        this.index = index;
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:RBLMessage.CrudType)
+    }
+
+    /**
      * Protobuf enum {@code RBLMessage.ActuatorType}
      */
     public enum ActuatorType
@@ -806,7 +828,7 @@ public final class RblProto {
       }
       public static final com.google.protobuf.Descriptors.EnumDescriptor
           getDescriptor() {
-        return protobuf.RblProto.RBLMessage.getDescriptor().getEnumTypes().get(3);
+        return protobuf.RblProto.RBLMessage.getDescriptor().getEnumTypes().get(4);
       }
 
       private static final ActuatorType[] VALUES = values();
@@ -837,40 +859,58 @@ public final class RblProto {
     public enum DataType
         implements com.google.protobuf.ProtocolMessageEnum {
       /**
-       * <code>INTEGER = 0;</code>
+       * <code>MODULE_LIST = 0;</code>
        */
-      INTEGER(0, 0),
+      MODULE_LIST(0, 0),
       /**
-       * <code>FLOAT = 1;</code>
+       * <code>MODULE_DATA = 1;</code>
        */
-      FLOAT(1, 1),
+      MODULE_DATA(1, 1),
       /**
-       * <code>STRING = 2;</code>
+       * <code>SYSTEM_DATA = 2;</code>
        */
-      STRING(2, 2),
+      SYSTEM_DATA(2, 2),
+      /**
+       * <code>CLIENT_LIST = 3;</code>
+       */
+      CLIENT_LIST(3, 3),
+      /**
+       * <code>CLIENT_DATA = 4;</code>
+       */
+      CLIENT_DATA(4, 4),
       ;
 
       /**
-       * <code>INTEGER = 0;</code>
+       * <code>MODULE_LIST = 0;</code>
        */
-      public static final int INTEGER_VALUE = 0;
+      public static final int MODULE_LIST_VALUE = 0;
       /**
-       * <code>FLOAT = 1;</code>
+       * <code>MODULE_DATA = 1;</code>
        */
-      public static final int FLOAT_VALUE = 1;
+      public static final int MODULE_DATA_VALUE = 1;
       /**
-       * <code>STRING = 2;</code>
+       * <code>SYSTEM_DATA = 2;</code>
        */
-      public static final int STRING_VALUE = 2;
+      public static final int SYSTEM_DATA_VALUE = 2;
+      /**
+       * <code>CLIENT_LIST = 3;</code>
+       */
+      public static final int CLIENT_LIST_VALUE = 3;
+      /**
+       * <code>CLIENT_DATA = 4;</code>
+       */
+      public static final int CLIENT_DATA_VALUE = 4;
 
 
       public final int getNumber() { return value; }
 
       public static DataType valueOf(int value) {
         switch (value) {
-          case 0: return INTEGER;
-          case 1: return FLOAT;
-          case 2: return STRING;
+          case 0: return MODULE_LIST;
+          case 1: return MODULE_DATA;
+          case 2: return SYSTEM_DATA;
+          case 3: return CLIENT_LIST;
+          case 4: return CLIENT_DATA;
           default: return null;
         }
       }
@@ -897,7 +937,7 @@ public final class RblProto {
       }
       public static final com.google.protobuf.Descriptors.EnumDescriptor
           getDescriptor() {
-        return protobuf.RblProto.RBLMessage.getDescriptor().getEnumTypes().get(4);
+        return protobuf.RblProto.RBLMessage.getDescriptor().getEnumTypes().get(5);
       }
 
       private static final DataType[] VALUES = values();
@@ -1435,6 +1475,20 @@ public final class RblProto {
        * <code>required int32 actuatorId = 2;</code>
        */
       int getActuatorId();
+
+      /**
+       * <code>optional string name = 3;</code>
+       */
+      boolean hasName();
+      /**
+       * <code>optional string name = 3;</code>
+       */
+      java.lang.String getName();
+      /**
+       * <code>optional string name = 3;</code>
+       */
+      com.google.protobuf.ByteString
+          getNameBytes();
     }
     /**
      * Protobuf type {@code RBLMessage.Actuator}
@@ -1502,6 +1556,12 @@ public final class RblProto {
               case 16: {
                 bitField0_ |= 0x00000002;
                 actuatorId_ = input.readInt32();
+                break;
+              }
+              case 26: {
+                com.google.protobuf.ByteString bs = input.readBytes();
+                bitField0_ |= 0x00000004;
+                name_ = bs;
                 break;
               }
             }
@@ -1574,9 +1634,52 @@ public final class RblProto {
         return actuatorId_;
       }
 
+      public static final int NAME_FIELD_NUMBER = 3;
+      private java.lang.Object name_;
+      /**
+       * <code>optional string name = 3;</code>
+       */
+      public boolean hasName() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>optional string name = 3;</code>
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            name_ = s;
+          }
+          return s;
+        }
+      }
+      /**
+       * <code>optional string name = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
       private void initFields() {
         actuatorType_ = protobuf.RblProto.RBLMessage.ActuatorType.SYSTEM;
         actuatorId_ = 0;
+        name_ = "";
       }
       private byte memoizedIsInitialized = -1;
       public final boolean isInitialized() {
@@ -1605,6 +1708,9 @@ public final class RblProto {
         if (((bitField0_ & 0x00000002) == 0x00000002)) {
           output.writeInt32(2, actuatorId_);
         }
+        if (((bitField0_ & 0x00000004) == 0x00000004)) {
+          output.writeBytes(3, getNameBytes());
+        }
         getUnknownFields().writeTo(output);
       }
 
@@ -1621,6 +1727,10 @@ public final class RblProto {
         if (((bitField0_ & 0x00000002) == 0x00000002)) {
           size += com.google.protobuf.CodedOutputStream
             .computeInt32Size(2, actuatorId_);
+        }
+        if (((bitField0_ & 0x00000004) == 0x00000004)) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeBytesSize(3, getNameBytes());
         }
         size += getUnknownFields().getSerializedSize();
         memoizedSerializedSize = size;
@@ -1743,6 +1853,8 @@ public final class RblProto {
           bitField0_ = (bitField0_ & ~0x00000001);
           actuatorId_ = 0;
           bitField0_ = (bitField0_ & ~0x00000002);
+          name_ = "";
+          bitField0_ = (bitField0_ & ~0x00000004);
           return this;
         }
 
@@ -1779,6 +1891,10 @@ public final class RblProto {
             to_bitField0_ |= 0x00000002;
           }
           result.actuatorId_ = actuatorId_;
+          if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+            to_bitField0_ |= 0x00000004;
+          }
+          result.name_ = name_;
           result.bitField0_ = to_bitField0_;
           onBuilt();
           return result;
@@ -1800,6 +1916,11 @@ public final class RblProto {
           }
           if (other.hasActuatorId()) {
             setActuatorId(other.getActuatorId());
+          }
+          if (other.hasName()) {
+            bitField0_ |= 0x00000004;
+            name_ = other.name_;
+            onChanged();
           }
           this.mergeUnknownFields(other.getUnknownFields());
           return this;
@@ -1899,6 +2020,82 @@ public final class RblProto {
         public Builder clearActuatorId() {
           bitField0_ = (bitField0_ & ~0x00000002);
           actuatorId_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object name_ = "";
+        /**
+         * <code>optional string name = 3;</code>
+         */
+        public boolean hasName() {
+          return ((bitField0_ & 0x00000004) == 0x00000004);
+        }
+        /**
+         * <code>optional string name = 3;</code>
+         */
+        public java.lang.String getName() {
+          java.lang.Object ref = name_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            if (bs.isValidUtf8()) {
+              name_ = s;
+            }
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <code>optional string name = 3;</code>
+         */
+        public com.google.protobuf.ByteString
+            getNameBytes() {
+          java.lang.Object ref = name_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            name_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <code>optional string name = 3;</code>
+         */
+        public Builder setName(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+          name_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional string name = 3;</code>
+         */
+        public Builder clearName() {
+          bitField0_ = (bitField0_ & ~0x00000004);
+          name_ = getDefaultInstance().getName();
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional string name = 3;</code>
+         */
+        public Builder setNameBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+          name_ = value;
           onChanged();
           return this;
         }
@@ -3465,21 +3662,30 @@ public final class RblProto {
         com.google.protobuf.MessageOrBuilder {
 
       /**
-       * <code>required string name = 1;</code>
+       * <code>required .RBLMessage.CrudType crudType = 1;</code>
+       */
+      boolean hasCrudType();
+      /**
+       * <code>required .RBLMessage.CrudType crudType = 1;</code>
+       */
+      protobuf.RblProto.RBLMessage.CrudType getCrudType();
+
+      /**
+       * <code>required string name = 2;</code>
        */
       boolean hasName();
       /**
-       * <code>required string name = 1;</code>
+       * <code>required string name = 2;</code>
        */
       java.lang.String getName();
       /**
-       * <code>required string name = 1;</code>
+       * <code>required string name = 2;</code>
        */
       com.google.protobuf.ByteString
           getNameBytes();
 
       /**
-       * <code>repeated .RBLMessage.Actuator initiator = 2;</code>
+       * <code>repeated .RBLMessage.Actuator initiator = 3;</code>
        *
        * <pre>
        * Every condition will be mapped to an initiator
@@ -3488,7 +3694,7 @@ public final class RblProto {
       java.util.List<protobuf.RblProto.RBLMessage.Actuator> 
           getInitiatorList();
       /**
-       * <code>repeated .RBLMessage.Actuator initiator = 2;</code>
+       * <code>repeated .RBLMessage.Actuator initiator = 3;</code>
        *
        * <pre>
        * Every condition will be mapped to an initiator
@@ -3496,7 +3702,7 @@ public final class RblProto {
        */
       protobuf.RblProto.RBLMessage.Actuator getInitiator(int index);
       /**
-       * <code>repeated .RBLMessage.Actuator initiator = 2;</code>
+       * <code>repeated .RBLMessage.Actuator initiator = 3;</code>
        *
        * <pre>
        * Every condition will be mapped to an initiator
@@ -3504,7 +3710,7 @@ public final class RblProto {
        */
       int getInitiatorCount();
       /**
-       * <code>repeated .RBLMessage.Actuator initiator = 2;</code>
+       * <code>repeated .RBLMessage.Actuator initiator = 3;</code>
        *
        * <pre>
        * Every condition will be mapped to an initiator
@@ -3513,7 +3719,7 @@ public final class RblProto {
       java.util.List<? extends protobuf.RblProto.RBLMessage.ActuatorOrBuilder> 
           getInitiatorOrBuilderList();
       /**
-       * <code>repeated .RBLMessage.Actuator initiator = 2;</code>
+       * <code>repeated .RBLMessage.Actuator initiator = 3;</code>
        *
        * <pre>
        * Every condition will be mapped to an initiator
@@ -3547,7 +3753,7 @@ public final class RblProto {
           int index);
 
       /**
-       * <code>repeated .RBLMessage.Actuator receiver = 3;</code>
+       * <code>repeated .RBLMessage.Actuator receiver = 5;</code>
        *
        * <pre>
        * Every trigger will be mapped to a receiver
@@ -3556,7 +3762,7 @@ public final class RblProto {
       java.util.List<protobuf.RblProto.RBLMessage.Actuator> 
           getReceiverList();
       /**
-       * <code>repeated .RBLMessage.Actuator receiver = 3;</code>
+       * <code>repeated .RBLMessage.Actuator receiver = 5;</code>
        *
        * <pre>
        * Every trigger will be mapped to a receiver
@@ -3564,7 +3770,7 @@ public final class RblProto {
        */
       protobuf.RblProto.RBLMessage.Actuator getReceiver(int index);
       /**
-       * <code>repeated .RBLMessage.Actuator receiver = 3;</code>
+       * <code>repeated .RBLMessage.Actuator receiver = 5;</code>
        *
        * <pre>
        * Every trigger will be mapped to a receiver
@@ -3572,7 +3778,7 @@ public final class RblProto {
        */
       int getReceiverCount();
       /**
-       * <code>repeated .RBLMessage.Actuator receiver = 3;</code>
+       * <code>repeated .RBLMessage.Actuator receiver = 5;</code>
        *
        * <pre>
        * Every trigger will be mapped to a receiver
@@ -3581,7 +3787,7 @@ public final class RblProto {
       java.util.List<? extends protobuf.RblProto.RBLMessage.ActuatorOrBuilder> 
           getReceiverOrBuilderList();
       /**
-       * <code>repeated .RBLMessage.Actuator receiver = 3;</code>
+       * <code>repeated .RBLMessage.Actuator receiver = 5;</code>
        *
        * <pre>
        * Every trigger will be mapped to a receiver
@@ -3591,25 +3797,25 @@ public final class RblProto {
           int index);
 
       /**
-       * <code>repeated .RBLMessage.Trigger trigger = 5;</code>
+       * <code>repeated .RBLMessage.Trigger trigger = 6;</code>
        */
       java.util.List<protobuf.RblProto.RBLMessage.Trigger> 
           getTriggerList();
       /**
-       * <code>repeated .RBLMessage.Trigger trigger = 5;</code>
+       * <code>repeated .RBLMessage.Trigger trigger = 6;</code>
        */
       protobuf.RblProto.RBLMessage.Trigger getTrigger(int index);
       /**
-       * <code>repeated .RBLMessage.Trigger trigger = 5;</code>
+       * <code>repeated .RBLMessage.Trigger trigger = 6;</code>
        */
       int getTriggerCount();
       /**
-       * <code>repeated .RBLMessage.Trigger trigger = 5;</code>
+       * <code>repeated .RBLMessage.Trigger trigger = 6;</code>
        */
       java.util.List<? extends protobuf.RblProto.RBLMessage.TriggerOrBuilder> 
           getTriggerOrBuilderList();
       /**
-       * <code>repeated .RBLMessage.Trigger trigger = 5;</code>
+       * <code>repeated .RBLMessage.Trigger trigger = 6;</code>
        */
       protobuf.RblProto.RBLMessage.TriggerOrBuilder getTriggerOrBuilder(
           int index);
@@ -3666,40 +3872,51 @@ public final class RblProto {
                 }
                 break;
               }
-              case 10: {
-                com.google.protobuf.ByteString bs = input.readBytes();
-                bitField0_ |= 0x00000001;
-                name_ = bs;
+              case 8: {
+                int rawValue = input.readEnum();
+                protobuf.RblProto.RBLMessage.CrudType value = protobuf.RblProto.RBLMessage.CrudType.valueOf(rawValue);
+                if (value == null) {
+                  unknownFields.mergeVarintField(1, rawValue);
+                } else {
+                  bitField0_ |= 0x00000001;
+                  crudType_ = value;
+                }
                 break;
               }
               case 18: {
-                if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                com.google.protobuf.ByteString bs = input.readBytes();
+                bitField0_ |= 0x00000002;
+                name_ = bs;
+                break;
+              }
+              case 26: {
+                if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
                   initiator_ = new java.util.ArrayList<protobuf.RblProto.RBLMessage.Actuator>();
-                  mutable_bitField0_ |= 0x00000002;
+                  mutable_bitField0_ |= 0x00000004;
                 }
                 initiator_.add(input.readMessage(protobuf.RblProto.RBLMessage.Actuator.PARSER, extensionRegistry));
                 break;
               }
-              case 26: {
-                if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-                  receiver_ = new java.util.ArrayList<protobuf.RblProto.RBLMessage.Actuator>();
-                  mutable_bitField0_ |= 0x00000008;
-                }
-                receiver_.add(input.readMessage(protobuf.RblProto.RBLMessage.Actuator.PARSER, extensionRegistry));
-                break;
-              }
               case 34: {
-                if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+                if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
                   condition_ = new java.util.ArrayList<protobuf.RblProto.RBLMessage.Condition>();
-                  mutable_bitField0_ |= 0x00000004;
+                  mutable_bitField0_ |= 0x00000008;
                 }
                 condition_.add(input.readMessage(protobuf.RblProto.RBLMessage.Condition.PARSER, extensionRegistry));
                 break;
               }
               case 42: {
                 if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
-                  trigger_ = new java.util.ArrayList<protobuf.RblProto.RBLMessage.Trigger>();
+                  receiver_ = new java.util.ArrayList<protobuf.RblProto.RBLMessage.Actuator>();
                   mutable_bitField0_ |= 0x00000010;
+                }
+                receiver_.add(input.readMessage(protobuf.RblProto.RBLMessage.Actuator.PARSER, extensionRegistry));
+                break;
+              }
+              case 50: {
+                if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+                  trigger_ = new java.util.ArrayList<protobuf.RblProto.RBLMessage.Trigger>();
+                  mutable_bitField0_ |= 0x00000020;
                 }
                 trigger_.add(input.readMessage(protobuf.RblProto.RBLMessage.Trigger.PARSER, extensionRegistry));
                 break;
@@ -3712,16 +3929,16 @@ public final class RblProto {
           throw new com.google.protobuf.InvalidProtocolBufferException(
               e.getMessage()).setUnfinishedMessage(this);
         } finally {
-          if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+          if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
             initiator_ = java.util.Collections.unmodifiableList(initiator_);
           }
           if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-            receiver_ = java.util.Collections.unmodifiableList(receiver_);
-          }
-          if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
             condition_ = java.util.Collections.unmodifiableList(condition_);
           }
           if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+            receiver_ = java.util.Collections.unmodifiableList(receiver_);
+          }
+          if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
             trigger_ = java.util.Collections.unmodifiableList(trigger_);
           }
           this.unknownFields = unknownFields.build();
@@ -3756,16 +3973,31 @@ public final class RblProto {
       }
 
       private int bitField0_;
-      public static final int NAME_FIELD_NUMBER = 1;
-      private java.lang.Object name_;
+      public static final int CRUDTYPE_FIELD_NUMBER = 1;
+      private protobuf.RblProto.RBLMessage.CrudType crudType_;
       /**
-       * <code>required string name = 1;</code>
+       * <code>required .RBLMessage.CrudType crudType = 1;</code>
        */
-      public boolean hasName() {
+      public boolean hasCrudType() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
-       * <code>required string name = 1;</code>
+       * <code>required .RBLMessage.CrudType crudType = 1;</code>
+       */
+      public protobuf.RblProto.RBLMessage.CrudType getCrudType() {
+        return crudType_;
+      }
+
+      public static final int NAME_FIELD_NUMBER = 2;
+      private java.lang.Object name_;
+      /**
+       * <code>required string name = 2;</code>
+       */
+      public boolean hasName() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>required string name = 2;</code>
        */
       public java.lang.String getName() {
         java.lang.Object ref = name_;
@@ -3782,7 +4014,7 @@ public final class RblProto {
         }
       }
       /**
-       * <code>required string name = 1;</code>
+       * <code>required string name = 2;</code>
        */
       public com.google.protobuf.ByteString
           getNameBytes() {
@@ -3798,10 +4030,10 @@ public final class RblProto {
         }
       }
 
-      public static final int INITIATOR_FIELD_NUMBER = 2;
+      public static final int INITIATOR_FIELD_NUMBER = 3;
       private java.util.List<protobuf.RblProto.RBLMessage.Actuator> initiator_;
       /**
-       * <code>repeated .RBLMessage.Actuator initiator = 2;</code>
+       * <code>repeated .RBLMessage.Actuator initiator = 3;</code>
        *
        * <pre>
        * Every condition will be mapped to an initiator
@@ -3811,7 +4043,7 @@ public final class RblProto {
         return initiator_;
       }
       /**
-       * <code>repeated .RBLMessage.Actuator initiator = 2;</code>
+       * <code>repeated .RBLMessage.Actuator initiator = 3;</code>
        *
        * <pre>
        * Every condition will be mapped to an initiator
@@ -3822,7 +4054,7 @@ public final class RblProto {
         return initiator_;
       }
       /**
-       * <code>repeated .RBLMessage.Actuator initiator = 2;</code>
+       * <code>repeated .RBLMessage.Actuator initiator = 3;</code>
        *
        * <pre>
        * Every condition will be mapped to an initiator
@@ -3832,7 +4064,7 @@ public final class RblProto {
         return initiator_.size();
       }
       /**
-       * <code>repeated .RBLMessage.Actuator initiator = 2;</code>
+       * <code>repeated .RBLMessage.Actuator initiator = 3;</code>
        *
        * <pre>
        * Every condition will be mapped to an initiator
@@ -3842,7 +4074,7 @@ public final class RblProto {
         return initiator_.get(index);
       }
       /**
-       * <code>repeated .RBLMessage.Actuator initiator = 2;</code>
+       * <code>repeated .RBLMessage.Actuator initiator = 3;</code>
        *
        * <pre>
        * Every condition will be mapped to an initiator
@@ -3888,10 +4120,10 @@ public final class RblProto {
         return condition_.get(index);
       }
 
-      public static final int RECEIVER_FIELD_NUMBER = 3;
+      public static final int RECEIVER_FIELD_NUMBER = 5;
       private java.util.List<protobuf.RblProto.RBLMessage.Actuator> receiver_;
       /**
-       * <code>repeated .RBLMessage.Actuator receiver = 3;</code>
+       * <code>repeated .RBLMessage.Actuator receiver = 5;</code>
        *
        * <pre>
        * Every trigger will be mapped to a receiver
@@ -3901,7 +4133,7 @@ public final class RblProto {
         return receiver_;
       }
       /**
-       * <code>repeated .RBLMessage.Actuator receiver = 3;</code>
+       * <code>repeated .RBLMessage.Actuator receiver = 5;</code>
        *
        * <pre>
        * Every trigger will be mapped to a receiver
@@ -3912,7 +4144,7 @@ public final class RblProto {
         return receiver_;
       }
       /**
-       * <code>repeated .RBLMessage.Actuator receiver = 3;</code>
+       * <code>repeated .RBLMessage.Actuator receiver = 5;</code>
        *
        * <pre>
        * Every trigger will be mapped to a receiver
@@ -3922,7 +4154,7 @@ public final class RblProto {
         return receiver_.size();
       }
       /**
-       * <code>repeated .RBLMessage.Actuator receiver = 3;</code>
+       * <code>repeated .RBLMessage.Actuator receiver = 5;</code>
        *
        * <pre>
        * Every trigger will be mapped to a receiver
@@ -3932,7 +4164,7 @@ public final class RblProto {
         return receiver_.get(index);
       }
       /**
-       * <code>repeated .RBLMessage.Actuator receiver = 3;</code>
+       * <code>repeated .RBLMessage.Actuator receiver = 5;</code>
        *
        * <pre>
        * Every trigger will be mapped to a receiver
@@ -3943,35 +4175,35 @@ public final class RblProto {
         return receiver_.get(index);
       }
 
-      public static final int TRIGGER_FIELD_NUMBER = 5;
+      public static final int TRIGGER_FIELD_NUMBER = 6;
       private java.util.List<protobuf.RblProto.RBLMessage.Trigger> trigger_;
       /**
-       * <code>repeated .RBLMessage.Trigger trigger = 5;</code>
+       * <code>repeated .RBLMessage.Trigger trigger = 6;</code>
        */
       public java.util.List<protobuf.RblProto.RBLMessage.Trigger> getTriggerList() {
         return trigger_;
       }
       /**
-       * <code>repeated .RBLMessage.Trigger trigger = 5;</code>
+       * <code>repeated .RBLMessage.Trigger trigger = 6;</code>
        */
       public java.util.List<? extends protobuf.RblProto.RBLMessage.TriggerOrBuilder> 
           getTriggerOrBuilderList() {
         return trigger_;
       }
       /**
-       * <code>repeated .RBLMessage.Trigger trigger = 5;</code>
+       * <code>repeated .RBLMessage.Trigger trigger = 6;</code>
        */
       public int getTriggerCount() {
         return trigger_.size();
       }
       /**
-       * <code>repeated .RBLMessage.Trigger trigger = 5;</code>
+       * <code>repeated .RBLMessage.Trigger trigger = 6;</code>
        */
       public protobuf.RblProto.RBLMessage.Trigger getTrigger(int index) {
         return trigger_.get(index);
       }
       /**
-       * <code>repeated .RBLMessage.Trigger trigger = 5;</code>
+       * <code>repeated .RBLMessage.Trigger trigger = 6;</code>
        */
       public protobuf.RblProto.RBLMessage.TriggerOrBuilder getTriggerOrBuilder(
           int index) {
@@ -3979,6 +4211,7 @@ public final class RblProto {
       }
 
       private void initFields() {
+        crudType_ = protobuf.RblProto.RBLMessage.CrudType.CREATE;
         name_ = "";
         initiator_ = java.util.Collections.emptyList();
         condition_ = java.util.Collections.emptyList();
@@ -3991,6 +4224,10 @@ public final class RblProto {
         if (isInitialized == 1) return true;
         if (isInitialized == 0) return false;
 
+        if (!hasCrudType()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
         if (!hasName()) {
           memoizedIsInitialized = 0;
           return false;
@@ -4027,19 +4264,22 @@ public final class RblProto {
                           throws java.io.IOException {
         getSerializedSize();
         if (((bitField0_ & 0x00000001) == 0x00000001)) {
-          output.writeBytes(1, getNameBytes());
+          output.writeEnum(1, crudType_.getNumber());
+        }
+        if (((bitField0_ & 0x00000002) == 0x00000002)) {
+          output.writeBytes(2, getNameBytes());
         }
         for (int i = 0; i < initiator_.size(); i++) {
-          output.writeMessage(2, initiator_.get(i));
-        }
-        for (int i = 0; i < receiver_.size(); i++) {
-          output.writeMessage(3, receiver_.get(i));
+          output.writeMessage(3, initiator_.get(i));
         }
         for (int i = 0; i < condition_.size(); i++) {
           output.writeMessage(4, condition_.get(i));
         }
+        for (int i = 0; i < receiver_.size(); i++) {
+          output.writeMessage(5, receiver_.get(i));
+        }
         for (int i = 0; i < trigger_.size(); i++) {
-          output.writeMessage(5, trigger_.get(i));
+          output.writeMessage(6, trigger_.get(i));
         }
         getUnknownFields().writeTo(output);
       }
@@ -4052,23 +4292,27 @@ public final class RblProto {
         size = 0;
         if (((bitField0_ & 0x00000001) == 0x00000001)) {
           size += com.google.protobuf.CodedOutputStream
-            .computeBytesSize(1, getNameBytes());
+            .computeEnumSize(1, crudType_.getNumber());
+        }
+        if (((bitField0_ & 0x00000002) == 0x00000002)) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeBytesSize(2, getNameBytes());
         }
         for (int i = 0; i < initiator_.size(); i++) {
           size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(2, initiator_.get(i));
-        }
-        for (int i = 0; i < receiver_.size(); i++) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(3, receiver_.get(i));
+            .computeMessageSize(3, initiator_.get(i));
         }
         for (int i = 0; i < condition_.size(); i++) {
           size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(4, condition_.get(i));
         }
+        for (int i = 0; i < receiver_.size(); i++) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(5, receiver_.get(i));
+        }
         for (int i = 0; i < trigger_.size(); i++) {
           size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(5, trigger_.get(i));
+            .computeMessageSize(6, trigger_.get(i));
         }
         size += getUnknownFields().getSerializedSize();
         memoizedSerializedSize = size;
@@ -4191,29 +4435,31 @@ public final class RblProto {
 
         public Builder clear() {
           super.clear();
-          name_ = "";
+          crudType_ = protobuf.RblProto.RBLMessage.CrudType.CREATE;
           bitField0_ = (bitField0_ & ~0x00000001);
+          name_ = "";
+          bitField0_ = (bitField0_ & ~0x00000002);
           if (initiatorBuilder_ == null) {
             initiator_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             initiatorBuilder_.clear();
           }
           if (conditionBuilder_ == null) {
             condition_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             conditionBuilder_.clear();
           }
           if (receiverBuilder_ == null) {
             receiver_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
             receiverBuilder_.clear();
           }
           if (triggerBuilder_ == null) {
             trigger_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000020);
           } else {
             triggerBuilder_.clear();
           }
@@ -4248,38 +4494,42 @@ public final class RblProto {
           if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
             to_bitField0_ |= 0x00000001;
           }
+          result.crudType_ = crudType_;
+          if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+            to_bitField0_ |= 0x00000002;
+          }
           result.name_ = name_;
           if (initiatorBuilder_ == null) {
-            if (((bitField0_ & 0x00000002) == 0x00000002)) {
+            if (((bitField0_ & 0x00000004) == 0x00000004)) {
               initiator_ = java.util.Collections.unmodifiableList(initiator_);
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000004);
             }
             result.initiator_ = initiator_;
           } else {
             result.initiator_ = initiatorBuilder_.build();
           }
           if (conditionBuilder_ == null) {
-            if (((bitField0_ & 0x00000004) == 0x00000004)) {
+            if (((bitField0_ & 0x00000008) == 0x00000008)) {
               condition_ = java.util.Collections.unmodifiableList(condition_);
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000008);
             }
             result.condition_ = condition_;
           } else {
             result.condition_ = conditionBuilder_.build();
           }
           if (receiverBuilder_ == null) {
-            if (((bitField0_ & 0x00000008) == 0x00000008)) {
+            if (((bitField0_ & 0x00000010) == 0x00000010)) {
               receiver_ = java.util.Collections.unmodifiableList(receiver_);
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000010);
             }
             result.receiver_ = receiver_;
           } else {
             result.receiver_ = receiverBuilder_.build();
           }
           if (triggerBuilder_ == null) {
-            if (((bitField0_ & 0x00000010) == 0x00000010)) {
+            if (((bitField0_ & 0x00000020) == 0x00000020)) {
               trigger_ = java.util.Collections.unmodifiableList(trigger_);
-              bitField0_ = (bitField0_ & ~0x00000010);
+              bitField0_ = (bitField0_ & ~0x00000020);
             }
             result.trigger_ = trigger_;
           } else {
@@ -4301,8 +4551,11 @@ public final class RblProto {
 
         public Builder mergeFrom(protobuf.RblProto.RBLMessage.Logic other) {
           if (other == protobuf.RblProto.RBLMessage.Logic.getDefaultInstance()) return this;
+          if (other.hasCrudType()) {
+            setCrudType(other.getCrudType());
+          }
           if (other.hasName()) {
-            bitField0_ |= 0x00000001;
+            bitField0_ |= 0x00000002;
             name_ = other.name_;
             onChanged();
           }
@@ -4310,7 +4563,7 @@ public final class RblProto {
             if (!other.initiator_.isEmpty()) {
               if (initiator_.isEmpty()) {
                 initiator_ = other.initiator_;
-                bitField0_ = (bitField0_ & ~0x00000002);
+                bitField0_ = (bitField0_ & ~0x00000004);
               } else {
                 ensureInitiatorIsMutable();
                 initiator_.addAll(other.initiator_);
@@ -4323,7 +4576,7 @@ public final class RblProto {
                 initiatorBuilder_.dispose();
                 initiatorBuilder_ = null;
                 initiator_ = other.initiator_;
-                bitField0_ = (bitField0_ & ~0x00000002);
+                bitField0_ = (bitField0_ & ~0x00000004);
                 initiatorBuilder_ = 
                   com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
                      getInitiatorFieldBuilder() : null;
@@ -4336,7 +4589,7 @@ public final class RblProto {
             if (!other.condition_.isEmpty()) {
               if (condition_.isEmpty()) {
                 condition_ = other.condition_;
-                bitField0_ = (bitField0_ & ~0x00000004);
+                bitField0_ = (bitField0_ & ~0x00000008);
               } else {
                 ensureConditionIsMutable();
                 condition_.addAll(other.condition_);
@@ -4349,7 +4602,7 @@ public final class RblProto {
                 conditionBuilder_.dispose();
                 conditionBuilder_ = null;
                 condition_ = other.condition_;
-                bitField0_ = (bitField0_ & ~0x00000004);
+                bitField0_ = (bitField0_ & ~0x00000008);
                 conditionBuilder_ = 
                   com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
                      getConditionFieldBuilder() : null;
@@ -4362,7 +4615,7 @@ public final class RblProto {
             if (!other.receiver_.isEmpty()) {
               if (receiver_.isEmpty()) {
                 receiver_ = other.receiver_;
-                bitField0_ = (bitField0_ & ~0x00000008);
+                bitField0_ = (bitField0_ & ~0x00000010);
               } else {
                 ensureReceiverIsMutable();
                 receiver_.addAll(other.receiver_);
@@ -4375,7 +4628,7 @@ public final class RblProto {
                 receiverBuilder_.dispose();
                 receiverBuilder_ = null;
                 receiver_ = other.receiver_;
-                bitField0_ = (bitField0_ & ~0x00000008);
+                bitField0_ = (bitField0_ & ~0x00000010);
                 receiverBuilder_ = 
                   com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
                      getReceiverFieldBuilder() : null;
@@ -4388,7 +4641,7 @@ public final class RblProto {
             if (!other.trigger_.isEmpty()) {
               if (trigger_.isEmpty()) {
                 trigger_ = other.trigger_;
-                bitField0_ = (bitField0_ & ~0x00000010);
+                bitField0_ = (bitField0_ & ~0x00000020);
               } else {
                 ensureTriggerIsMutable();
                 trigger_.addAll(other.trigger_);
@@ -4401,7 +4654,7 @@ public final class RblProto {
                 triggerBuilder_.dispose();
                 triggerBuilder_ = null;
                 trigger_ = other.trigger_;
-                bitField0_ = (bitField0_ & ~0x00000010);
+                bitField0_ = (bitField0_ & ~0x00000020);
                 triggerBuilder_ = 
                   com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
                      getTriggerFieldBuilder() : null;
@@ -4415,6 +4668,10 @@ public final class RblProto {
         }
 
         public final boolean isInitialized() {
+          if (!hasCrudType()) {
+            
+            return false;
+          }
           if (!hasName()) {
             
             return false;
@@ -4465,15 +4722,50 @@ public final class RblProto {
         }
         private int bitField0_;
 
-        private java.lang.Object name_ = "";
+        private protobuf.RblProto.RBLMessage.CrudType crudType_ = protobuf.RblProto.RBLMessage.CrudType.CREATE;
         /**
-         * <code>required string name = 1;</code>
+         * <code>required .RBLMessage.CrudType crudType = 1;</code>
          */
-        public boolean hasName() {
+        public boolean hasCrudType() {
           return ((bitField0_ & 0x00000001) == 0x00000001);
         }
         /**
-         * <code>required string name = 1;</code>
+         * <code>required .RBLMessage.CrudType crudType = 1;</code>
+         */
+        public protobuf.RblProto.RBLMessage.CrudType getCrudType() {
+          return crudType_;
+        }
+        /**
+         * <code>required .RBLMessage.CrudType crudType = 1;</code>
+         */
+        public Builder setCrudType(protobuf.RblProto.RBLMessage.CrudType value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          bitField0_ |= 0x00000001;
+          crudType_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>required .RBLMessage.CrudType crudType = 1;</code>
+         */
+        public Builder clearCrudType() {
+          bitField0_ = (bitField0_ & ~0x00000001);
+          crudType_ = protobuf.RblProto.RBLMessage.CrudType.CREATE;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object name_ = "";
+        /**
+         * <code>required string name = 2;</code>
+         */
+        public boolean hasName() {
+          return ((bitField0_ & 0x00000002) == 0x00000002);
+        }
+        /**
+         * <code>required string name = 2;</code>
          */
         public java.lang.String getName() {
           java.lang.Object ref = name_;
@@ -4490,7 +4782,7 @@ public final class RblProto {
           }
         }
         /**
-         * <code>required string name = 1;</code>
+         * <code>required string name = 2;</code>
          */
         public com.google.protobuf.ByteString
             getNameBytes() {
@@ -4506,36 +4798,36 @@ public final class RblProto {
           }
         }
         /**
-         * <code>required string name = 1;</code>
+         * <code>required string name = 2;</code>
          */
         public Builder setName(
             java.lang.String value) {
           if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000001;
+  bitField0_ |= 0x00000002;
           name_ = value;
           onChanged();
           return this;
         }
         /**
-         * <code>required string name = 1;</code>
+         * <code>required string name = 2;</code>
          */
         public Builder clearName() {
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
           name_ = getDefaultInstance().getName();
           onChanged();
           return this;
         }
         /**
-         * <code>required string name = 1;</code>
+         * <code>required string name = 2;</code>
          */
         public Builder setNameBytes(
             com.google.protobuf.ByteString value) {
           if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000001;
+  bitField0_ |= 0x00000002;
           name_ = value;
           onChanged();
           return this;
@@ -4544,9 +4836,9 @@ public final class RblProto {
         private java.util.List<protobuf.RblProto.RBLMessage.Actuator> initiator_ =
           java.util.Collections.emptyList();
         private void ensureInitiatorIsMutable() {
-          if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+          if (!((bitField0_ & 0x00000004) == 0x00000004)) {
             initiator_ = new java.util.ArrayList<protobuf.RblProto.RBLMessage.Actuator>(initiator_);
-            bitField0_ |= 0x00000002;
+            bitField0_ |= 0x00000004;
            }
         }
 
@@ -4554,7 +4846,7 @@ public final class RblProto {
             protobuf.RblProto.RBLMessage.Actuator, protobuf.RblProto.RBLMessage.Actuator.Builder, protobuf.RblProto.RBLMessage.ActuatorOrBuilder> initiatorBuilder_;
 
         /**
-         * <code>repeated .RBLMessage.Actuator initiator = 2;</code>
+         * <code>repeated .RBLMessage.Actuator initiator = 3;</code>
          *
          * <pre>
          * Every condition will be mapped to an initiator
@@ -4568,7 +4860,7 @@ public final class RblProto {
           }
         }
         /**
-         * <code>repeated .RBLMessage.Actuator initiator = 2;</code>
+         * <code>repeated .RBLMessage.Actuator initiator = 3;</code>
          *
          * <pre>
          * Every condition will be mapped to an initiator
@@ -4582,7 +4874,7 @@ public final class RblProto {
           }
         }
         /**
-         * <code>repeated .RBLMessage.Actuator initiator = 2;</code>
+         * <code>repeated .RBLMessage.Actuator initiator = 3;</code>
          *
          * <pre>
          * Every condition will be mapped to an initiator
@@ -4596,7 +4888,7 @@ public final class RblProto {
           }
         }
         /**
-         * <code>repeated .RBLMessage.Actuator initiator = 2;</code>
+         * <code>repeated .RBLMessage.Actuator initiator = 3;</code>
          *
          * <pre>
          * Every condition will be mapped to an initiator
@@ -4617,7 +4909,7 @@ public final class RblProto {
           return this;
         }
         /**
-         * <code>repeated .RBLMessage.Actuator initiator = 2;</code>
+         * <code>repeated .RBLMessage.Actuator initiator = 3;</code>
          *
          * <pre>
          * Every condition will be mapped to an initiator
@@ -4635,7 +4927,7 @@ public final class RblProto {
           return this;
         }
         /**
-         * <code>repeated .RBLMessage.Actuator initiator = 2;</code>
+         * <code>repeated .RBLMessage.Actuator initiator = 3;</code>
          *
          * <pre>
          * Every condition will be mapped to an initiator
@@ -4655,7 +4947,7 @@ public final class RblProto {
           return this;
         }
         /**
-         * <code>repeated .RBLMessage.Actuator initiator = 2;</code>
+         * <code>repeated .RBLMessage.Actuator initiator = 3;</code>
          *
          * <pre>
          * Every condition will be mapped to an initiator
@@ -4676,7 +4968,7 @@ public final class RblProto {
           return this;
         }
         /**
-         * <code>repeated .RBLMessage.Actuator initiator = 2;</code>
+         * <code>repeated .RBLMessage.Actuator initiator = 3;</code>
          *
          * <pre>
          * Every condition will be mapped to an initiator
@@ -4694,7 +4986,7 @@ public final class RblProto {
           return this;
         }
         /**
-         * <code>repeated .RBLMessage.Actuator initiator = 2;</code>
+         * <code>repeated .RBLMessage.Actuator initiator = 3;</code>
          *
          * <pre>
          * Every condition will be mapped to an initiator
@@ -4712,7 +5004,7 @@ public final class RblProto {
           return this;
         }
         /**
-         * <code>repeated .RBLMessage.Actuator initiator = 2;</code>
+         * <code>repeated .RBLMessage.Actuator initiator = 3;</code>
          *
          * <pre>
          * Every condition will be mapped to an initiator
@@ -4731,7 +5023,7 @@ public final class RblProto {
           return this;
         }
         /**
-         * <code>repeated .RBLMessage.Actuator initiator = 2;</code>
+         * <code>repeated .RBLMessage.Actuator initiator = 3;</code>
          *
          * <pre>
          * Every condition will be mapped to an initiator
@@ -4740,7 +5032,7 @@ public final class RblProto {
         public Builder clearInitiator() {
           if (initiatorBuilder_ == null) {
             initiator_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
             onChanged();
           } else {
             initiatorBuilder_.clear();
@@ -4748,7 +5040,7 @@ public final class RblProto {
           return this;
         }
         /**
-         * <code>repeated .RBLMessage.Actuator initiator = 2;</code>
+         * <code>repeated .RBLMessage.Actuator initiator = 3;</code>
          *
          * <pre>
          * Every condition will be mapped to an initiator
@@ -4765,7 +5057,7 @@ public final class RblProto {
           return this;
         }
         /**
-         * <code>repeated .RBLMessage.Actuator initiator = 2;</code>
+         * <code>repeated .RBLMessage.Actuator initiator = 3;</code>
          *
          * <pre>
          * Every condition will be mapped to an initiator
@@ -4776,7 +5068,7 @@ public final class RblProto {
           return getInitiatorFieldBuilder().getBuilder(index);
         }
         /**
-         * <code>repeated .RBLMessage.Actuator initiator = 2;</code>
+         * <code>repeated .RBLMessage.Actuator initiator = 3;</code>
          *
          * <pre>
          * Every condition will be mapped to an initiator
@@ -4790,7 +5082,7 @@ public final class RblProto {
           }
         }
         /**
-         * <code>repeated .RBLMessage.Actuator initiator = 2;</code>
+         * <code>repeated .RBLMessage.Actuator initiator = 3;</code>
          *
          * <pre>
          * Every condition will be mapped to an initiator
@@ -4805,7 +5097,7 @@ public final class RblProto {
           }
         }
         /**
-         * <code>repeated .RBLMessage.Actuator initiator = 2;</code>
+         * <code>repeated .RBLMessage.Actuator initiator = 3;</code>
          *
          * <pre>
          * Every condition will be mapped to an initiator
@@ -4816,7 +5108,7 @@ public final class RblProto {
               protobuf.RblProto.RBLMessage.Actuator.getDefaultInstance());
         }
         /**
-         * <code>repeated .RBLMessage.Actuator initiator = 2;</code>
+         * <code>repeated .RBLMessage.Actuator initiator = 3;</code>
          *
          * <pre>
          * Every condition will be mapped to an initiator
@@ -4828,7 +5120,7 @@ public final class RblProto {
               index, protobuf.RblProto.RBLMessage.Actuator.getDefaultInstance());
         }
         /**
-         * <code>repeated .RBLMessage.Actuator initiator = 2;</code>
+         * <code>repeated .RBLMessage.Actuator initiator = 3;</code>
          *
          * <pre>
          * Every condition will be mapped to an initiator
@@ -4845,7 +5137,7 @@ public final class RblProto {
             initiatorBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
                 protobuf.RblProto.RBLMessage.Actuator, protobuf.RblProto.RBLMessage.Actuator.Builder, protobuf.RblProto.RBLMessage.ActuatorOrBuilder>(
                     initiator_,
-                    ((bitField0_ & 0x00000002) == 0x00000002),
+                    ((bitField0_ & 0x00000004) == 0x00000004),
                     getParentForChildren(),
                     isClean());
             initiator_ = null;
@@ -4856,9 +5148,9 @@ public final class RblProto {
         private java.util.List<protobuf.RblProto.RBLMessage.Condition> condition_ =
           java.util.Collections.emptyList();
         private void ensureConditionIsMutable() {
-          if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+          if (!((bitField0_ & 0x00000008) == 0x00000008)) {
             condition_ = new java.util.ArrayList<protobuf.RblProto.RBLMessage.Condition>(condition_);
-            bitField0_ |= 0x00000004;
+            bitField0_ |= 0x00000008;
            }
         }
 
@@ -5008,7 +5300,7 @@ public final class RblProto {
         public Builder clearCondition() {
           if (conditionBuilder_ == null) {
             condition_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000008);
             onChanged();
           } else {
             conditionBuilder_.clear();
@@ -5085,7 +5377,7 @@ public final class RblProto {
             conditionBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
                 protobuf.RblProto.RBLMessage.Condition, protobuf.RblProto.RBLMessage.Condition.Builder, protobuf.RblProto.RBLMessage.ConditionOrBuilder>(
                     condition_,
-                    ((bitField0_ & 0x00000004) == 0x00000004),
+                    ((bitField0_ & 0x00000008) == 0x00000008),
                     getParentForChildren(),
                     isClean());
             condition_ = null;
@@ -5096,9 +5388,9 @@ public final class RblProto {
         private java.util.List<protobuf.RblProto.RBLMessage.Actuator> receiver_ =
           java.util.Collections.emptyList();
         private void ensureReceiverIsMutable() {
-          if (!((bitField0_ & 0x00000008) == 0x00000008)) {
+          if (!((bitField0_ & 0x00000010) == 0x00000010)) {
             receiver_ = new java.util.ArrayList<protobuf.RblProto.RBLMessage.Actuator>(receiver_);
-            bitField0_ |= 0x00000008;
+            bitField0_ |= 0x00000010;
            }
         }
 
@@ -5106,7 +5398,7 @@ public final class RblProto {
             protobuf.RblProto.RBLMessage.Actuator, protobuf.RblProto.RBLMessage.Actuator.Builder, protobuf.RblProto.RBLMessage.ActuatorOrBuilder> receiverBuilder_;
 
         /**
-         * <code>repeated .RBLMessage.Actuator receiver = 3;</code>
+         * <code>repeated .RBLMessage.Actuator receiver = 5;</code>
          *
          * <pre>
          * Every trigger will be mapped to a receiver
@@ -5120,7 +5412,7 @@ public final class RblProto {
           }
         }
         /**
-         * <code>repeated .RBLMessage.Actuator receiver = 3;</code>
+         * <code>repeated .RBLMessage.Actuator receiver = 5;</code>
          *
          * <pre>
          * Every trigger will be mapped to a receiver
@@ -5134,7 +5426,7 @@ public final class RblProto {
           }
         }
         /**
-         * <code>repeated .RBLMessage.Actuator receiver = 3;</code>
+         * <code>repeated .RBLMessage.Actuator receiver = 5;</code>
          *
          * <pre>
          * Every trigger will be mapped to a receiver
@@ -5148,7 +5440,7 @@ public final class RblProto {
           }
         }
         /**
-         * <code>repeated .RBLMessage.Actuator receiver = 3;</code>
+         * <code>repeated .RBLMessage.Actuator receiver = 5;</code>
          *
          * <pre>
          * Every trigger will be mapped to a receiver
@@ -5169,7 +5461,7 @@ public final class RblProto {
           return this;
         }
         /**
-         * <code>repeated .RBLMessage.Actuator receiver = 3;</code>
+         * <code>repeated .RBLMessage.Actuator receiver = 5;</code>
          *
          * <pre>
          * Every trigger will be mapped to a receiver
@@ -5187,7 +5479,7 @@ public final class RblProto {
           return this;
         }
         /**
-         * <code>repeated .RBLMessage.Actuator receiver = 3;</code>
+         * <code>repeated .RBLMessage.Actuator receiver = 5;</code>
          *
          * <pre>
          * Every trigger will be mapped to a receiver
@@ -5207,7 +5499,7 @@ public final class RblProto {
           return this;
         }
         /**
-         * <code>repeated .RBLMessage.Actuator receiver = 3;</code>
+         * <code>repeated .RBLMessage.Actuator receiver = 5;</code>
          *
          * <pre>
          * Every trigger will be mapped to a receiver
@@ -5228,7 +5520,7 @@ public final class RblProto {
           return this;
         }
         /**
-         * <code>repeated .RBLMessage.Actuator receiver = 3;</code>
+         * <code>repeated .RBLMessage.Actuator receiver = 5;</code>
          *
          * <pre>
          * Every trigger will be mapped to a receiver
@@ -5246,7 +5538,7 @@ public final class RblProto {
           return this;
         }
         /**
-         * <code>repeated .RBLMessage.Actuator receiver = 3;</code>
+         * <code>repeated .RBLMessage.Actuator receiver = 5;</code>
          *
          * <pre>
          * Every trigger will be mapped to a receiver
@@ -5264,7 +5556,7 @@ public final class RblProto {
           return this;
         }
         /**
-         * <code>repeated .RBLMessage.Actuator receiver = 3;</code>
+         * <code>repeated .RBLMessage.Actuator receiver = 5;</code>
          *
          * <pre>
          * Every trigger will be mapped to a receiver
@@ -5283,7 +5575,7 @@ public final class RblProto {
           return this;
         }
         /**
-         * <code>repeated .RBLMessage.Actuator receiver = 3;</code>
+         * <code>repeated .RBLMessage.Actuator receiver = 5;</code>
          *
          * <pre>
          * Every trigger will be mapped to a receiver
@@ -5292,7 +5584,7 @@ public final class RblProto {
         public Builder clearReceiver() {
           if (receiverBuilder_ == null) {
             receiver_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000010);
             onChanged();
           } else {
             receiverBuilder_.clear();
@@ -5300,7 +5592,7 @@ public final class RblProto {
           return this;
         }
         /**
-         * <code>repeated .RBLMessage.Actuator receiver = 3;</code>
+         * <code>repeated .RBLMessage.Actuator receiver = 5;</code>
          *
          * <pre>
          * Every trigger will be mapped to a receiver
@@ -5317,7 +5609,7 @@ public final class RblProto {
           return this;
         }
         /**
-         * <code>repeated .RBLMessage.Actuator receiver = 3;</code>
+         * <code>repeated .RBLMessage.Actuator receiver = 5;</code>
          *
          * <pre>
          * Every trigger will be mapped to a receiver
@@ -5328,7 +5620,7 @@ public final class RblProto {
           return getReceiverFieldBuilder().getBuilder(index);
         }
         /**
-         * <code>repeated .RBLMessage.Actuator receiver = 3;</code>
+         * <code>repeated .RBLMessage.Actuator receiver = 5;</code>
          *
          * <pre>
          * Every trigger will be mapped to a receiver
@@ -5342,7 +5634,7 @@ public final class RblProto {
           }
         }
         /**
-         * <code>repeated .RBLMessage.Actuator receiver = 3;</code>
+         * <code>repeated .RBLMessage.Actuator receiver = 5;</code>
          *
          * <pre>
          * Every trigger will be mapped to a receiver
@@ -5357,7 +5649,7 @@ public final class RblProto {
           }
         }
         /**
-         * <code>repeated .RBLMessage.Actuator receiver = 3;</code>
+         * <code>repeated .RBLMessage.Actuator receiver = 5;</code>
          *
          * <pre>
          * Every trigger will be mapped to a receiver
@@ -5368,7 +5660,7 @@ public final class RblProto {
               protobuf.RblProto.RBLMessage.Actuator.getDefaultInstance());
         }
         /**
-         * <code>repeated .RBLMessage.Actuator receiver = 3;</code>
+         * <code>repeated .RBLMessage.Actuator receiver = 5;</code>
          *
          * <pre>
          * Every trigger will be mapped to a receiver
@@ -5380,7 +5672,7 @@ public final class RblProto {
               index, protobuf.RblProto.RBLMessage.Actuator.getDefaultInstance());
         }
         /**
-         * <code>repeated .RBLMessage.Actuator receiver = 3;</code>
+         * <code>repeated .RBLMessage.Actuator receiver = 5;</code>
          *
          * <pre>
          * Every trigger will be mapped to a receiver
@@ -5397,7 +5689,7 @@ public final class RblProto {
             receiverBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
                 protobuf.RblProto.RBLMessage.Actuator, protobuf.RblProto.RBLMessage.Actuator.Builder, protobuf.RblProto.RBLMessage.ActuatorOrBuilder>(
                     receiver_,
-                    ((bitField0_ & 0x00000008) == 0x00000008),
+                    ((bitField0_ & 0x00000010) == 0x00000010),
                     getParentForChildren(),
                     isClean());
             receiver_ = null;
@@ -5408,9 +5700,9 @@ public final class RblProto {
         private java.util.List<protobuf.RblProto.RBLMessage.Trigger> trigger_ =
           java.util.Collections.emptyList();
         private void ensureTriggerIsMutable() {
-          if (!((bitField0_ & 0x00000010) == 0x00000010)) {
+          if (!((bitField0_ & 0x00000020) == 0x00000020)) {
             trigger_ = new java.util.ArrayList<protobuf.RblProto.RBLMessage.Trigger>(trigger_);
-            bitField0_ |= 0x00000010;
+            bitField0_ |= 0x00000020;
            }
         }
 
@@ -5418,7 +5710,7 @@ public final class RblProto {
             protobuf.RblProto.RBLMessage.Trigger, protobuf.RblProto.RBLMessage.Trigger.Builder, protobuf.RblProto.RBLMessage.TriggerOrBuilder> triggerBuilder_;
 
         /**
-         * <code>repeated .RBLMessage.Trigger trigger = 5;</code>
+         * <code>repeated .RBLMessage.Trigger trigger = 6;</code>
          */
         public java.util.List<protobuf.RblProto.RBLMessage.Trigger> getTriggerList() {
           if (triggerBuilder_ == null) {
@@ -5428,7 +5720,7 @@ public final class RblProto {
           }
         }
         /**
-         * <code>repeated .RBLMessage.Trigger trigger = 5;</code>
+         * <code>repeated .RBLMessage.Trigger trigger = 6;</code>
          */
         public int getTriggerCount() {
           if (triggerBuilder_ == null) {
@@ -5438,7 +5730,7 @@ public final class RblProto {
           }
         }
         /**
-         * <code>repeated .RBLMessage.Trigger trigger = 5;</code>
+         * <code>repeated .RBLMessage.Trigger trigger = 6;</code>
          */
         public protobuf.RblProto.RBLMessage.Trigger getTrigger(int index) {
           if (triggerBuilder_ == null) {
@@ -5448,7 +5740,7 @@ public final class RblProto {
           }
         }
         /**
-         * <code>repeated .RBLMessage.Trigger trigger = 5;</code>
+         * <code>repeated .RBLMessage.Trigger trigger = 6;</code>
          */
         public Builder setTrigger(
             int index, protobuf.RblProto.RBLMessage.Trigger value) {
@@ -5465,7 +5757,7 @@ public final class RblProto {
           return this;
         }
         /**
-         * <code>repeated .RBLMessage.Trigger trigger = 5;</code>
+         * <code>repeated .RBLMessage.Trigger trigger = 6;</code>
          */
         public Builder setTrigger(
             int index, protobuf.RblProto.RBLMessage.Trigger.Builder builderForValue) {
@@ -5479,7 +5771,7 @@ public final class RblProto {
           return this;
         }
         /**
-         * <code>repeated .RBLMessage.Trigger trigger = 5;</code>
+         * <code>repeated .RBLMessage.Trigger trigger = 6;</code>
          */
         public Builder addTrigger(protobuf.RblProto.RBLMessage.Trigger value) {
           if (triggerBuilder_ == null) {
@@ -5495,7 +5787,7 @@ public final class RblProto {
           return this;
         }
         /**
-         * <code>repeated .RBLMessage.Trigger trigger = 5;</code>
+         * <code>repeated .RBLMessage.Trigger trigger = 6;</code>
          */
         public Builder addTrigger(
             int index, protobuf.RblProto.RBLMessage.Trigger value) {
@@ -5512,7 +5804,7 @@ public final class RblProto {
           return this;
         }
         /**
-         * <code>repeated .RBLMessage.Trigger trigger = 5;</code>
+         * <code>repeated .RBLMessage.Trigger trigger = 6;</code>
          */
         public Builder addTrigger(
             protobuf.RblProto.RBLMessage.Trigger.Builder builderForValue) {
@@ -5526,7 +5818,7 @@ public final class RblProto {
           return this;
         }
         /**
-         * <code>repeated .RBLMessage.Trigger trigger = 5;</code>
+         * <code>repeated .RBLMessage.Trigger trigger = 6;</code>
          */
         public Builder addTrigger(
             int index, protobuf.RblProto.RBLMessage.Trigger.Builder builderForValue) {
@@ -5540,7 +5832,7 @@ public final class RblProto {
           return this;
         }
         /**
-         * <code>repeated .RBLMessage.Trigger trigger = 5;</code>
+         * <code>repeated .RBLMessage.Trigger trigger = 6;</code>
          */
         public Builder addAllTrigger(
             java.lang.Iterable<? extends protobuf.RblProto.RBLMessage.Trigger> values) {
@@ -5555,12 +5847,12 @@ public final class RblProto {
           return this;
         }
         /**
-         * <code>repeated .RBLMessage.Trigger trigger = 5;</code>
+         * <code>repeated .RBLMessage.Trigger trigger = 6;</code>
          */
         public Builder clearTrigger() {
           if (triggerBuilder_ == null) {
             trigger_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000020);
             onChanged();
           } else {
             triggerBuilder_.clear();
@@ -5568,7 +5860,7 @@ public final class RblProto {
           return this;
         }
         /**
-         * <code>repeated .RBLMessage.Trigger trigger = 5;</code>
+         * <code>repeated .RBLMessage.Trigger trigger = 6;</code>
          */
         public Builder removeTrigger(int index) {
           if (triggerBuilder_ == null) {
@@ -5581,14 +5873,14 @@ public final class RblProto {
           return this;
         }
         /**
-         * <code>repeated .RBLMessage.Trigger trigger = 5;</code>
+         * <code>repeated .RBLMessage.Trigger trigger = 6;</code>
          */
         public protobuf.RblProto.RBLMessage.Trigger.Builder getTriggerBuilder(
             int index) {
           return getTriggerFieldBuilder().getBuilder(index);
         }
         /**
-         * <code>repeated .RBLMessage.Trigger trigger = 5;</code>
+         * <code>repeated .RBLMessage.Trigger trigger = 6;</code>
          */
         public protobuf.RblProto.RBLMessage.TriggerOrBuilder getTriggerOrBuilder(
             int index) {
@@ -5598,7 +5890,7 @@ public final class RblProto {
           }
         }
         /**
-         * <code>repeated .RBLMessage.Trigger trigger = 5;</code>
+         * <code>repeated .RBLMessage.Trigger trigger = 6;</code>
          */
         public java.util.List<? extends protobuf.RblProto.RBLMessage.TriggerOrBuilder> 
              getTriggerOrBuilderList() {
@@ -5609,14 +5901,14 @@ public final class RblProto {
           }
         }
         /**
-         * <code>repeated .RBLMessage.Trigger trigger = 5;</code>
+         * <code>repeated .RBLMessage.Trigger trigger = 6;</code>
          */
         public protobuf.RblProto.RBLMessage.Trigger.Builder addTriggerBuilder() {
           return getTriggerFieldBuilder().addBuilder(
               protobuf.RblProto.RBLMessage.Trigger.getDefaultInstance());
         }
         /**
-         * <code>repeated .RBLMessage.Trigger trigger = 5;</code>
+         * <code>repeated .RBLMessage.Trigger trigger = 6;</code>
          */
         public protobuf.RblProto.RBLMessage.Trigger.Builder addTriggerBuilder(
             int index) {
@@ -5624,7 +5916,7 @@ public final class RblProto {
               index, protobuf.RblProto.RBLMessage.Trigger.getDefaultInstance());
         }
         /**
-         * <code>repeated .RBLMessage.Trigger trigger = 5;</code>
+         * <code>repeated .RBLMessage.Trigger trigger = 6;</code>
          */
         public java.util.List<protobuf.RblProto.RBLMessage.Trigger.Builder> 
              getTriggerBuilderList() {
@@ -5637,7 +5929,7 @@ public final class RblProto {
             triggerBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
                 protobuf.RblProto.RBLMessage.Trigger, protobuf.RblProto.RBLMessage.Trigger.Builder, protobuf.RblProto.RBLMessage.TriggerOrBuilder>(
                     trigger_,
-                    ((bitField0_ & 0x00000010) == 0x00000010),
+                    ((bitField0_ & 0x00000020) == 0x00000020),
                     getParentForChildren(),
                     isClean());
             trigger_ = null;
@@ -6883,1620 +7175,6 @@ public final class RblProto {
       // @@protoc_insertion_point(class_scope:RBLMessage.Trigger)
     }
 
-    public interface SetDataOrBuilder extends
-        // @@protoc_insertion_point(interface_extends:RBLMessage.SetData)
-        com.google.protobuf.MessageOrBuilder {
-
-      /**
-       * <code>required .RBLMessage.Actuator actuator = 1;</code>
-       */
-      boolean hasActuator();
-      /**
-       * <code>required .RBLMessage.Actuator actuator = 1;</code>
-       */
-      protobuf.RblProto.RBLMessage.Actuator getActuator();
-      /**
-       * <code>required .RBLMessage.Actuator actuator = 1;</code>
-       */
-      protobuf.RblProto.RBLMessage.ActuatorOrBuilder getActuatorOrBuilder();
-
-      /**
-       * <code>required int32 fieldId = 2;</code>
-       */
-      boolean hasFieldId();
-      /**
-       * <code>required int32 fieldId = 2;</code>
-       */
-      int getFieldId();
-
-      /**
-       * <code>required .RBLMessage.Data data = 3;</code>
-       */
-      boolean hasData();
-      /**
-       * <code>required .RBLMessage.Data data = 3;</code>
-       */
-      protobuf.RblProto.RBLMessage.Data getData();
-      /**
-       * <code>required .RBLMessage.Data data = 3;</code>
-       */
-      protobuf.RblProto.RBLMessage.DataOrBuilder getDataOrBuilder();
-    }
-    /**
-     * Protobuf type {@code RBLMessage.SetData}
-     */
-    public static final class SetData extends
-        com.google.protobuf.GeneratedMessage implements
-        // @@protoc_insertion_point(message_implements:RBLMessage.SetData)
-        SetDataOrBuilder {
-      // Use SetData.newBuilder() to construct.
-      private SetData(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
-        super(builder);
-        this.unknownFields = builder.getUnknownFields();
-      }
-      private SetData(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
-
-      private static final SetData defaultInstance;
-      public static SetData getDefaultInstance() {
-        return defaultInstance;
-      }
-
-      public SetData getDefaultInstanceForType() {
-        return defaultInstance;
-      }
-
-      private final com.google.protobuf.UnknownFieldSet unknownFields;
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet
-          getUnknownFields() {
-        return this.unknownFields;
-      }
-      private SetData(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        initFields();
-        int mutable_bitField0_ = 0;
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              default: {
-                if (!parseUnknownField(input, unknownFields,
-                                       extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-              case 10: {
-                protobuf.RblProto.RBLMessage.Actuator.Builder subBuilder = null;
-                if (((bitField0_ & 0x00000001) == 0x00000001)) {
-                  subBuilder = actuator_.toBuilder();
-                }
-                actuator_ = input.readMessage(protobuf.RblProto.RBLMessage.Actuator.PARSER, extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(actuator_);
-                  actuator_ = subBuilder.buildPartial();
-                }
-                bitField0_ |= 0x00000001;
-                break;
-              }
-              case 16: {
-                bitField0_ |= 0x00000002;
-                fieldId_ = input.readInt32();
-                break;
-              }
-              case 26: {
-                protobuf.RblProto.RBLMessage.Data.Builder subBuilder = null;
-                if (((bitField0_ & 0x00000004) == 0x00000004)) {
-                  subBuilder = data_.toBuilder();
-                }
-                data_ = input.readMessage(protobuf.RblProto.RBLMessage.Data.PARSER, extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(data_);
-                  data_ = subBuilder.buildPartial();
-                }
-                bitField0_ |= 0x00000004;
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e.getMessage()).setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return protobuf.RblProto.internal_static_RBLMessage_SetData_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return protobuf.RblProto.internal_static_RBLMessage_SetData_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                protobuf.RblProto.RBLMessage.SetData.class, protobuf.RblProto.RBLMessage.SetData.Builder.class);
-      }
-
-      public static com.google.protobuf.Parser<SetData> PARSER =
-          new com.google.protobuf.AbstractParser<SetData>() {
-        public SetData parsePartialFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          return new SetData(input, extensionRegistry);
-        }
-      };
-
-      @java.lang.Override
-      public com.google.protobuf.Parser<SetData> getParserForType() {
-        return PARSER;
-      }
-
-      private int bitField0_;
-      public static final int ACTUATOR_FIELD_NUMBER = 1;
-      private protobuf.RblProto.RBLMessage.Actuator actuator_;
-      /**
-       * <code>required .RBLMessage.Actuator actuator = 1;</code>
-       */
-      public boolean hasActuator() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
-      }
-      /**
-       * <code>required .RBLMessage.Actuator actuator = 1;</code>
-       */
-      public protobuf.RblProto.RBLMessage.Actuator getActuator() {
-        return actuator_;
-      }
-      /**
-       * <code>required .RBLMessage.Actuator actuator = 1;</code>
-       */
-      public protobuf.RblProto.RBLMessage.ActuatorOrBuilder getActuatorOrBuilder() {
-        return actuator_;
-      }
-
-      public static final int FIELDID_FIELD_NUMBER = 2;
-      private int fieldId_;
-      /**
-       * <code>required int32 fieldId = 2;</code>
-       */
-      public boolean hasFieldId() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
-      }
-      /**
-       * <code>required int32 fieldId = 2;</code>
-       */
-      public int getFieldId() {
-        return fieldId_;
-      }
-
-      public static final int DATA_FIELD_NUMBER = 3;
-      private protobuf.RblProto.RBLMessage.Data data_;
-      /**
-       * <code>required .RBLMessage.Data data = 3;</code>
-       */
-      public boolean hasData() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
-      }
-      /**
-       * <code>required .RBLMessage.Data data = 3;</code>
-       */
-      public protobuf.RblProto.RBLMessage.Data getData() {
-        return data_;
-      }
-      /**
-       * <code>required .RBLMessage.Data data = 3;</code>
-       */
-      public protobuf.RblProto.RBLMessage.DataOrBuilder getDataOrBuilder() {
-        return data_;
-      }
-
-      private void initFields() {
-        actuator_ = protobuf.RblProto.RBLMessage.Actuator.getDefaultInstance();
-        fieldId_ = 0;
-        data_ = protobuf.RblProto.RBLMessage.Data.getDefaultInstance();
-      }
-      private byte memoizedIsInitialized = -1;
-      public final boolean isInitialized() {
-        byte isInitialized = memoizedIsInitialized;
-        if (isInitialized == 1) return true;
-        if (isInitialized == 0) return false;
-
-        if (!hasActuator()) {
-          memoizedIsInitialized = 0;
-          return false;
-        }
-        if (!hasFieldId()) {
-          memoizedIsInitialized = 0;
-          return false;
-        }
-        if (!hasData()) {
-          memoizedIsInitialized = 0;
-          return false;
-        }
-        if (!getActuator().isInitialized()) {
-          memoizedIsInitialized = 0;
-          return false;
-        }
-        if (!getData().isInitialized()) {
-          memoizedIsInitialized = 0;
-          return false;
-        }
-        memoizedIsInitialized = 1;
-        return true;
-      }
-
-      public void writeTo(com.google.protobuf.CodedOutputStream output)
-                          throws java.io.IOException {
-        getSerializedSize();
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
-          output.writeMessage(1, actuator_);
-        }
-        if (((bitField0_ & 0x00000002) == 0x00000002)) {
-          output.writeInt32(2, fieldId_);
-        }
-        if (((bitField0_ & 0x00000004) == 0x00000004)) {
-          output.writeMessage(3, data_);
-        }
-        getUnknownFields().writeTo(output);
-      }
-
-      private int memoizedSerializedSize = -1;
-      public int getSerializedSize() {
-        int size = memoizedSerializedSize;
-        if (size != -1) return size;
-
-        size = 0;
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(1, actuator_);
-        }
-        if (((bitField0_ & 0x00000002) == 0x00000002)) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeInt32Size(2, fieldId_);
-        }
-        if (((bitField0_ & 0x00000004) == 0x00000004)) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(3, data_);
-        }
-        size += getUnknownFields().getSerializedSize();
-        memoizedSerializedSize = size;
-        return size;
-      }
-
-      private static final long serialVersionUID = 0L;
-      @java.lang.Override
-      protected java.lang.Object writeReplace()
-          throws java.io.ObjectStreamException {
-        return super.writeReplace();
-      }
-
-      public static protobuf.RblProto.RBLMessage.SetData parseFrom(
-          com.google.protobuf.ByteString data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-      }
-      public static protobuf.RblProto.RBLMessage.SetData parseFrom(
-          com.google.protobuf.ByteString data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-      }
-      public static protobuf.RblProto.RBLMessage.SetData parseFrom(byte[] data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-      }
-      public static protobuf.RblProto.RBLMessage.SetData parseFrom(
-          byte[] data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-      }
-      public static protobuf.RblProto.RBLMessage.SetData parseFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        return PARSER.parseFrom(input);
-      }
-      public static protobuf.RblProto.RBLMessage.SetData parseFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return PARSER.parseFrom(input, extensionRegistry);
-      }
-      public static protobuf.RblProto.RBLMessage.SetData parseDelimitedFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        return PARSER.parseDelimitedFrom(input);
-      }
-      public static protobuf.RblProto.RBLMessage.SetData parseDelimitedFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return PARSER.parseDelimitedFrom(input, extensionRegistry);
-      }
-      public static protobuf.RblProto.RBLMessage.SetData parseFrom(
-          com.google.protobuf.CodedInputStream input)
-          throws java.io.IOException {
-        return PARSER.parseFrom(input);
-      }
-      public static protobuf.RblProto.RBLMessage.SetData parseFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return PARSER.parseFrom(input, extensionRegistry);
-      }
-
-      public static Builder newBuilder() { return Builder.create(); }
-      public Builder newBuilderForType() { return newBuilder(); }
-      public static Builder newBuilder(protobuf.RblProto.RBLMessage.SetData prototype) {
-        return newBuilder().mergeFrom(prototype);
-      }
-      public Builder toBuilder() { return newBuilder(this); }
-
-      @java.lang.Override
-      protected Builder newBuilderForType(
-          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-        Builder builder = new Builder(parent);
-        return builder;
-      }
-      /**
-       * Protobuf type {@code RBLMessage.SetData}
-       */
-      public static final class Builder extends
-          com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-          // @@protoc_insertion_point(builder_implements:RBLMessage.SetData)
-          protobuf.RblProto.RBLMessage.SetDataOrBuilder {
-        public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-          return protobuf.RblProto.internal_static_RBLMessage_SetData_descriptor;
-        }
-
-        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-            internalGetFieldAccessorTable() {
-          return protobuf.RblProto.internal_static_RBLMessage_SetData_fieldAccessorTable
-              .ensureFieldAccessorsInitialized(
-                  protobuf.RblProto.RBLMessage.SetData.class, protobuf.RblProto.RBLMessage.SetData.Builder.class);
-        }
-
-        // Construct using protobuf.RblProto.RBLMessage.SetData.newBuilder()
-        private Builder() {
-          maybeForceBuilderInitialization();
-        }
-
-        private Builder(
-            com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-          super(parent);
-          maybeForceBuilderInitialization();
-        }
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
-            getActuatorFieldBuilder();
-            getDataFieldBuilder();
-          }
-        }
-        private static Builder create() {
-          return new Builder();
-        }
-
-        public Builder clear() {
-          super.clear();
-          if (actuatorBuilder_ == null) {
-            actuator_ = protobuf.RblProto.RBLMessage.Actuator.getDefaultInstance();
-          } else {
-            actuatorBuilder_.clear();
-          }
-          bitField0_ = (bitField0_ & ~0x00000001);
-          fieldId_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000002);
-          if (dataBuilder_ == null) {
-            data_ = protobuf.RblProto.RBLMessage.Data.getDefaultInstance();
-          } else {
-            dataBuilder_.clear();
-          }
-          bitField0_ = (bitField0_ & ~0x00000004);
-          return this;
-        }
-
-        public Builder clone() {
-          return create().mergeFrom(buildPartial());
-        }
-
-        public com.google.protobuf.Descriptors.Descriptor
-            getDescriptorForType() {
-          return protobuf.RblProto.internal_static_RBLMessage_SetData_descriptor;
-        }
-
-        public protobuf.RblProto.RBLMessage.SetData getDefaultInstanceForType() {
-          return protobuf.RblProto.RBLMessage.SetData.getDefaultInstance();
-        }
-
-        public protobuf.RblProto.RBLMessage.SetData build() {
-          protobuf.RblProto.RBLMessage.SetData result = buildPartial();
-          if (!result.isInitialized()) {
-            throw newUninitializedMessageException(result);
-          }
-          return result;
-        }
-
-        public protobuf.RblProto.RBLMessage.SetData buildPartial() {
-          protobuf.RblProto.RBLMessage.SetData result = new protobuf.RblProto.RBLMessage.SetData(this);
-          int from_bitField0_ = bitField0_;
-          int to_bitField0_ = 0;
-          if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-            to_bitField0_ |= 0x00000001;
-          }
-          if (actuatorBuilder_ == null) {
-            result.actuator_ = actuator_;
-          } else {
-            result.actuator_ = actuatorBuilder_.build();
-          }
-          if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-            to_bitField0_ |= 0x00000002;
-          }
-          result.fieldId_ = fieldId_;
-          if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
-            to_bitField0_ |= 0x00000004;
-          }
-          if (dataBuilder_ == null) {
-            result.data_ = data_;
-          } else {
-            result.data_ = dataBuilder_.build();
-          }
-          result.bitField0_ = to_bitField0_;
-          onBuilt();
-          return result;
-        }
-
-        public Builder mergeFrom(com.google.protobuf.Message other) {
-          if (other instanceof protobuf.RblProto.RBLMessage.SetData) {
-            return mergeFrom((protobuf.RblProto.RBLMessage.SetData)other);
-          } else {
-            super.mergeFrom(other);
-            return this;
-          }
-        }
-
-        public Builder mergeFrom(protobuf.RblProto.RBLMessage.SetData other) {
-          if (other == protobuf.RblProto.RBLMessage.SetData.getDefaultInstance()) return this;
-          if (other.hasActuator()) {
-            mergeActuator(other.getActuator());
-          }
-          if (other.hasFieldId()) {
-            setFieldId(other.getFieldId());
-          }
-          if (other.hasData()) {
-            mergeData(other.getData());
-          }
-          this.mergeUnknownFields(other.getUnknownFields());
-          return this;
-        }
-
-        public final boolean isInitialized() {
-          if (!hasActuator()) {
-            
-            return false;
-          }
-          if (!hasFieldId()) {
-            
-            return false;
-          }
-          if (!hasData()) {
-            
-            return false;
-          }
-          if (!getActuator().isInitialized()) {
-            
-            return false;
-          }
-          if (!getData().isInitialized()) {
-            
-            return false;
-          }
-          return true;
-        }
-
-        public Builder mergeFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-          protobuf.RblProto.RBLMessage.SetData parsedMessage = null;
-          try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (protobuf.RblProto.RBLMessage.SetData) e.getUnfinishedMessage();
-            throw e;
-          } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
-          return this;
-        }
-        private int bitField0_;
-
-        private protobuf.RblProto.RBLMessage.Actuator actuator_ = protobuf.RblProto.RBLMessage.Actuator.getDefaultInstance();
-        private com.google.protobuf.SingleFieldBuilder<
-            protobuf.RblProto.RBLMessage.Actuator, protobuf.RblProto.RBLMessage.Actuator.Builder, protobuf.RblProto.RBLMessage.ActuatorOrBuilder> actuatorBuilder_;
-        /**
-         * <code>required .RBLMessage.Actuator actuator = 1;</code>
-         */
-        public boolean hasActuator() {
-          return ((bitField0_ & 0x00000001) == 0x00000001);
-        }
-        /**
-         * <code>required .RBLMessage.Actuator actuator = 1;</code>
-         */
-        public protobuf.RblProto.RBLMessage.Actuator getActuator() {
-          if (actuatorBuilder_ == null) {
-            return actuator_;
-          } else {
-            return actuatorBuilder_.getMessage();
-          }
-        }
-        /**
-         * <code>required .RBLMessage.Actuator actuator = 1;</code>
-         */
-        public Builder setActuator(protobuf.RblProto.RBLMessage.Actuator value) {
-          if (actuatorBuilder_ == null) {
-            if (value == null) {
-              throw new NullPointerException();
-            }
-            actuator_ = value;
-            onChanged();
-          } else {
-            actuatorBuilder_.setMessage(value);
-          }
-          bitField0_ |= 0x00000001;
-          return this;
-        }
-        /**
-         * <code>required .RBLMessage.Actuator actuator = 1;</code>
-         */
-        public Builder setActuator(
-            protobuf.RblProto.RBLMessage.Actuator.Builder builderForValue) {
-          if (actuatorBuilder_ == null) {
-            actuator_ = builderForValue.build();
-            onChanged();
-          } else {
-            actuatorBuilder_.setMessage(builderForValue.build());
-          }
-          bitField0_ |= 0x00000001;
-          return this;
-        }
-        /**
-         * <code>required .RBLMessage.Actuator actuator = 1;</code>
-         */
-        public Builder mergeActuator(protobuf.RblProto.RBLMessage.Actuator value) {
-          if (actuatorBuilder_ == null) {
-            if (((bitField0_ & 0x00000001) == 0x00000001) &&
-                actuator_ != protobuf.RblProto.RBLMessage.Actuator.getDefaultInstance()) {
-              actuator_ =
-                protobuf.RblProto.RBLMessage.Actuator.newBuilder(actuator_).mergeFrom(value).buildPartial();
-            } else {
-              actuator_ = value;
-            }
-            onChanged();
-          } else {
-            actuatorBuilder_.mergeFrom(value);
-          }
-          bitField0_ |= 0x00000001;
-          return this;
-        }
-        /**
-         * <code>required .RBLMessage.Actuator actuator = 1;</code>
-         */
-        public Builder clearActuator() {
-          if (actuatorBuilder_ == null) {
-            actuator_ = protobuf.RblProto.RBLMessage.Actuator.getDefaultInstance();
-            onChanged();
-          } else {
-            actuatorBuilder_.clear();
-          }
-          bitField0_ = (bitField0_ & ~0x00000001);
-          return this;
-        }
-        /**
-         * <code>required .RBLMessage.Actuator actuator = 1;</code>
-         */
-        public protobuf.RblProto.RBLMessage.Actuator.Builder getActuatorBuilder() {
-          bitField0_ |= 0x00000001;
-          onChanged();
-          return getActuatorFieldBuilder().getBuilder();
-        }
-        /**
-         * <code>required .RBLMessage.Actuator actuator = 1;</code>
-         */
-        public protobuf.RblProto.RBLMessage.ActuatorOrBuilder getActuatorOrBuilder() {
-          if (actuatorBuilder_ != null) {
-            return actuatorBuilder_.getMessageOrBuilder();
-          } else {
-            return actuator_;
-          }
-        }
-        /**
-         * <code>required .RBLMessage.Actuator actuator = 1;</code>
-         */
-        private com.google.protobuf.SingleFieldBuilder<
-            protobuf.RblProto.RBLMessage.Actuator, protobuf.RblProto.RBLMessage.Actuator.Builder, protobuf.RblProto.RBLMessage.ActuatorOrBuilder> 
-            getActuatorFieldBuilder() {
-          if (actuatorBuilder_ == null) {
-            actuatorBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-                protobuf.RblProto.RBLMessage.Actuator, protobuf.RblProto.RBLMessage.Actuator.Builder, protobuf.RblProto.RBLMessage.ActuatorOrBuilder>(
-                    getActuator(),
-                    getParentForChildren(),
-                    isClean());
-            actuator_ = null;
-          }
-          return actuatorBuilder_;
-        }
-
-        private int fieldId_ ;
-        /**
-         * <code>required int32 fieldId = 2;</code>
-         */
-        public boolean hasFieldId() {
-          return ((bitField0_ & 0x00000002) == 0x00000002);
-        }
-        /**
-         * <code>required int32 fieldId = 2;</code>
-         */
-        public int getFieldId() {
-          return fieldId_;
-        }
-        /**
-         * <code>required int32 fieldId = 2;</code>
-         */
-        public Builder setFieldId(int value) {
-          bitField0_ |= 0x00000002;
-          fieldId_ = value;
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>required int32 fieldId = 2;</code>
-         */
-        public Builder clearFieldId() {
-          bitField0_ = (bitField0_ & ~0x00000002);
-          fieldId_ = 0;
-          onChanged();
-          return this;
-        }
-
-        private protobuf.RblProto.RBLMessage.Data data_ = protobuf.RblProto.RBLMessage.Data.getDefaultInstance();
-        private com.google.protobuf.SingleFieldBuilder<
-            protobuf.RblProto.RBLMessage.Data, protobuf.RblProto.RBLMessage.Data.Builder, protobuf.RblProto.RBLMessage.DataOrBuilder> dataBuilder_;
-        /**
-         * <code>required .RBLMessage.Data data = 3;</code>
-         */
-        public boolean hasData() {
-          return ((bitField0_ & 0x00000004) == 0x00000004);
-        }
-        /**
-         * <code>required .RBLMessage.Data data = 3;</code>
-         */
-        public protobuf.RblProto.RBLMessage.Data getData() {
-          if (dataBuilder_ == null) {
-            return data_;
-          } else {
-            return dataBuilder_.getMessage();
-          }
-        }
-        /**
-         * <code>required .RBLMessage.Data data = 3;</code>
-         */
-        public Builder setData(protobuf.RblProto.RBLMessage.Data value) {
-          if (dataBuilder_ == null) {
-            if (value == null) {
-              throw new NullPointerException();
-            }
-            data_ = value;
-            onChanged();
-          } else {
-            dataBuilder_.setMessage(value);
-          }
-          bitField0_ |= 0x00000004;
-          return this;
-        }
-        /**
-         * <code>required .RBLMessage.Data data = 3;</code>
-         */
-        public Builder setData(
-            protobuf.RblProto.RBLMessage.Data.Builder builderForValue) {
-          if (dataBuilder_ == null) {
-            data_ = builderForValue.build();
-            onChanged();
-          } else {
-            dataBuilder_.setMessage(builderForValue.build());
-          }
-          bitField0_ |= 0x00000004;
-          return this;
-        }
-        /**
-         * <code>required .RBLMessage.Data data = 3;</code>
-         */
-        public Builder mergeData(protobuf.RblProto.RBLMessage.Data value) {
-          if (dataBuilder_ == null) {
-            if (((bitField0_ & 0x00000004) == 0x00000004) &&
-                data_ != protobuf.RblProto.RBLMessage.Data.getDefaultInstance()) {
-              data_ =
-                protobuf.RblProto.RBLMessage.Data.newBuilder(data_).mergeFrom(value).buildPartial();
-            } else {
-              data_ = value;
-            }
-            onChanged();
-          } else {
-            dataBuilder_.mergeFrom(value);
-          }
-          bitField0_ |= 0x00000004;
-          return this;
-        }
-        /**
-         * <code>required .RBLMessage.Data data = 3;</code>
-         */
-        public Builder clearData() {
-          if (dataBuilder_ == null) {
-            data_ = protobuf.RblProto.RBLMessage.Data.getDefaultInstance();
-            onChanged();
-          } else {
-            dataBuilder_.clear();
-          }
-          bitField0_ = (bitField0_ & ~0x00000004);
-          return this;
-        }
-        /**
-         * <code>required .RBLMessage.Data data = 3;</code>
-         */
-        public protobuf.RblProto.RBLMessage.Data.Builder getDataBuilder() {
-          bitField0_ |= 0x00000004;
-          onChanged();
-          return getDataFieldBuilder().getBuilder();
-        }
-        /**
-         * <code>required .RBLMessage.Data data = 3;</code>
-         */
-        public protobuf.RblProto.RBLMessage.DataOrBuilder getDataOrBuilder() {
-          if (dataBuilder_ != null) {
-            return dataBuilder_.getMessageOrBuilder();
-          } else {
-            return data_;
-          }
-        }
-        /**
-         * <code>required .RBLMessage.Data data = 3;</code>
-         */
-        private com.google.protobuf.SingleFieldBuilder<
-            protobuf.RblProto.RBLMessage.Data, protobuf.RblProto.RBLMessage.Data.Builder, protobuf.RblProto.RBLMessage.DataOrBuilder> 
-            getDataFieldBuilder() {
-          if (dataBuilder_ == null) {
-            dataBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-                protobuf.RblProto.RBLMessage.Data, protobuf.RblProto.RBLMessage.Data.Builder, protobuf.RblProto.RBLMessage.DataOrBuilder>(
-                    getData(),
-                    getParentForChildren(),
-                    isClean());
-            data_ = null;
-          }
-          return dataBuilder_;
-        }
-
-        // @@protoc_insertion_point(builder_scope:RBLMessage.SetData)
-      }
-
-      static {
-        defaultInstance = new SetData(true);
-        defaultInstance.initFields();
-      }
-
-      // @@protoc_insertion_point(class_scope:RBLMessage.SetData)
-    }
-
-    public interface GetDataOrBuilder extends
-        // @@protoc_insertion_point(interface_extends:RBLMessage.GetData)
-        com.google.protobuf.MessageOrBuilder {
-
-      /**
-       * <code>required .RBLMessage.Actuator actuator = 1;</code>
-       */
-      boolean hasActuator();
-      /**
-       * <code>required .RBLMessage.Actuator actuator = 1;</code>
-       */
-      protobuf.RblProto.RBLMessage.Actuator getActuator();
-      /**
-       * <code>required .RBLMessage.Actuator actuator = 1;</code>
-       */
-      protobuf.RblProto.RBLMessage.ActuatorOrBuilder getActuatorOrBuilder();
-
-      /**
-       * <code>required int32 fieldId = 2;</code>
-       */
-      boolean hasFieldId();
-      /**
-       * <code>required int32 fieldId = 2;</code>
-       */
-      int getFieldId();
-
-      /**
-       * <code>optional .RBLMessage.Range range = 3;</code>
-       */
-      boolean hasRange();
-      /**
-       * <code>optional .RBLMessage.Range range = 3;</code>
-       */
-      protobuf.RblProto.RBLMessage.Range getRange();
-      /**
-       * <code>optional .RBLMessage.Range range = 3;</code>
-       */
-      protobuf.RblProto.RBLMessage.RangeOrBuilder getRangeOrBuilder();
-    }
-    /**
-     * Protobuf type {@code RBLMessage.GetData}
-     */
-    public static final class GetData extends
-        com.google.protobuf.GeneratedMessage implements
-        // @@protoc_insertion_point(message_implements:RBLMessage.GetData)
-        GetDataOrBuilder {
-      // Use GetData.newBuilder() to construct.
-      private GetData(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
-        super(builder);
-        this.unknownFields = builder.getUnknownFields();
-      }
-      private GetData(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
-
-      private static final GetData defaultInstance;
-      public static GetData getDefaultInstance() {
-        return defaultInstance;
-      }
-
-      public GetData getDefaultInstanceForType() {
-        return defaultInstance;
-      }
-
-      private final com.google.protobuf.UnknownFieldSet unknownFields;
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet
-          getUnknownFields() {
-        return this.unknownFields;
-      }
-      private GetData(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        initFields();
-        int mutable_bitField0_ = 0;
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              default: {
-                if (!parseUnknownField(input, unknownFields,
-                                       extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-              case 10: {
-                protobuf.RblProto.RBLMessage.Actuator.Builder subBuilder = null;
-                if (((bitField0_ & 0x00000001) == 0x00000001)) {
-                  subBuilder = actuator_.toBuilder();
-                }
-                actuator_ = input.readMessage(protobuf.RblProto.RBLMessage.Actuator.PARSER, extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(actuator_);
-                  actuator_ = subBuilder.buildPartial();
-                }
-                bitField0_ |= 0x00000001;
-                break;
-              }
-              case 16: {
-                bitField0_ |= 0x00000002;
-                fieldId_ = input.readInt32();
-                break;
-              }
-              case 26: {
-                protobuf.RblProto.RBLMessage.Range.Builder subBuilder = null;
-                if (((bitField0_ & 0x00000004) == 0x00000004)) {
-                  subBuilder = range_.toBuilder();
-                }
-                range_ = input.readMessage(protobuf.RblProto.RBLMessage.Range.PARSER, extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(range_);
-                  range_ = subBuilder.buildPartial();
-                }
-                bitField0_ |= 0x00000004;
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e.getMessage()).setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return protobuf.RblProto.internal_static_RBLMessage_GetData_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return protobuf.RblProto.internal_static_RBLMessage_GetData_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                protobuf.RblProto.RBLMessage.GetData.class, protobuf.RblProto.RBLMessage.GetData.Builder.class);
-      }
-
-      public static com.google.protobuf.Parser<GetData> PARSER =
-          new com.google.protobuf.AbstractParser<GetData>() {
-        public GetData parsePartialFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          return new GetData(input, extensionRegistry);
-        }
-      };
-
-      @java.lang.Override
-      public com.google.protobuf.Parser<GetData> getParserForType() {
-        return PARSER;
-      }
-
-      private int bitField0_;
-      public static final int ACTUATOR_FIELD_NUMBER = 1;
-      private protobuf.RblProto.RBLMessage.Actuator actuator_;
-      /**
-       * <code>required .RBLMessage.Actuator actuator = 1;</code>
-       */
-      public boolean hasActuator() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
-      }
-      /**
-       * <code>required .RBLMessage.Actuator actuator = 1;</code>
-       */
-      public protobuf.RblProto.RBLMessage.Actuator getActuator() {
-        return actuator_;
-      }
-      /**
-       * <code>required .RBLMessage.Actuator actuator = 1;</code>
-       */
-      public protobuf.RblProto.RBLMessage.ActuatorOrBuilder getActuatorOrBuilder() {
-        return actuator_;
-      }
-
-      public static final int FIELDID_FIELD_NUMBER = 2;
-      private int fieldId_;
-      /**
-       * <code>required int32 fieldId = 2;</code>
-       */
-      public boolean hasFieldId() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
-      }
-      /**
-       * <code>required int32 fieldId = 2;</code>
-       */
-      public int getFieldId() {
-        return fieldId_;
-      }
-
-      public static final int RANGE_FIELD_NUMBER = 3;
-      private protobuf.RblProto.RBLMessage.Range range_;
-      /**
-       * <code>optional .RBLMessage.Range range = 3;</code>
-       */
-      public boolean hasRange() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
-      }
-      /**
-       * <code>optional .RBLMessage.Range range = 3;</code>
-       */
-      public protobuf.RblProto.RBLMessage.Range getRange() {
-        return range_;
-      }
-      /**
-       * <code>optional .RBLMessage.Range range = 3;</code>
-       */
-      public protobuf.RblProto.RBLMessage.RangeOrBuilder getRangeOrBuilder() {
-        return range_;
-      }
-
-      private void initFields() {
-        actuator_ = protobuf.RblProto.RBLMessage.Actuator.getDefaultInstance();
-        fieldId_ = 0;
-        range_ = protobuf.RblProto.RBLMessage.Range.getDefaultInstance();
-      }
-      private byte memoizedIsInitialized = -1;
-      public final boolean isInitialized() {
-        byte isInitialized = memoizedIsInitialized;
-        if (isInitialized == 1) return true;
-        if (isInitialized == 0) return false;
-
-        if (!hasActuator()) {
-          memoizedIsInitialized = 0;
-          return false;
-        }
-        if (!hasFieldId()) {
-          memoizedIsInitialized = 0;
-          return false;
-        }
-        if (!getActuator().isInitialized()) {
-          memoizedIsInitialized = 0;
-          return false;
-        }
-        memoizedIsInitialized = 1;
-        return true;
-      }
-
-      public void writeTo(com.google.protobuf.CodedOutputStream output)
-                          throws java.io.IOException {
-        getSerializedSize();
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
-          output.writeMessage(1, actuator_);
-        }
-        if (((bitField0_ & 0x00000002) == 0x00000002)) {
-          output.writeInt32(2, fieldId_);
-        }
-        if (((bitField0_ & 0x00000004) == 0x00000004)) {
-          output.writeMessage(3, range_);
-        }
-        getUnknownFields().writeTo(output);
-      }
-
-      private int memoizedSerializedSize = -1;
-      public int getSerializedSize() {
-        int size = memoizedSerializedSize;
-        if (size != -1) return size;
-
-        size = 0;
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(1, actuator_);
-        }
-        if (((bitField0_ & 0x00000002) == 0x00000002)) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeInt32Size(2, fieldId_);
-        }
-        if (((bitField0_ & 0x00000004) == 0x00000004)) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(3, range_);
-        }
-        size += getUnknownFields().getSerializedSize();
-        memoizedSerializedSize = size;
-        return size;
-      }
-
-      private static final long serialVersionUID = 0L;
-      @java.lang.Override
-      protected java.lang.Object writeReplace()
-          throws java.io.ObjectStreamException {
-        return super.writeReplace();
-      }
-
-      public static protobuf.RblProto.RBLMessage.GetData parseFrom(
-          com.google.protobuf.ByteString data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-      }
-      public static protobuf.RblProto.RBLMessage.GetData parseFrom(
-          com.google.protobuf.ByteString data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-      }
-      public static protobuf.RblProto.RBLMessage.GetData parseFrom(byte[] data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-      }
-      public static protobuf.RblProto.RBLMessage.GetData parseFrom(
-          byte[] data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-      }
-      public static protobuf.RblProto.RBLMessage.GetData parseFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        return PARSER.parseFrom(input);
-      }
-      public static protobuf.RblProto.RBLMessage.GetData parseFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return PARSER.parseFrom(input, extensionRegistry);
-      }
-      public static protobuf.RblProto.RBLMessage.GetData parseDelimitedFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        return PARSER.parseDelimitedFrom(input);
-      }
-      public static protobuf.RblProto.RBLMessage.GetData parseDelimitedFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return PARSER.parseDelimitedFrom(input, extensionRegistry);
-      }
-      public static protobuf.RblProto.RBLMessage.GetData parseFrom(
-          com.google.protobuf.CodedInputStream input)
-          throws java.io.IOException {
-        return PARSER.parseFrom(input);
-      }
-      public static protobuf.RblProto.RBLMessage.GetData parseFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return PARSER.parseFrom(input, extensionRegistry);
-      }
-
-      public static Builder newBuilder() { return Builder.create(); }
-      public Builder newBuilderForType() { return newBuilder(); }
-      public static Builder newBuilder(protobuf.RblProto.RBLMessage.GetData prototype) {
-        return newBuilder().mergeFrom(prototype);
-      }
-      public Builder toBuilder() { return newBuilder(this); }
-
-      @java.lang.Override
-      protected Builder newBuilderForType(
-          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-        Builder builder = new Builder(parent);
-        return builder;
-      }
-      /**
-       * Protobuf type {@code RBLMessage.GetData}
-       */
-      public static final class Builder extends
-          com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-          // @@protoc_insertion_point(builder_implements:RBLMessage.GetData)
-          protobuf.RblProto.RBLMessage.GetDataOrBuilder {
-        public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-          return protobuf.RblProto.internal_static_RBLMessage_GetData_descriptor;
-        }
-
-        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-            internalGetFieldAccessorTable() {
-          return protobuf.RblProto.internal_static_RBLMessage_GetData_fieldAccessorTable
-              .ensureFieldAccessorsInitialized(
-                  protobuf.RblProto.RBLMessage.GetData.class, protobuf.RblProto.RBLMessage.GetData.Builder.class);
-        }
-
-        // Construct using protobuf.RblProto.RBLMessage.GetData.newBuilder()
-        private Builder() {
-          maybeForceBuilderInitialization();
-        }
-
-        private Builder(
-            com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-          super(parent);
-          maybeForceBuilderInitialization();
-        }
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
-            getActuatorFieldBuilder();
-            getRangeFieldBuilder();
-          }
-        }
-        private static Builder create() {
-          return new Builder();
-        }
-
-        public Builder clear() {
-          super.clear();
-          if (actuatorBuilder_ == null) {
-            actuator_ = protobuf.RblProto.RBLMessage.Actuator.getDefaultInstance();
-          } else {
-            actuatorBuilder_.clear();
-          }
-          bitField0_ = (bitField0_ & ~0x00000001);
-          fieldId_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000002);
-          if (rangeBuilder_ == null) {
-            range_ = protobuf.RblProto.RBLMessage.Range.getDefaultInstance();
-          } else {
-            rangeBuilder_.clear();
-          }
-          bitField0_ = (bitField0_ & ~0x00000004);
-          return this;
-        }
-
-        public Builder clone() {
-          return create().mergeFrom(buildPartial());
-        }
-
-        public com.google.protobuf.Descriptors.Descriptor
-            getDescriptorForType() {
-          return protobuf.RblProto.internal_static_RBLMessage_GetData_descriptor;
-        }
-
-        public protobuf.RblProto.RBLMessage.GetData getDefaultInstanceForType() {
-          return protobuf.RblProto.RBLMessage.GetData.getDefaultInstance();
-        }
-
-        public protobuf.RblProto.RBLMessage.GetData build() {
-          protobuf.RblProto.RBLMessage.GetData result = buildPartial();
-          if (!result.isInitialized()) {
-            throw newUninitializedMessageException(result);
-          }
-          return result;
-        }
-
-        public protobuf.RblProto.RBLMessage.GetData buildPartial() {
-          protobuf.RblProto.RBLMessage.GetData result = new protobuf.RblProto.RBLMessage.GetData(this);
-          int from_bitField0_ = bitField0_;
-          int to_bitField0_ = 0;
-          if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-            to_bitField0_ |= 0x00000001;
-          }
-          if (actuatorBuilder_ == null) {
-            result.actuator_ = actuator_;
-          } else {
-            result.actuator_ = actuatorBuilder_.build();
-          }
-          if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-            to_bitField0_ |= 0x00000002;
-          }
-          result.fieldId_ = fieldId_;
-          if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
-            to_bitField0_ |= 0x00000004;
-          }
-          if (rangeBuilder_ == null) {
-            result.range_ = range_;
-          } else {
-            result.range_ = rangeBuilder_.build();
-          }
-          result.bitField0_ = to_bitField0_;
-          onBuilt();
-          return result;
-        }
-
-        public Builder mergeFrom(com.google.protobuf.Message other) {
-          if (other instanceof protobuf.RblProto.RBLMessage.GetData) {
-            return mergeFrom((protobuf.RblProto.RBLMessage.GetData)other);
-          } else {
-            super.mergeFrom(other);
-            return this;
-          }
-        }
-
-        public Builder mergeFrom(protobuf.RblProto.RBLMessage.GetData other) {
-          if (other == protobuf.RblProto.RBLMessage.GetData.getDefaultInstance()) return this;
-          if (other.hasActuator()) {
-            mergeActuator(other.getActuator());
-          }
-          if (other.hasFieldId()) {
-            setFieldId(other.getFieldId());
-          }
-          if (other.hasRange()) {
-            mergeRange(other.getRange());
-          }
-          this.mergeUnknownFields(other.getUnknownFields());
-          return this;
-        }
-
-        public final boolean isInitialized() {
-          if (!hasActuator()) {
-            
-            return false;
-          }
-          if (!hasFieldId()) {
-            
-            return false;
-          }
-          if (!getActuator().isInitialized()) {
-            
-            return false;
-          }
-          return true;
-        }
-
-        public Builder mergeFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-          protobuf.RblProto.RBLMessage.GetData parsedMessage = null;
-          try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (protobuf.RblProto.RBLMessage.GetData) e.getUnfinishedMessage();
-            throw e;
-          } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
-          return this;
-        }
-        private int bitField0_;
-
-        private protobuf.RblProto.RBLMessage.Actuator actuator_ = protobuf.RblProto.RBLMessage.Actuator.getDefaultInstance();
-        private com.google.protobuf.SingleFieldBuilder<
-            protobuf.RblProto.RBLMessage.Actuator, protobuf.RblProto.RBLMessage.Actuator.Builder, protobuf.RblProto.RBLMessage.ActuatorOrBuilder> actuatorBuilder_;
-        /**
-         * <code>required .RBLMessage.Actuator actuator = 1;</code>
-         */
-        public boolean hasActuator() {
-          return ((bitField0_ & 0x00000001) == 0x00000001);
-        }
-        /**
-         * <code>required .RBLMessage.Actuator actuator = 1;</code>
-         */
-        public protobuf.RblProto.RBLMessage.Actuator getActuator() {
-          if (actuatorBuilder_ == null) {
-            return actuator_;
-          } else {
-            return actuatorBuilder_.getMessage();
-          }
-        }
-        /**
-         * <code>required .RBLMessage.Actuator actuator = 1;</code>
-         */
-        public Builder setActuator(protobuf.RblProto.RBLMessage.Actuator value) {
-          if (actuatorBuilder_ == null) {
-            if (value == null) {
-              throw new NullPointerException();
-            }
-            actuator_ = value;
-            onChanged();
-          } else {
-            actuatorBuilder_.setMessage(value);
-          }
-          bitField0_ |= 0x00000001;
-          return this;
-        }
-        /**
-         * <code>required .RBLMessage.Actuator actuator = 1;</code>
-         */
-        public Builder setActuator(
-            protobuf.RblProto.RBLMessage.Actuator.Builder builderForValue) {
-          if (actuatorBuilder_ == null) {
-            actuator_ = builderForValue.build();
-            onChanged();
-          } else {
-            actuatorBuilder_.setMessage(builderForValue.build());
-          }
-          bitField0_ |= 0x00000001;
-          return this;
-        }
-        /**
-         * <code>required .RBLMessage.Actuator actuator = 1;</code>
-         */
-        public Builder mergeActuator(protobuf.RblProto.RBLMessage.Actuator value) {
-          if (actuatorBuilder_ == null) {
-            if (((bitField0_ & 0x00000001) == 0x00000001) &&
-                actuator_ != protobuf.RblProto.RBLMessage.Actuator.getDefaultInstance()) {
-              actuator_ =
-                protobuf.RblProto.RBLMessage.Actuator.newBuilder(actuator_).mergeFrom(value).buildPartial();
-            } else {
-              actuator_ = value;
-            }
-            onChanged();
-          } else {
-            actuatorBuilder_.mergeFrom(value);
-          }
-          bitField0_ |= 0x00000001;
-          return this;
-        }
-        /**
-         * <code>required .RBLMessage.Actuator actuator = 1;</code>
-         */
-        public Builder clearActuator() {
-          if (actuatorBuilder_ == null) {
-            actuator_ = protobuf.RblProto.RBLMessage.Actuator.getDefaultInstance();
-            onChanged();
-          } else {
-            actuatorBuilder_.clear();
-          }
-          bitField0_ = (bitField0_ & ~0x00000001);
-          return this;
-        }
-        /**
-         * <code>required .RBLMessage.Actuator actuator = 1;</code>
-         */
-        public protobuf.RblProto.RBLMessage.Actuator.Builder getActuatorBuilder() {
-          bitField0_ |= 0x00000001;
-          onChanged();
-          return getActuatorFieldBuilder().getBuilder();
-        }
-        /**
-         * <code>required .RBLMessage.Actuator actuator = 1;</code>
-         */
-        public protobuf.RblProto.RBLMessage.ActuatorOrBuilder getActuatorOrBuilder() {
-          if (actuatorBuilder_ != null) {
-            return actuatorBuilder_.getMessageOrBuilder();
-          } else {
-            return actuator_;
-          }
-        }
-        /**
-         * <code>required .RBLMessage.Actuator actuator = 1;</code>
-         */
-        private com.google.protobuf.SingleFieldBuilder<
-            protobuf.RblProto.RBLMessage.Actuator, protobuf.RblProto.RBLMessage.Actuator.Builder, protobuf.RblProto.RBLMessage.ActuatorOrBuilder> 
-            getActuatorFieldBuilder() {
-          if (actuatorBuilder_ == null) {
-            actuatorBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-                protobuf.RblProto.RBLMessage.Actuator, protobuf.RblProto.RBLMessage.Actuator.Builder, protobuf.RblProto.RBLMessage.ActuatorOrBuilder>(
-                    getActuator(),
-                    getParentForChildren(),
-                    isClean());
-            actuator_ = null;
-          }
-          return actuatorBuilder_;
-        }
-
-        private int fieldId_ ;
-        /**
-         * <code>required int32 fieldId = 2;</code>
-         */
-        public boolean hasFieldId() {
-          return ((bitField0_ & 0x00000002) == 0x00000002);
-        }
-        /**
-         * <code>required int32 fieldId = 2;</code>
-         */
-        public int getFieldId() {
-          return fieldId_;
-        }
-        /**
-         * <code>required int32 fieldId = 2;</code>
-         */
-        public Builder setFieldId(int value) {
-          bitField0_ |= 0x00000002;
-          fieldId_ = value;
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>required int32 fieldId = 2;</code>
-         */
-        public Builder clearFieldId() {
-          bitField0_ = (bitField0_ & ~0x00000002);
-          fieldId_ = 0;
-          onChanged();
-          return this;
-        }
-
-        private protobuf.RblProto.RBLMessage.Range range_ = protobuf.RblProto.RBLMessage.Range.getDefaultInstance();
-        private com.google.protobuf.SingleFieldBuilder<
-            protobuf.RblProto.RBLMessage.Range, protobuf.RblProto.RBLMessage.Range.Builder, protobuf.RblProto.RBLMessage.RangeOrBuilder> rangeBuilder_;
-        /**
-         * <code>optional .RBLMessage.Range range = 3;</code>
-         */
-        public boolean hasRange() {
-          return ((bitField0_ & 0x00000004) == 0x00000004);
-        }
-        /**
-         * <code>optional .RBLMessage.Range range = 3;</code>
-         */
-        public protobuf.RblProto.RBLMessage.Range getRange() {
-          if (rangeBuilder_ == null) {
-            return range_;
-          } else {
-            return rangeBuilder_.getMessage();
-          }
-        }
-        /**
-         * <code>optional .RBLMessage.Range range = 3;</code>
-         */
-        public Builder setRange(protobuf.RblProto.RBLMessage.Range value) {
-          if (rangeBuilder_ == null) {
-            if (value == null) {
-              throw new NullPointerException();
-            }
-            range_ = value;
-            onChanged();
-          } else {
-            rangeBuilder_.setMessage(value);
-          }
-          bitField0_ |= 0x00000004;
-          return this;
-        }
-        /**
-         * <code>optional .RBLMessage.Range range = 3;</code>
-         */
-        public Builder setRange(
-            protobuf.RblProto.RBLMessage.Range.Builder builderForValue) {
-          if (rangeBuilder_ == null) {
-            range_ = builderForValue.build();
-            onChanged();
-          } else {
-            rangeBuilder_.setMessage(builderForValue.build());
-          }
-          bitField0_ |= 0x00000004;
-          return this;
-        }
-        /**
-         * <code>optional .RBLMessage.Range range = 3;</code>
-         */
-        public Builder mergeRange(protobuf.RblProto.RBLMessage.Range value) {
-          if (rangeBuilder_ == null) {
-            if (((bitField0_ & 0x00000004) == 0x00000004) &&
-                range_ != protobuf.RblProto.RBLMessage.Range.getDefaultInstance()) {
-              range_ =
-                protobuf.RblProto.RBLMessage.Range.newBuilder(range_).mergeFrom(value).buildPartial();
-            } else {
-              range_ = value;
-            }
-            onChanged();
-          } else {
-            rangeBuilder_.mergeFrom(value);
-          }
-          bitField0_ |= 0x00000004;
-          return this;
-        }
-        /**
-         * <code>optional .RBLMessage.Range range = 3;</code>
-         */
-        public Builder clearRange() {
-          if (rangeBuilder_ == null) {
-            range_ = protobuf.RblProto.RBLMessage.Range.getDefaultInstance();
-            onChanged();
-          } else {
-            rangeBuilder_.clear();
-          }
-          bitField0_ = (bitField0_ & ~0x00000004);
-          return this;
-        }
-        /**
-         * <code>optional .RBLMessage.Range range = 3;</code>
-         */
-        public protobuf.RblProto.RBLMessage.Range.Builder getRangeBuilder() {
-          bitField0_ |= 0x00000004;
-          onChanged();
-          return getRangeFieldBuilder().getBuilder();
-        }
-        /**
-         * <code>optional .RBLMessage.Range range = 3;</code>
-         */
-        public protobuf.RblProto.RBLMessage.RangeOrBuilder getRangeOrBuilder() {
-          if (rangeBuilder_ != null) {
-            return rangeBuilder_.getMessageOrBuilder();
-          } else {
-            return range_;
-          }
-        }
-        /**
-         * <code>optional .RBLMessage.Range range = 3;</code>
-         */
-        private com.google.protobuf.SingleFieldBuilder<
-            protobuf.RblProto.RBLMessage.Range, protobuf.RblProto.RBLMessage.Range.Builder, protobuf.RblProto.RBLMessage.RangeOrBuilder> 
-            getRangeFieldBuilder() {
-          if (rangeBuilder_ == null) {
-            rangeBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-                protobuf.RblProto.RBLMessage.Range, protobuf.RblProto.RBLMessage.Range.Builder, protobuf.RblProto.RBLMessage.RangeOrBuilder>(
-                    getRange(),
-                    getParentForChildren(),
-                    isClean());
-            range_ = null;
-          }
-          return rangeBuilder_;
-        }
-
-        // @@protoc_insertion_point(builder_scope:RBLMessage.GetData)
-      }
-
-      static {
-        defaultInstance = new GetData(true);
-        defaultInstance.initFields();
-      }
-
-      // @@protoc_insertion_point(class_scope:RBLMessage.GetData)
-    }
-
     public interface RangeOrBuilder extends
         // @@protoc_insertion_point(interface_extends:RBLMessage.Range)
         com.google.protobuf.MessageOrBuilder {
@@ -9336,18 +8014,18 @@ public final class RblProto {
       // @@protoc_insertion_point(class_scope:RBLMessage.Range)
     }
 
-    public interface DataOrBuilder extends
-        // @@protoc_insertion_point(interface_extends:RBLMessage.Data)
+    public interface DataSetOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:RBLMessage.DataSet)
         com.google.protobuf.MessageOrBuilder {
 
       /**
-       * <code>required int32 fieldId = 1;</code>
+       * <code>required .RBLMessage.CrudType crudType = 1;</code>
        */
-      boolean hasFieldId();
+      boolean hasCrudType();
       /**
-       * <code>required int32 fieldId = 1;</code>
+       * <code>required .RBLMessage.CrudType crudType = 1;</code>
        */
-      int getFieldId();
+      protobuf.RblProto.RBLMessage.CrudType getCrudType();
 
       /**
        * <code>required .RBLMessage.DataType dataType = 2;</code>
@@ -9359,47 +8037,1231 @@ public final class RblProto {
       protobuf.RblProto.RBLMessage.DataType getDataType();
 
       /**
-       * <code>repeated string stringData = 3;</code>
+       * <code>optional .RBLMessage.Actuator actuator = 3;</code>
+       */
+      boolean hasActuator();
+      /**
+       * <code>optional .RBLMessage.Actuator actuator = 3;</code>
+       */
+      protobuf.RblProto.RBLMessage.Actuator getActuator();
+      /**
+       * <code>optional .RBLMessage.Actuator actuator = 3;</code>
+       */
+      protobuf.RblProto.RBLMessage.ActuatorOrBuilder getActuatorOrBuilder();
+
+      /**
+       * <code>optional int32 fieldId = 4;</code>
+       */
+      boolean hasFieldId();
+      /**
+       * <code>optional int32 fieldId = 4;</code>
+       */
+      int getFieldId();
+
+      /**
+       * <code>optional .RBLMessage.Range range = 5;</code>
+       */
+      boolean hasRange();
+      /**
+       * <code>optional .RBLMessage.Range range = 5;</code>
+       */
+      protobuf.RblProto.RBLMessage.Range getRange();
+      /**
+       * <code>optional .RBLMessage.Range range = 5;</code>
+       */
+      protobuf.RblProto.RBLMessage.RangeOrBuilder getRangeOrBuilder();
+
+      /**
+       * <code>optional .RBLMessage.Data data = 6;</code>
+       */
+      boolean hasData();
+      /**
+       * <code>optional .RBLMessage.Data data = 6;</code>
+       */
+      protobuf.RblProto.RBLMessage.Data getData();
+      /**
+       * <code>optional .RBLMessage.Data data = 6;</code>
+       */
+      protobuf.RblProto.RBLMessage.DataOrBuilder getDataOrBuilder();
+    }
+    /**
+     * Protobuf type {@code RBLMessage.DataSet}
+     */
+    public static final class DataSet extends
+        com.google.protobuf.GeneratedMessage implements
+        // @@protoc_insertion_point(message_implements:RBLMessage.DataSet)
+        DataSetOrBuilder {
+      // Use DataSet.newBuilder() to construct.
+      private DataSet(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+        super(builder);
+        this.unknownFields = builder.getUnknownFields();
+      }
+      private DataSet(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+      private static final DataSet defaultInstance;
+      public static DataSet getDefaultInstance() {
+        return defaultInstance;
+      }
+
+      public DataSet getDefaultInstanceForType() {
+        return defaultInstance;
+      }
+
+      private final com.google.protobuf.UnknownFieldSet unknownFields;
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+          getUnknownFields() {
+        return this.unknownFields;
+      }
+      private DataSet(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        initFields();
+        int mutable_bitField0_ = 0;
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default: {
+                if (!parseUnknownField(input, unknownFields,
+                                       extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+              case 8: {
+                int rawValue = input.readEnum();
+                protobuf.RblProto.RBLMessage.CrudType value = protobuf.RblProto.RBLMessage.CrudType.valueOf(rawValue);
+                if (value == null) {
+                  unknownFields.mergeVarintField(1, rawValue);
+                } else {
+                  bitField0_ |= 0x00000001;
+                  crudType_ = value;
+                }
+                break;
+              }
+              case 16: {
+                int rawValue = input.readEnum();
+                protobuf.RblProto.RBLMessage.DataType value = protobuf.RblProto.RBLMessage.DataType.valueOf(rawValue);
+                if (value == null) {
+                  unknownFields.mergeVarintField(2, rawValue);
+                } else {
+                  bitField0_ |= 0x00000002;
+                  dataType_ = value;
+                }
+                break;
+              }
+              case 26: {
+                protobuf.RblProto.RBLMessage.Actuator.Builder subBuilder = null;
+                if (((bitField0_ & 0x00000004) == 0x00000004)) {
+                  subBuilder = actuator_.toBuilder();
+                }
+                actuator_ = input.readMessage(protobuf.RblProto.RBLMessage.Actuator.PARSER, extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(actuator_);
+                  actuator_ = subBuilder.buildPartial();
+                }
+                bitField0_ |= 0x00000004;
+                break;
+              }
+              case 32: {
+                bitField0_ |= 0x00000008;
+                fieldId_ = input.readInt32();
+                break;
+              }
+              case 42: {
+                protobuf.RblProto.RBLMessage.Range.Builder subBuilder = null;
+                if (((bitField0_ & 0x00000010) == 0x00000010)) {
+                  subBuilder = range_.toBuilder();
+                }
+                range_ = input.readMessage(protobuf.RblProto.RBLMessage.Range.PARSER, extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(range_);
+                  range_ = subBuilder.buildPartial();
+                }
+                bitField0_ |= 0x00000010;
+                break;
+              }
+              case 50: {
+                protobuf.RblProto.RBLMessage.Data.Builder subBuilder = null;
+                if (((bitField0_ & 0x00000020) == 0x00000020)) {
+                  subBuilder = data_.toBuilder();
+                }
+                data_ = input.readMessage(protobuf.RblProto.RBLMessage.Data.PARSER, extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(data_);
+                  data_ = subBuilder.buildPartial();
+                }
+                bitField0_ |= 0x00000020;
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e.getMessage()).setUnfinishedMessage(this);
+        } finally {
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return protobuf.RblProto.internal_static_RBLMessage_DataSet_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return protobuf.RblProto.internal_static_RBLMessage_DataSet_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                protobuf.RblProto.RBLMessage.DataSet.class, protobuf.RblProto.RBLMessage.DataSet.Builder.class);
+      }
+
+      public static com.google.protobuf.Parser<DataSet> PARSER =
+          new com.google.protobuf.AbstractParser<DataSet>() {
+        public DataSet parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new DataSet(input, extensionRegistry);
+        }
+      };
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<DataSet> getParserForType() {
+        return PARSER;
+      }
+
+      private int bitField0_;
+      public static final int CRUDTYPE_FIELD_NUMBER = 1;
+      private protobuf.RblProto.RBLMessage.CrudType crudType_;
+      /**
+       * <code>required .RBLMessage.CrudType crudType = 1;</code>
+       */
+      public boolean hasCrudType() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required .RBLMessage.CrudType crudType = 1;</code>
+       */
+      public protobuf.RblProto.RBLMessage.CrudType getCrudType() {
+        return crudType_;
+      }
+
+      public static final int DATATYPE_FIELD_NUMBER = 2;
+      private protobuf.RblProto.RBLMessage.DataType dataType_;
+      /**
+       * <code>required .RBLMessage.DataType dataType = 2;</code>
+       */
+      public boolean hasDataType() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>required .RBLMessage.DataType dataType = 2;</code>
+       */
+      public protobuf.RblProto.RBLMessage.DataType getDataType() {
+        return dataType_;
+      }
+
+      public static final int ACTUATOR_FIELD_NUMBER = 3;
+      private protobuf.RblProto.RBLMessage.Actuator actuator_;
+      /**
+       * <code>optional .RBLMessage.Actuator actuator = 3;</code>
+       */
+      public boolean hasActuator() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>optional .RBLMessage.Actuator actuator = 3;</code>
+       */
+      public protobuf.RblProto.RBLMessage.Actuator getActuator() {
+        return actuator_;
+      }
+      /**
+       * <code>optional .RBLMessage.Actuator actuator = 3;</code>
+       */
+      public protobuf.RblProto.RBLMessage.ActuatorOrBuilder getActuatorOrBuilder() {
+        return actuator_;
+      }
+
+      public static final int FIELDID_FIELD_NUMBER = 4;
+      private int fieldId_;
+      /**
+       * <code>optional int32 fieldId = 4;</code>
+       */
+      public boolean hasFieldId() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>optional int32 fieldId = 4;</code>
+       */
+      public int getFieldId() {
+        return fieldId_;
+      }
+
+      public static final int RANGE_FIELD_NUMBER = 5;
+      private protobuf.RblProto.RBLMessage.Range range_;
+      /**
+       * <code>optional .RBLMessage.Range range = 5;</code>
+       */
+      public boolean hasRange() {
+        return ((bitField0_ & 0x00000010) == 0x00000010);
+      }
+      /**
+       * <code>optional .RBLMessage.Range range = 5;</code>
+       */
+      public protobuf.RblProto.RBLMessage.Range getRange() {
+        return range_;
+      }
+      /**
+       * <code>optional .RBLMessage.Range range = 5;</code>
+       */
+      public protobuf.RblProto.RBLMessage.RangeOrBuilder getRangeOrBuilder() {
+        return range_;
+      }
+
+      public static final int DATA_FIELD_NUMBER = 6;
+      private protobuf.RblProto.RBLMessage.Data data_;
+      /**
+       * <code>optional .RBLMessage.Data data = 6;</code>
+       */
+      public boolean hasData() {
+        return ((bitField0_ & 0x00000020) == 0x00000020);
+      }
+      /**
+       * <code>optional .RBLMessage.Data data = 6;</code>
+       */
+      public protobuf.RblProto.RBLMessage.Data getData() {
+        return data_;
+      }
+      /**
+       * <code>optional .RBLMessage.Data data = 6;</code>
+       */
+      public protobuf.RblProto.RBLMessage.DataOrBuilder getDataOrBuilder() {
+        return data_;
+      }
+
+      private void initFields() {
+        crudType_ = protobuf.RblProto.RBLMessage.CrudType.CREATE;
+        dataType_ = protobuf.RblProto.RBLMessage.DataType.MODULE_LIST;
+        actuator_ = protobuf.RblProto.RBLMessage.Actuator.getDefaultInstance();
+        fieldId_ = 0;
+        range_ = protobuf.RblProto.RBLMessage.Range.getDefaultInstance();
+        data_ = protobuf.RblProto.RBLMessage.Data.getDefaultInstance();
+      }
+      private byte memoizedIsInitialized = -1;
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        if (!hasCrudType()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+        if (!hasDataType()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+        if (hasActuator()) {
+          if (!getActuator().isInitialized()) {
+            memoizedIsInitialized = 0;
+            return false;
+          }
+        }
+        if (hasData()) {
+          if (!getData().isInitialized()) {
+            memoizedIsInitialized = 0;
+            return false;
+          }
+        }
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        getSerializedSize();
+        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          output.writeEnum(1, crudType_.getNumber());
+        }
+        if (((bitField0_ & 0x00000002) == 0x00000002)) {
+          output.writeEnum(2, dataType_.getNumber());
+        }
+        if (((bitField0_ & 0x00000004) == 0x00000004)) {
+          output.writeMessage(3, actuator_);
+        }
+        if (((bitField0_ & 0x00000008) == 0x00000008)) {
+          output.writeInt32(4, fieldId_);
+        }
+        if (((bitField0_ & 0x00000010) == 0x00000010)) {
+          output.writeMessage(5, range_);
+        }
+        if (((bitField0_ & 0x00000020) == 0x00000020)) {
+          output.writeMessage(6, data_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      private int memoizedSerializedSize = -1;
+      public int getSerializedSize() {
+        int size = memoizedSerializedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeEnumSize(1, crudType_.getNumber());
+        }
+        if (((bitField0_ & 0x00000002) == 0x00000002)) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeEnumSize(2, dataType_.getNumber());
+        }
+        if (((bitField0_ & 0x00000004) == 0x00000004)) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(3, actuator_);
+        }
+        if (((bitField0_ & 0x00000008) == 0x00000008)) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeInt32Size(4, fieldId_);
+        }
+        if (((bitField0_ & 0x00000010) == 0x00000010)) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(5, range_);
+        }
+        if (((bitField0_ & 0x00000020) == 0x00000020)) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(6, data_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSerializedSize = size;
+        return size;
+      }
+
+      private static final long serialVersionUID = 0L;
+      @java.lang.Override
+      protected java.lang.Object writeReplace()
+          throws java.io.ObjectStreamException {
+        return super.writeReplace();
+      }
+
+      public static protobuf.RblProto.RBLMessage.DataSet parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static protobuf.RblProto.RBLMessage.DataSet parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static protobuf.RblProto.RBLMessage.DataSet parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static protobuf.RblProto.RBLMessage.DataSet parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static protobuf.RblProto.RBLMessage.DataSet parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return PARSER.parseFrom(input);
+      }
+      public static protobuf.RblProto.RBLMessage.DataSet parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return PARSER.parseFrom(input, extensionRegistry);
+      }
+      public static protobuf.RblProto.RBLMessage.DataSet parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return PARSER.parseDelimitedFrom(input);
+      }
+      public static protobuf.RblProto.RBLMessage.DataSet parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return PARSER.parseDelimitedFrom(input, extensionRegistry);
+      }
+      public static protobuf.RblProto.RBLMessage.DataSet parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return PARSER.parseFrom(input);
+      }
+      public static protobuf.RblProto.RBLMessage.DataSet parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return PARSER.parseFrom(input, extensionRegistry);
+      }
+
+      public static Builder newBuilder() { return Builder.create(); }
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder(protobuf.RblProto.RBLMessage.DataSet prototype) {
+        return newBuilder().mergeFrom(prototype);
+      }
+      public Builder toBuilder() { return newBuilder(this); }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       * Protobuf type {@code RBLMessage.DataSet}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:RBLMessage.DataSet)
+          protobuf.RblProto.RBLMessage.DataSetOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return protobuf.RblProto.internal_static_RBLMessage_DataSet_descriptor;
+        }
+
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return protobuf.RblProto.internal_static_RBLMessage_DataSet_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  protobuf.RblProto.RBLMessage.DataSet.class, protobuf.RblProto.RBLMessage.DataSet.Builder.class);
+        }
+
+        // Construct using protobuf.RblProto.RBLMessage.DataSet.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(
+            com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+            getActuatorFieldBuilder();
+            getRangeFieldBuilder();
+            getDataFieldBuilder();
+          }
+        }
+        private static Builder create() {
+          return new Builder();
+        }
+
+        public Builder clear() {
+          super.clear();
+          crudType_ = protobuf.RblProto.RBLMessage.CrudType.CREATE;
+          bitField0_ = (bitField0_ & ~0x00000001);
+          dataType_ = protobuf.RblProto.RBLMessage.DataType.MODULE_LIST;
+          bitField0_ = (bitField0_ & ~0x00000002);
+          if (actuatorBuilder_ == null) {
+            actuator_ = protobuf.RblProto.RBLMessage.Actuator.getDefaultInstance();
+          } else {
+            actuatorBuilder_.clear();
+          }
+          bitField0_ = (bitField0_ & ~0x00000004);
+          fieldId_ = 0;
+          bitField0_ = (bitField0_ & ~0x00000008);
+          if (rangeBuilder_ == null) {
+            range_ = protobuf.RblProto.RBLMessage.Range.getDefaultInstance();
+          } else {
+            rangeBuilder_.clear();
+          }
+          bitField0_ = (bitField0_ & ~0x00000010);
+          if (dataBuilder_ == null) {
+            data_ = protobuf.RblProto.RBLMessage.Data.getDefaultInstance();
+          } else {
+            dataBuilder_.clear();
+          }
+          bitField0_ = (bitField0_ & ~0x00000020);
+          return this;
+        }
+
+        public Builder clone() {
+          return create().mergeFrom(buildPartial());
+        }
+
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return protobuf.RblProto.internal_static_RBLMessage_DataSet_descriptor;
+        }
+
+        public protobuf.RblProto.RBLMessage.DataSet getDefaultInstanceForType() {
+          return protobuf.RblProto.RBLMessage.DataSet.getDefaultInstance();
+        }
+
+        public protobuf.RblProto.RBLMessage.DataSet build() {
+          protobuf.RblProto.RBLMessage.DataSet result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        public protobuf.RblProto.RBLMessage.DataSet buildPartial() {
+          protobuf.RblProto.RBLMessage.DataSet result = new protobuf.RblProto.RBLMessage.DataSet(this);
+          int from_bitField0_ = bitField0_;
+          int to_bitField0_ = 0;
+          if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+            to_bitField0_ |= 0x00000001;
+          }
+          result.crudType_ = crudType_;
+          if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+            to_bitField0_ |= 0x00000002;
+          }
+          result.dataType_ = dataType_;
+          if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+            to_bitField0_ |= 0x00000004;
+          }
+          if (actuatorBuilder_ == null) {
+            result.actuator_ = actuator_;
+          } else {
+            result.actuator_ = actuatorBuilder_.build();
+          }
+          if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+            to_bitField0_ |= 0x00000008;
+          }
+          result.fieldId_ = fieldId_;
+          if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+            to_bitField0_ |= 0x00000010;
+          }
+          if (rangeBuilder_ == null) {
+            result.range_ = range_;
+          } else {
+            result.range_ = rangeBuilder_.build();
+          }
+          if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+            to_bitField0_ |= 0x00000020;
+          }
+          if (dataBuilder_ == null) {
+            result.data_ = data_;
+          } else {
+            result.data_ = dataBuilder_.build();
+          }
+          result.bitField0_ = to_bitField0_;
+          onBuilt();
+          return result;
+        }
+
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof protobuf.RblProto.RBLMessage.DataSet) {
+            return mergeFrom((protobuf.RblProto.RBLMessage.DataSet)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(protobuf.RblProto.RBLMessage.DataSet other) {
+          if (other == protobuf.RblProto.RBLMessage.DataSet.getDefaultInstance()) return this;
+          if (other.hasCrudType()) {
+            setCrudType(other.getCrudType());
+          }
+          if (other.hasDataType()) {
+            setDataType(other.getDataType());
+          }
+          if (other.hasActuator()) {
+            mergeActuator(other.getActuator());
+          }
+          if (other.hasFieldId()) {
+            setFieldId(other.getFieldId());
+          }
+          if (other.hasRange()) {
+            mergeRange(other.getRange());
+          }
+          if (other.hasData()) {
+            mergeData(other.getData());
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          return this;
+        }
+
+        public final boolean isInitialized() {
+          if (!hasCrudType()) {
+            
+            return false;
+          }
+          if (!hasDataType()) {
+            
+            return false;
+          }
+          if (hasActuator()) {
+            if (!getActuator().isInitialized()) {
+              
+              return false;
+            }
+          }
+          if (hasData()) {
+            if (!getData().isInitialized()) {
+              
+              return false;
+            }
+          }
+          return true;
+        }
+
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          protobuf.RblProto.RBLMessage.DataSet parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (protobuf.RblProto.RBLMessage.DataSet) e.getUnfinishedMessage();
+            throw e;
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+        private int bitField0_;
+
+        private protobuf.RblProto.RBLMessage.CrudType crudType_ = protobuf.RblProto.RBLMessage.CrudType.CREATE;
+        /**
+         * <code>required .RBLMessage.CrudType crudType = 1;</code>
+         */
+        public boolean hasCrudType() {
+          return ((bitField0_ & 0x00000001) == 0x00000001);
+        }
+        /**
+         * <code>required .RBLMessage.CrudType crudType = 1;</code>
+         */
+        public protobuf.RblProto.RBLMessage.CrudType getCrudType() {
+          return crudType_;
+        }
+        /**
+         * <code>required .RBLMessage.CrudType crudType = 1;</code>
+         */
+        public Builder setCrudType(protobuf.RblProto.RBLMessage.CrudType value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          bitField0_ |= 0x00000001;
+          crudType_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>required .RBLMessage.CrudType crudType = 1;</code>
+         */
+        public Builder clearCrudType() {
+          bitField0_ = (bitField0_ & ~0x00000001);
+          crudType_ = protobuf.RblProto.RBLMessage.CrudType.CREATE;
+          onChanged();
+          return this;
+        }
+
+        private protobuf.RblProto.RBLMessage.DataType dataType_ = protobuf.RblProto.RBLMessage.DataType.MODULE_LIST;
+        /**
+         * <code>required .RBLMessage.DataType dataType = 2;</code>
+         */
+        public boolean hasDataType() {
+          return ((bitField0_ & 0x00000002) == 0x00000002);
+        }
+        /**
+         * <code>required .RBLMessage.DataType dataType = 2;</code>
+         */
+        public protobuf.RblProto.RBLMessage.DataType getDataType() {
+          return dataType_;
+        }
+        /**
+         * <code>required .RBLMessage.DataType dataType = 2;</code>
+         */
+        public Builder setDataType(protobuf.RblProto.RBLMessage.DataType value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          bitField0_ |= 0x00000002;
+          dataType_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>required .RBLMessage.DataType dataType = 2;</code>
+         */
+        public Builder clearDataType() {
+          bitField0_ = (bitField0_ & ~0x00000002);
+          dataType_ = protobuf.RblProto.RBLMessage.DataType.MODULE_LIST;
+          onChanged();
+          return this;
+        }
+
+        private protobuf.RblProto.RBLMessage.Actuator actuator_ = protobuf.RblProto.RBLMessage.Actuator.getDefaultInstance();
+        private com.google.protobuf.SingleFieldBuilder<
+            protobuf.RblProto.RBLMessage.Actuator, protobuf.RblProto.RBLMessage.Actuator.Builder, protobuf.RblProto.RBLMessage.ActuatorOrBuilder> actuatorBuilder_;
+        /**
+         * <code>optional .RBLMessage.Actuator actuator = 3;</code>
+         */
+        public boolean hasActuator() {
+          return ((bitField0_ & 0x00000004) == 0x00000004);
+        }
+        /**
+         * <code>optional .RBLMessage.Actuator actuator = 3;</code>
+         */
+        public protobuf.RblProto.RBLMessage.Actuator getActuator() {
+          if (actuatorBuilder_ == null) {
+            return actuator_;
+          } else {
+            return actuatorBuilder_.getMessage();
+          }
+        }
+        /**
+         * <code>optional .RBLMessage.Actuator actuator = 3;</code>
+         */
+        public Builder setActuator(protobuf.RblProto.RBLMessage.Actuator value) {
+          if (actuatorBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            actuator_ = value;
+            onChanged();
+          } else {
+            actuatorBuilder_.setMessage(value);
+          }
+          bitField0_ |= 0x00000004;
+          return this;
+        }
+        /**
+         * <code>optional .RBLMessage.Actuator actuator = 3;</code>
+         */
+        public Builder setActuator(
+            protobuf.RblProto.RBLMessage.Actuator.Builder builderForValue) {
+          if (actuatorBuilder_ == null) {
+            actuator_ = builderForValue.build();
+            onChanged();
+          } else {
+            actuatorBuilder_.setMessage(builderForValue.build());
+          }
+          bitField0_ |= 0x00000004;
+          return this;
+        }
+        /**
+         * <code>optional .RBLMessage.Actuator actuator = 3;</code>
+         */
+        public Builder mergeActuator(protobuf.RblProto.RBLMessage.Actuator value) {
+          if (actuatorBuilder_ == null) {
+            if (((bitField0_ & 0x00000004) == 0x00000004) &&
+                actuator_ != protobuf.RblProto.RBLMessage.Actuator.getDefaultInstance()) {
+              actuator_ =
+                protobuf.RblProto.RBLMessage.Actuator.newBuilder(actuator_).mergeFrom(value).buildPartial();
+            } else {
+              actuator_ = value;
+            }
+            onChanged();
+          } else {
+            actuatorBuilder_.mergeFrom(value);
+          }
+          bitField0_ |= 0x00000004;
+          return this;
+        }
+        /**
+         * <code>optional .RBLMessage.Actuator actuator = 3;</code>
+         */
+        public Builder clearActuator() {
+          if (actuatorBuilder_ == null) {
+            actuator_ = protobuf.RblProto.RBLMessage.Actuator.getDefaultInstance();
+            onChanged();
+          } else {
+            actuatorBuilder_.clear();
+          }
+          bitField0_ = (bitField0_ & ~0x00000004);
+          return this;
+        }
+        /**
+         * <code>optional .RBLMessage.Actuator actuator = 3;</code>
+         */
+        public protobuf.RblProto.RBLMessage.Actuator.Builder getActuatorBuilder() {
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return getActuatorFieldBuilder().getBuilder();
+        }
+        /**
+         * <code>optional .RBLMessage.Actuator actuator = 3;</code>
+         */
+        public protobuf.RblProto.RBLMessage.ActuatorOrBuilder getActuatorOrBuilder() {
+          if (actuatorBuilder_ != null) {
+            return actuatorBuilder_.getMessageOrBuilder();
+          } else {
+            return actuator_;
+          }
+        }
+        /**
+         * <code>optional .RBLMessage.Actuator actuator = 3;</code>
+         */
+        private com.google.protobuf.SingleFieldBuilder<
+            protobuf.RblProto.RBLMessage.Actuator, protobuf.RblProto.RBLMessage.Actuator.Builder, protobuf.RblProto.RBLMessage.ActuatorOrBuilder> 
+            getActuatorFieldBuilder() {
+          if (actuatorBuilder_ == null) {
+            actuatorBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+                protobuf.RblProto.RBLMessage.Actuator, protobuf.RblProto.RBLMessage.Actuator.Builder, protobuf.RblProto.RBLMessage.ActuatorOrBuilder>(
+                    getActuator(),
+                    getParentForChildren(),
+                    isClean());
+            actuator_ = null;
+          }
+          return actuatorBuilder_;
+        }
+
+        private int fieldId_ ;
+        /**
+         * <code>optional int32 fieldId = 4;</code>
+         */
+        public boolean hasFieldId() {
+          return ((bitField0_ & 0x00000008) == 0x00000008);
+        }
+        /**
+         * <code>optional int32 fieldId = 4;</code>
+         */
+        public int getFieldId() {
+          return fieldId_;
+        }
+        /**
+         * <code>optional int32 fieldId = 4;</code>
+         */
+        public Builder setFieldId(int value) {
+          bitField0_ |= 0x00000008;
+          fieldId_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional int32 fieldId = 4;</code>
+         */
+        public Builder clearFieldId() {
+          bitField0_ = (bitField0_ & ~0x00000008);
+          fieldId_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private protobuf.RblProto.RBLMessage.Range range_ = protobuf.RblProto.RBLMessage.Range.getDefaultInstance();
+        private com.google.protobuf.SingleFieldBuilder<
+            protobuf.RblProto.RBLMessage.Range, protobuf.RblProto.RBLMessage.Range.Builder, protobuf.RblProto.RBLMessage.RangeOrBuilder> rangeBuilder_;
+        /**
+         * <code>optional .RBLMessage.Range range = 5;</code>
+         */
+        public boolean hasRange() {
+          return ((bitField0_ & 0x00000010) == 0x00000010);
+        }
+        /**
+         * <code>optional .RBLMessage.Range range = 5;</code>
+         */
+        public protobuf.RblProto.RBLMessage.Range getRange() {
+          if (rangeBuilder_ == null) {
+            return range_;
+          } else {
+            return rangeBuilder_.getMessage();
+          }
+        }
+        /**
+         * <code>optional .RBLMessage.Range range = 5;</code>
+         */
+        public Builder setRange(protobuf.RblProto.RBLMessage.Range value) {
+          if (rangeBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            range_ = value;
+            onChanged();
+          } else {
+            rangeBuilder_.setMessage(value);
+          }
+          bitField0_ |= 0x00000010;
+          return this;
+        }
+        /**
+         * <code>optional .RBLMessage.Range range = 5;</code>
+         */
+        public Builder setRange(
+            protobuf.RblProto.RBLMessage.Range.Builder builderForValue) {
+          if (rangeBuilder_ == null) {
+            range_ = builderForValue.build();
+            onChanged();
+          } else {
+            rangeBuilder_.setMessage(builderForValue.build());
+          }
+          bitField0_ |= 0x00000010;
+          return this;
+        }
+        /**
+         * <code>optional .RBLMessage.Range range = 5;</code>
+         */
+        public Builder mergeRange(protobuf.RblProto.RBLMessage.Range value) {
+          if (rangeBuilder_ == null) {
+            if (((bitField0_ & 0x00000010) == 0x00000010) &&
+                range_ != protobuf.RblProto.RBLMessage.Range.getDefaultInstance()) {
+              range_ =
+                protobuf.RblProto.RBLMessage.Range.newBuilder(range_).mergeFrom(value).buildPartial();
+            } else {
+              range_ = value;
+            }
+            onChanged();
+          } else {
+            rangeBuilder_.mergeFrom(value);
+          }
+          bitField0_ |= 0x00000010;
+          return this;
+        }
+        /**
+         * <code>optional .RBLMessage.Range range = 5;</code>
+         */
+        public Builder clearRange() {
+          if (rangeBuilder_ == null) {
+            range_ = protobuf.RblProto.RBLMessage.Range.getDefaultInstance();
+            onChanged();
+          } else {
+            rangeBuilder_.clear();
+          }
+          bitField0_ = (bitField0_ & ~0x00000010);
+          return this;
+        }
+        /**
+         * <code>optional .RBLMessage.Range range = 5;</code>
+         */
+        public protobuf.RblProto.RBLMessage.Range.Builder getRangeBuilder() {
+          bitField0_ |= 0x00000010;
+          onChanged();
+          return getRangeFieldBuilder().getBuilder();
+        }
+        /**
+         * <code>optional .RBLMessage.Range range = 5;</code>
+         */
+        public protobuf.RblProto.RBLMessage.RangeOrBuilder getRangeOrBuilder() {
+          if (rangeBuilder_ != null) {
+            return rangeBuilder_.getMessageOrBuilder();
+          } else {
+            return range_;
+          }
+        }
+        /**
+         * <code>optional .RBLMessage.Range range = 5;</code>
+         */
+        private com.google.protobuf.SingleFieldBuilder<
+            protobuf.RblProto.RBLMessage.Range, protobuf.RblProto.RBLMessage.Range.Builder, protobuf.RblProto.RBLMessage.RangeOrBuilder> 
+            getRangeFieldBuilder() {
+          if (rangeBuilder_ == null) {
+            rangeBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+                protobuf.RblProto.RBLMessage.Range, protobuf.RblProto.RBLMessage.Range.Builder, protobuf.RblProto.RBLMessage.RangeOrBuilder>(
+                    getRange(),
+                    getParentForChildren(),
+                    isClean());
+            range_ = null;
+          }
+          return rangeBuilder_;
+        }
+
+        private protobuf.RblProto.RBLMessage.Data data_ = protobuf.RblProto.RBLMessage.Data.getDefaultInstance();
+        private com.google.protobuf.SingleFieldBuilder<
+            protobuf.RblProto.RBLMessage.Data, protobuf.RblProto.RBLMessage.Data.Builder, protobuf.RblProto.RBLMessage.DataOrBuilder> dataBuilder_;
+        /**
+         * <code>optional .RBLMessage.Data data = 6;</code>
+         */
+        public boolean hasData() {
+          return ((bitField0_ & 0x00000020) == 0x00000020);
+        }
+        /**
+         * <code>optional .RBLMessage.Data data = 6;</code>
+         */
+        public protobuf.RblProto.RBLMessage.Data getData() {
+          if (dataBuilder_ == null) {
+            return data_;
+          } else {
+            return dataBuilder_.getMessage();
+          }
+        }
+        /**
+         * <code>optional .RBLMessage.Data data = 6;</code>
+         */
+        public Builder setData(protobuf.RblProto.RBLMessage.Data value) {
+          if (dataBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            data_ = value;
+            onChanged();
+          } else {
+            dataBuilder_.setMessage(value);
+          }
+          bitField0_ |= 0x00000020;
+          return this;
+        }
+        /**
+         * <code>optional .RBLMessage.Data data = 6;</code>
+         */
+        public Builder setData(
+            protobuf.RblProto.RBLMessage.Data.Builder builderForValue) {
+          if (dataBuilder_ == null) {
+            data_ = builderForValue.build();
+            onChanged();
+          } else {
+            dataBuilder_.setMessage(builderForValue.build());
+          }
+          bitField0_ |= 0x00000020;
+          return this;
+        }
+        /**
+         * <code>optional .RBLMessage.Data data = 6;</code>
+         */
+        public Builder mergeData(protobuf.RblProto.RBLMessage.Data value) {
+          if (dataBuilder_ == null) {
+            if (((bitField0_ & 0x00000020) == 0x00000020) &&
+                data_ != protobuf.RblProto.RBLMessage.Data.getDefaultInstance()) {
+              data_ =
+                protobuf.RblProto.RBLMessage.Data.newBuilder(data_).mergeFrom(value).buildPartial();
+            } else {
+              data_ = value;
+            }
+            onChanged();
+          } else {
+            dataBuilder_.mergeFrom(value);
+          }
+          bitField0_ |= 0x00000020;
+          return this;
+        }
+        /**
+         * <code>optional .RBLMessage.Data data = 6;</code>
+         */
+        public Builder clearData() {
+          if (dataBuilder_ == null) {
+            data_ = protobuf.RblProto.RBLMessage.Data.getDefaultInstance();
+            onChanged();
+          } else {
+            dataBuilder_.clear();
+          }
+          bitField0_ = (bitField0_ & ~0x00000020);
+          return this;
+        }
+        /**
+         * <code>optional .RBLMessage.Data data = 6;</code>
+         */
+        public protobuf.RblProto.RBLMessage.Data.Builder getDataBuilder() {
+          bitField0_ |= 0x00000020;
+          onChanged();
+          return getDataFieldBuilder().getBuilder();
+        }
+        /**
+         * <code>optional .RBLMessage.Data data = 6;</code>
+         */
+        public protobuf.RblProto.RBLMessage.DataOrBuilder getDataOrBuilder() {
+          if (dataBuilder_ != null) {
+            return dataBuilder_.getMessageOrBuilder();
+          } else {
+            return data_;
+          }
+        }
+        /**
+         * <code>optional .RBLMessage.Data data = 6;</code>
+         */
+        private com.google.protobuf.SingleFieldBuilder<
+            protobuf.RblProto.RBLMessage.Data, protobuf.RblProto.RBLMessage.Data.Builder, protobuf.RblProto.RBLMessage.DataOrBuilder> 
+            getDataFieldBuilder() {
+          if (dataBuilder_ == null) {
+            dataBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+                protobuf.RblProto.RBLMessage.Data, protobuf.RblProto.RBLMessage.Data.Builder, protobuf.RblProto.RBLMessage.DataOrBuilder>(
+                    getData(),
+                    getParentForChildren(),
+                    isClean());
+            data_ = null;
+          }
+          return dataBuilder_;
+        }
+
+        // @@protoc_insertion_point(builder_scope:RBLMessage.DataSet)
+      }
+
+      static {
+        defaultInstance = new DataSet(true);
+        defaultInstance.initFields();
+      }
+
+      // @@protoc_insertion_point(class_scope:RBLMessage.DataSet)
+    }
+
+    public interface DataOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:RBLMessage.Data)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       * <code>repeated .RBLMessage.Actuator actuators = 1;</code>
+       */
+      java.util.List<protobuf.RblProto.RBLMessage.Actuator> 
+          getActuatorsList();
+      /**
+       * <code>repeated .RBLMessage.Actuator actuators = 1;</code>
+       */
+      protobuf.RblProto.RBLMessage.Actuator getActuators(int index);
+      /**
+       * <code>repeated .RBLMessage.Actuator actuators = 1;</code>
+       */
+      int getActuatorsCount();
+      /**
+       * <code>repeated .RBLMessage.Actuator actuators = 1;</code>
+       */
+      java.util.List<? extends protobuf.RblProto.RBLMessage.ActuatorOrBuilder> 
+          getActuatorsOrBuilderList();
+      /**
+       * <code>repeated .RBLMessage.Actuator actuators = 1;</code>
+       */
+      protobuf.RblProto.RBLMessage.ActuatorOrBuilder getActuatorsOrBuilder(
+          int index);
+
+      /**
+       * <code>repeated string stringData = 2;</code>
        */
       com.google.protobuf.ProtocolStringList
           getStringDataList();
       /**
-       * <code>repeated string stringData = 3;</code>
+       * <code>repeated string stringData = 2;</code>
        */
       int getStringDataCount();
       /**
-       * <code>repeated string stringData = 3;</code>
+       * <code>repeated string stringData = 2;</code>
        */
       java.lang.String getStringData(int index);
       /**
-       * <code>repeated string stringData = 3;</code>
+       * <code>repeated string stringData = 2;</code>
        */
       com.google.protobuf.ByteString
           getStringDataBytes(int index);
 
       /**
-       * <code>repeated int32 int32Data = 4;</code>
+       * <code>repeated int32 int32Data = 3;</code>
        */
       java.util.List<java.lang.Integer> getInt32DataList();
       /**
-       * <code>repeated int32 int32Data = 4;</code>
+       * <code>repeated int32 int32Data = 3;</code>
        */
       int getInt32DataCount();
       /**
-       * <code>repeated int32 int32Data = 4;</code>
+       * <code>repeated int32 int32Data = 3;</code>
        */
       int getInt32Data(int index);
 
       /**
-       * <code>repeated float floatData = 5;</code>
+       * <code>repeated float floatData = 4;</code>
        */
       java.util.List<java.lang.Float> getFloatDataList();
       /**
-       * <code>repeated float floatData = 5;</code>
+       * <code>repeated float floatData = 4;</code>
        */
       int getFloatDataCount();
       /**
-       * <code>repeated float floatData = 5;</code>
+       * <code>repeated float floatData = 4;</code>
        */
       float getFloatData(int index);
     }
@@ -9455,45 +9317,37 @@ public final class RblProto {
                 }
                 break;
               }
-              case 8: {
-                bitField0_ |= 0x00000001;
-                fieldId_ = input.readInt32();
-                break;
-              }
-              case 16: {
-                int rawValue = input.readEnum();
-                protobuf.RblProto.RBLMessage.DataType value = protobuf.RblProto.RBLMessage.DataType.valueOf(rawValue);
-                if (value == null) {
-                  unknownFields.mergeVarintField(2, rawValue);
-                } else {
-                  bitField0_ |= 0x00000002;
-                  dataType_ = value;
+              case 10: {
+                if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                  actuators_ = new java.util.ArrayList<protobuf.RblProto.RBLMessage.Actuator>();
+                  mutable_bitField0_ |= 0x00000001;
                 }
+                actuators_.add(input.readMessage(protobuf.RblProto.RBLMessage.Actuator.PARSER, extensionRegistry));
                 break;
               }
-              case 26: {
+              case 18: {
                 com.google.protobuf.ByteString bs = input.readBytes();
-                if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+                if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
                   stringData_ = new com.google.protobuf.LazyStringArrayList();
-                  mutable_bitField0_ |= 0x00000004;
+                  mutable_bitField0_ |= 0x00000002;
                 }
                 stringData_.add(bs);
                 break;
               }
-              case 32: {
-                if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+              case 24: {
+                if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
                   int32Data_ = new java.util.ArrayList<java.lang.Integer>();
-                  mutable_bitField0_ |= 0x00000008;
+                  mutable_bitField0_ |= 0x00000004;
                 }
                 int32Data_.add(input.readInt32());
                 break;
               }
-              case 34: {
+              case 26: {
                 int length = input.readRawVarint32();
                 int limit = input.pushLimit(length);
-                if (!((mutable_bitField0_ & 0x00000008) == 0x00000008) && input.getBytesUntilLimit() > 0) {
+                if (!((mutable_bitField0_ & 0x00000004) == 0x00000004) && input.getBytesUntilLimit() > 0) {
                   int32Data_ = new java.util.ArrayList<java.lang.Integer>();
-                  mutable_bitField0_ |= 0x00000008;
+                  mutable_bitField0_ |= 0x00000004;
                 }
                 while (input.getBytesUntilLimit() > 0) {
                   int32Data_.add(input.readInt32());
@@ -9501,20 +9355,20 @@ public final class RblProto {
                 input.popLimit(limit);
                 break;
               }
-              case 45: {
-                if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+              case 37: {
+                if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
                   floatData_ = new java.util.ArrayList<java.lang.Float>();
-                  mutable_bitField0_ |= 0x00000010;
+                  mutable_bitField0_ |= 0x00000008;
                 }
                 floatData_.add(input.readFloat());
                 break;
               }
-              case 42: {
+              case 34: {
                 int length = input.readRawVarint32();
                 int limit = input.pushLimit(length);
-                if (!((mutable_bitField0_ & 0x00000010) == 0x00000010) && input.getBytesUntilLimit() > 0) {
+                if (!((mutable_bitField0_ & 0x00000008) == 0x00000008) && input.getBytesUntilLimit() > 0) {
                   floatData_ = new java.util.ArrayList<java.lang.Float>();
-                  mutable_bitField0_ |= 0x00000010;
+                  mutable_bitField0_ |= 0x00000008;
                 }
                 while (input.getBytesUntilLimit() > 0) {
                   floatData_.add(input.readFloat());
@@ -9530,13 +9384,16 @@ public final class RblProto {
           throw new com.google.protobuf.InvalidProtocolBufferException(
               e.getMessage()).setUnfinishedMessage(this);
         } finally {
-          if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+          if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+            actuators_ = java.util.Collections.unmodifiableList(actuators_);
+          }
+          if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
             stringData_ = stringData_.getUnmodifiableView();
           }
-          if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+          if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
             int32Data_ = java.util.Collections.unmodifiableList(int32Data_);
           }
-          if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+          if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
             floatData_ = java.util.Collections.unmodifiableList(floatData_);
           }
           this.unknownFields = unknownFields.build();
@@ -9570,113 +9427,116 @@ public final class RblProto {
         return PARSER;
       }
 
-      private int bitField0_;
-      public static final int FIELDID_FIELD_NUMBER = 1;
-      private int fieldId_;
+      public static final int ACTUATORS_FIELD_NUMBER = 1;
+      private java.util.List<protobuf.RblProto.RBLMessage.Actuator> actuators_;
       /**
-       * <code>required int32 fieldId = 1;</code>
+       * <code>repeated .RBLMessage.Actuator actuators = 1;</code>
        */
-      public boolean hasFieldId() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
+      public java.util.List<protobuf.RblProto.RBLMessage.Actuator> getActuatorsList() {
+        return actuators_;
       }
       /**
-       * <code>required int32 fieldId = 1;</code>
+       * <code>repeated .RBLMessage.Actuator actuators = 1;</code>
        */
-      public int getFieldId() {
-        return fieldId_;
+      public java.util.List<? extends protobuf.RblProto.RBLMessage.ActuatorOrBuilder> 
+          getActuatorsOrBuilderList() {
+        return actuators_;
+      }
+      /**
+       * <code>repeated .RBLMessage.Actuator actuators = 1;</code>
+       */
+      public int getActuatorsCount() {
+        return actuators_.size();
+      }
+      /**
+       * <code>repeated .RBLMessage.Actuator actuators = 1;</code>
+       */
+      public protobuf.RblProto.RBLMessage.Actuator getActuators(int index) {
+        return actuators_.get(index);
+      }
+      /**
+       * <code>repeated .RBLMessage.Actuator actuators = 1;</code>
+       */
+      public protobuf.RblProto.RBLMessage.ActuatorOrBuilder getActuatorsOrBuilder(
+          int index) {
+        return actuators_.get(index);
       }
 
-      public static final int DATATYPE_FIELD_NUMBER = 2;
-      private protobuf.RblProto.RBLMessage.DataType dataType_;
-      /**
-       * <code>required .RBLMessage.DataType dataType = 2;</code>
-       */
-      public boolean hasDataType() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
-      }
-      /**
-       * <code>required .RBLMessage.DataType dataType = 2;</code>
-       */
-      public protobuf.RblProto.RBLMessage.DataType getDataType() {
-        return dataType_;
-      }
-
-      public static final int STRINGDATA_FIELD_NUMBER = 3;
+      public static final int STRINGDATA_FIELD_NUMBER = 2;
       private com.google.protobuf.LazyStringList stringData_;
       /**
-       * <code>repeated string stringData = 3;</code>
+       * <code>repeated string stringData = 2;</code>
        */
       public com.google.protobuf.ProtocolStringList
           getStringDataList() {
         return stringData_;
       }
       /**
-       * <code>repeated string stringData = 3;</code>
+       * <code>repeated string stringData = 2;</code>
        */
       public int getStringDataCount() {
         return stringData_.size();
       }
       /**
-       * <code>repeated string stringData = 3;</code>
+       * <code>repeated string stringData = 2;</code>
        */
       public java.lang.String getStringData(int index) {
         return stringData_.get(index);
       }
       /**
-       * <code>repeated string stringData = 3;</code>
+       * <code>repeated string stringData = 2;</code>
        */
       public com.google.protobuf.ByteString
           getStringDataBytes(int index) {
         return stringData_.getByteString(index);
       }
 
-      public static final int INT32DATA_FIELD_NUMBER = 4;
+      public static final int INT32DATA_FIELD_NUMBER = 3;
       private java.util.List<java.lang.Integer> int32Data_;
       /**
-       * <code>repeated int32 int32Data = 4;</code>
+       * <code>repeated int32 int32Data = 3;</code>
        */
       public java.util.List<java.lang.Integer>
           getInt32DataList() {
         return int32Data_;
       }
       /**
-       * <code>repeated int32 int32Data = 4;</code>
+       * <code>repeated int32 int32Data = 3;</code>
        */
       public int getInt32DataCount() {
         return int32Data_.size();
       }
       /**
-       * <code>repeated int32 int32Data = 4;</code>
+       * <code>repeated int32 int32Data = 3;</code>
        */
       public int getInt32Data(int index) {
         return int32Data_.get(index);
       }
 
-      public static final int FLOATDATA_FIELD_NUMBER = 5;
+      public static final int FLOATDATA_FIELD_NUMBER = 4;
       private java.util.List<java.lang.Float> floatData_;
       /**
-       * <code>repeated float floatData = 5;</code>
+       * <code>repeated float floatData = 4;</code>
        */
       public java.util.List<java.lang.Float>
           getFloatDataList() {
         return floatData_;
       }
       /**
-       * <code>repeated float floatData = 5;</code>
+       * <code>repeated float floatData = 4;</code>
        */
       public int getFloatDataCount() {
         return floatData_.size();
       }
       /**
-       * <code>repeated float floatData = 5;</code>
+       * <code>repeated float floatData = 4;</code>
        */
       public float getFloatData(int index) {
         return floatData_.get(index);
       }
 
       private void initFields() {
-        fieldId_ = 0;
-        dataType_ = protobuf.RblProto.RBLMessage.DataType.INTEGER;
+        actuators_ = java.util.Collections.emptyList();
         stringData_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         int32Data_ = java.util.Collections.emptyList();
         floatData_ = java.util.Collections.emptyList();
@@ -9687,13 +9547,11 @@ public final class RblProto {
         if (isInitialized == 1) return true;
         if (isInitialized == 0) return false;
 
-        if (!hasFieldId()) {
-          memoizedIsInitialized = 0;
-          return false;
-        }
-        if (!hasDataType()) {
-          memoizedIsInitialized = 0;
-          return false;
+        for (int i = 0; i < getActuatorsCount(); i++) {
+          if (!getActuators(i).isInitialized()) {
+            memoizedIsInitialized = 0;
+            return false;
+          }
         }
         memoizedIsInitialized = 1;
         return true;
@@ -9702,20 +9560,17 @@ public final class RblProto {
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
         getSerializedSize();
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
-          output.writeInt32(1, fieldId_);
-        }
-        if (((bitField0_ & 0x00000002) == 0x00000002)) {
-          output.writeEnum(2, dataType_.getNumber());
+        for (int i = 0; i < actuators_.size(); i++) {
+          output.writeMessage(1, actuators_.get(i));
         }
         for (int i = 0; i < stringData_.size(); i++) {
-          output.writeBytes(3, stringData_.getByteString(i));
+          output.writeBytes(2, stringData_.getByteString(i));
         }
         for (int i = 0; i < int32Data_.size(); i++) {
-          output.writeInt32(4, int32Data_.get(i));
+          output.writeInt32(3, int32Data_.get(i));
         }
         for (int i = 0; i < floatData_.size(); i++) {
-          output.writeFloat(5, floatData_.get(i));
+          output.writeFloat(4, floatData_.get(i));
         }
         getUnknownFields().writeTo(output);
       }
@@ -9726,13 +9581,9 @@ public final class RblProto {
         if (size != -1) return size;
 
         size = 0;
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        for (int i = 0; i < actuators_.size(); i++) {
           size += com.google.protobuf.CodedOutputStream
-            .computeInt32Size(1, fieldId_);
-        }
-        if (((bitField0_ & 0x00000002) == 0x00000002)) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeEnumSize(2, dataType_.getNumber());
+            .computeMessageSize(1, actuators_.get(i));
         }
         {
           int dataSize = 0;
@@ -9867,6 +9718,7 @@ public final class RblProto {
         }
         private void maybeForceBuilderInitialization() {
           if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+            getActuatorsFieldBuilder();
           }
         }
         private static Builder create() {
@@ -9875,16 +9727,18 @@ public final class RblProto {
 
         public Builder clear() {
           super.clear();
-          fieldId_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000001);
-          dataType_ = protobuf.RblProto.RBLMessage.DataType.INTEGER;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          if (actuatorsBuilder_ == null) {
+            actuators_ = java.util.Collections.emptyList();
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            actuatorsBuilder_.clear();
+          }
           stringData_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000002);
           int32Data_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000004);
           floatData_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000008);
           return this;
         }
 
@@ -9912,31 +9766,30 @@ public final class RblProto {
         public protobuf.RblProto.RBLMessage.Data buildPartial() {
           protobuf.RblProto.RBLMessage.Data result = new protobuf.RblProto.RBLMessage.Data(this);
           int from_bitField0_ = bitField0_;
-          int to_bitField0_ = 0;
-          if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-            to_bitField0_ |= 0x00000001;
+          if (actuatorsBuilder_ == null) {
+            if (((bitField0_ & 0x00000001) == 0x00000001)) {
+              actuators_ = java.util.Collections.unmodifiableList(actuators_);
+              bitField0_ = (bitField0_ & ~0x00000001);
+            }
+            result.actuators_ = actuators_;
+          } else {
+            result.actuators_ = actuatorsBuilder_.build();
           }
-          result.fieldId_ = fieldId_;
-          if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-            to_bitField0_ |= 0x00000002;
-          }
-          result.dataType_ = dataType_;
-          if (((bitField0_ & 0x00000004) == 0x00000004)) {
+          if (((bitField0_ & 0x00000002) == 0x00000002)) {
             stringData_ = stringData_.getUnmodifiableView();
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.stringData_ = stringData_;
-          if (((bitField0_ & 0x00000008) == 0x00000008)) {
+          if (((bitField0_ & 0x00000004) == 0x00000004)) {
             int32Data_ = java.util.Collections.unmodifiableList(int32Data_);
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000004);
           }
           result.int32Data_ = int32Data_;
-          if (((bitField0_ & 0x00000010) == 0x00000010)) {
+          if (((bitField0_ & 0x00000008) == 0x00000008)) {
             floatData_ = java.util.Collections.unmodifiableList(floatData_);
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000008);
           }
           result.floatData_ = floatData_;
-          result.bitField0_ = to_bitField0_;
           onBuilt();
           return result;
         }
@@ -9952,16 +9805,36 @@ public final class RblProto {
 
         public Builder mergeFrom(protobuf.RblProto.RBLMessage.Data other) {
           if (other == protobuf.RblProto.RBLMessage.Data.getDefaultInstance()) return this;
-          if (other.hasFieldId()) {
-            setFieldId(other.getFieldId());
-          }
-          if (other.hasDataType()) {
-            setDataType(other.getDataType());
+          if (actuatorsBuilder_ == null) {
+            if (!other.actuators_.isEmpty()) {
+              if (actuators_.isEmpty()) {
+                actuators_ = other.actuators_;
+                bitField0_ = (bitField0_ & ~0x00000001);
+              } else {
+                ensureActuatorsIsMutable();
+                actuators_.addAll(other.actuators_);
+              }
+              onChanged();
+            }
+          } else {
+            if (!other.actuators_.isEmpty()) {
+              if (actuatorsBuilder_.isEmpty()) {
+                actuatorsBuilder_.dispose();
+                actuatorsBuilder_ = null;
+                actuators_ = other.actuators_;
+                bitField0_ = (bitField0_ & ~0x00000001);
+                actuatorsBuilder_ = 
+                  com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                     getActuatorsFieldBuilder() : null;
+              } else {
+                actuatorsBuilder_.addAllMessages(other.actuators_);
+              }
+            }
           }
           if (!other.stringData_.isEmpty()) {
             if (stringData_.isEmpty()) {
               stringData_ = other.stringData_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensureStringDataIsMutable();
               stringData_.addAll(other.stringData_);
@@ -9971,7 +9844,7 @@ public final class RblProto {
           if (!other.int32Data_.isEmpty()) {
             if (int32Data_.isEmpty()) {
               int32Data_ = other.int32Data_;
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000004);
             } else {
               ensureInt32DataIsMutable();
               int32Data_.addAll(other.int32Data_);
@@ -9981,7 +9854,7 @@ public final class RblProto {
           if (!other.floatData_.isEmpty()) {
             if (floatData_.isEmpty()) {
               floatData_ = other.floatData_;
-              bitField0_ = (bitField0_ & ~0x00000010);
+              bitField0_ = (bitField0_ & ~0x00000008);
             } else {
               ensureFloatDataIsMutable();
               floatData_.addAll(other.floatData_);
@@ -9993,13 +9866,11 @@ public final class RblProto {
         }
 
         public final boolean isInitialized() {
-          if (!hasFieldId()) {
-            
-            return false;
-          }
-          if (!hasDataType()) {
-            
-            return false;
+          for (int i = 0; i < getActuatorsCount(); i++) {
+            if (!getActuators(i).isInitialized()) {
+              
+              return false;
+            }
           }
           return true;
         }
@@ -10023,108 +9894,281 @@ public final class RblProto {
         }
         private int bitField0_;
 
-        private int fieldId_ ;
-        /**
-         * <code>required int32 fieldId = 1;</code>
-         */
-        public boolean hasFieldId() {
-          return ((bitField0_ & 0x00000001) == 0x00000001);
-        }
-        /**
-         * <code>required int32 fieldId = 1;</code>
-         */
-        public int getFieldId() {
-          return fieldId_;
-        }
-        /**
-         * <code>required int32 fieldId = 1;</code>
-         */
-        public Builder setFieldId(int value) {
-          bitField0_ |= 0x00000001;
-          fieldId_ = value;
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>required int32 fieldId = 1;</code>
-         */
-        public Builder clearFieldId() {
-          bitField0_ = (bitField0_ & ~0x00000001);
-          fieldId_ = 0;
-          onChanged();
-          return this;
+        private java.util.List<protobuf.RblProto.RBLMessage.Actuator> actuators_ =
+          java.util.Collections.emptyList();
+        private void ensureActuatorsIsMutable() {
+          if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+            actuators_ = new java.util.ArrayList<protobuf.RblProto.RBLMessage.Actuator>(actuators_);
+            bitField0_ |= 0x00000001;
+           }
         }
 
-        private protobuf.RblProto.RBLMessage.DataType dataType_ = protobuf.RblProto.RBLMessage.DataType.INTEGER;
+        private com.google.protobuf.RepeatedFieldBuilder<
+            protobuf.RblProto.RBLMessage.Actuator, protobuf.RblProto.RBLMessage.Actuator.Builder, protobuf.RblProto.RBLMessage.ActuatorOrBuilder> actuatorsBuilder_;
+
         /**
-         * <code>required .RBLMessage.DataType dataType = 2;</code>
+         * <code>repeated .RBLMessage.Actuator actuators = 1;</code>
          */
-        public boolean hasDataType() {
-          return ((bitField0_ & 0x00000002) == 0x00000002);
-        }
-        /**
-         * <code>required .RBLMessage.DataType dataType = 2;</code>
-         */
-        public protobuf.RblProto.RBLMessage.DataType getDataType() {
-          return dataType_;
-        }
-        /**
-         * <code>required .RBLMessage.DataType dataType = 2;</code>
-         */
-        public Builder setDataType(protobuf.RblProto.RBLMessage.DataType value) {
-          if (value == null) {
-            throw new NullPointerException();
+        public java.util.List<protobuf.RblProto.RBLMessage.Actuator> getActuatorsList() {
+          if (actuatorsBuilder_ == null) {
+            return java.util.Collections.unmodifiableList(actuators_);
+          } else {
+            return actuatorsBuilder_.getMessageList();
           }
-          bitField0_ |= 0x00000002;
-          dataType_ = value;
-          onChanged();
+        }
+        /**
+         * <code>repeated .RBLMessage.Actuator actuators = 1;</code>
+         */
+        public int getActuatorsCount() {
+          if (actuatorsBuilder_ == null) {
+            return actuators_.size();
+          } else {
+            return actuatorsBuilder_.getCount();
+          }
+        }
+        /**
+         * <code>repeated .RBLMessage.Actuator actuators = 1;</code>
+         */
+        public protobuf.RblProto.RBLMessage.Actuator getActuators(int index) {
+          if (actuatorsBuilder_ == null) {
+            return actuators_.get(index);
+          } else {
+            return actuatorsBuilder_.getMessage(index);
+          }
+        }
+        /**
+         * <code>repeated .RBLMessage.Actuator actuators = 1;</code>
+         */
+        public Builder setActuators(
+            int index, protobuf.RblProto.RBLMessage.Actuator value) {
+          if (actuatorsBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureActuatorsIsMutable();
+            actuators_.set(index, value);
+            onChanged();
+          } else {
+            actuatorsBuilder_.setMessage(index, value);
+          }
           return this;
         }
         /**
-         * <code>required .RBLMessage.DataType dataType = 2;</code>
+         * <code>repeated .RBLMessage.Actuator actuators = 1;</code>
          */
-        public Builder clearDataType() {
-          bitField0_ = (bitField0_ & ~0x00000002);
-          dataType_ = protobuf.RblProto.RBLMessage.DataType.INTEGER;
-          onChanged();
+        public Builder setActuators(
+            int index, protobuf.RblProto.RBLMessage.Actuator.Builder builderForValue) {
+          if (actuatorsBuilder_ == null) {
+            ensureActuatorsIsMutable();
+            actuators_.set(index, builderForValue.build());
+            onChanged();
+          } else {
+            actuatorsBuilder_.setMessage(index, builderForValue.build());
+          }
           return this;
+        }
+        /**
+         * <code>repeated .RBLMessage.Actuator actuators = 1;</code>
+         */
+        public Builder addActuators(protobuf.RblProto.RBLMessage.Actuator value) {
+          if (actuatorsBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureActuatorsIsMutable();
+            actuators_.add(value);
+            onChanged();
+          } else {
+            actuatorsBuilder_.addMessage(value);
+          }
+          return this;
+        }
+        /**
+         * <code>repeated .RBLMessage.Actuator actuators = 1;</code>
+         */
+        public Builder addActuators(
+            int index, protobuf.RblProto.RBLMessage.Actuator value) {
+          if (actuatorsBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureActuatorsIsMutable();
+            actuators_.add(index, value);
+            onChanged();
+          } else {
+            actuatorsBuilder_.addMessage(index, value);
+          }
+          return this;
+        }
+        /**
+         * <code>repeated .RBLMessage.Actuator actuators = 1;</code>
+         */
+        public Builder addActuators(
+            protobuf.RblProto.RBLMessage.Actuator.Builder builderForValue) {
+          if (actuatorsBuilder_ == null) {
+            ensureActuatorsIsMutable();
+            actuators_.add(builderForValue.build());
+            onChanged();
+          } else {
+            actuatorsBuilder_.addMessage(builderForValue.build());
+          }
+          return this;
+        }
+        /**
+         * <code>repeated .RBLMessage.Actuator actuators = 1;</code>
+         */
+        public Builder addActuators(
+            int index, protobuf.RblProto.RBLMessage.Actuator.Builder builderForValue) {
+          if (actuatorsBuilder_ == null) {
+            ensureActuatorsIsMutable();
+            actuators_.add(index, builderForValue.build());
+            onChanged();
+          } else {
+            actuatorsBuilder_.addMessage(index, builderForValue.build());
+          }
+          return this;
+        }
+        /**
+         * <code>repeated .RBLMessage.Actuator actuators = 1;</code>
+         */
+        public Builder addAllActuators(
+            java.lang.Iterable<? extends protobuf.RblProto.RBLMessage.Actuator> values) {
+          if (actuatorsBuilder_ == null) {
+            ensureActuatorsIsMutable();
+            com.google.protobuf.AbstractMessageLite.Builder.addAll(
+                values, actuators_);
+            onChanged();
+          } else {
+            actuatorsBuilder_.addAllMessages(values);
+          }
+          return this;
+        }
+        /**
+         * <code>repeated .RBLMessage.Actuator actuators = 1;</code>
+         */
+        public Builder clearActuators() {
+          if (actuatorsBuilder_ == null) {
+            actuators_ = java.util.Collections.emptyList();
+            bitField0_ = (bitField0_ & ~0x00000001);
+            onChanged();
+          } else {
+            actuatorsBuilder_.clear();
+          }
+          return this;
+        }
+        /**
+         * <code>repeated .RBLMessage.Actuator actuators = 1;</code>
+         */
+        public Builder removeActuators(int index) {
+          if (actuatorsBuilder_ == null) {
+            ensureActuatorsIsMutable();
+            actuators_.remove(index);
+            onChanged();
+          } else {
+            actuatorsBuilder_.remove(index);
+          }
+          return this;
+        }
+        /**
+         * <code>repeated .RBLMessage.Actuator actuators = 1;</code>
+         */
+        public protobuf.RblProto.RBLMessage.Actuator.Builder getActuatorsBuilder(
+            int index) {
+          return getActuatorsFieldBuilder().getBuilder(index);
+        }
+        /**
+         * <code>repeated .RBLMessage.Actuator actuators = 1;</code>
+         */
+        public protobuf.RblProto.RBLMessage.ActuatorOrBuilder getActuatorsOrBuilder(
+            int index) {
+          if (actuatorsBuilder_ == null) {
+            return actuators_.get(index);  } else {
+            return actuatorsBuilder_.getMessageOrBuilder(index);
+          }
+        }
+        /**
+         * <code>repeated .RBLMessage.Actuator actuators = 1;</code>
+         */
+        public java.util.List<? extends protobuf.RblProto.RBLMessage.ActuatorOrBuilder> 
+             getActuatorsOrBuilderList() {
+          if (actuatorsBuilder_ != null) {
+            return actuatorsBuilder_.getMessageOrBuilderList();
+          } else {
+            return java.util.Collections.unmodifiableList(actuators_);
+          }
+        }
+        /**
+         * <code>repeated .RBLMessage.Actuator actuators = 1;</code>
+         */
+        public protobuf.RblProto.RBLMessage.Actuator.Builder addActuatorsBuilder() {
+          return getActuatorsFieldBuilder().addBuilder(
+              protobuf.RblProto.RBLMessage.Actuator.getDefaultInstance());
+        }
+        /**
+         * <code>repeated .RBLMessage.Actuator actuators = 1;</code>
+         */
+        public protobuf.RblProto.RBLMessage.Actuator.Builder addActuatorsBuilder(
+            int index) {
+          return getActuatorsFieldBuilder().addBuilder(
+              index, protobuf.RblProto.RBLMessage.Actuator.getDefaultInstance());
+        }
+        /**
+         * <code>repeated .RBLMessage.Actuator actuators = 1;</code>
+         */
+        public java.util.List<protobuf.RblProto.RBLMessage.Actuator.Builder> 
+             getActuatorsBuilderList() {
+          return getActuatorsFieldBuilder().getBuilderList();
+        }
+        private com.google.protobuf.RepeatedFieldBuilder<
+            protobuf.RblProto.RBLMessage.Actuator, protobuf.RblProto.RBLMessage.Actuator.Builder, protobuf.RblProto.RBLMessage.ActuatorOrBuilder> 
+            getActuatorsFieldBuilder() {
+          if (actuatorsBuilder_ == null) {
+            actuatorsBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+                protobuf.RblProto.RBLMessage.Actuator, protobuf.RblProto.RBLMessage.Actuator.Builder, protobuf.RblProto.RBLMessage.ActuatorOrBuilder>(
+                    actuators_,
+                    ((bitField0_ & 0x00000001) == 0x00000001),
+                    getParentForChildren(),
+                    isClean());
+            actuators_ = null;
+          }
+          return actuatorsBuilder_;
         }
 
         private com.google.protobuf.LazyStringList stringData_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         private void ensureStringDataIsMutable() {
-          if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+          if (!((bitField0_ & 0x00000002) == 0x00000002)) {
             stringData_ = new com.google.protobuf.LazyStringArrayList(stringData_);
-            bitField0_ |= 0x00000004;
+            bitField0_ |= 0x00000002;
            }
         }
         /**
-         * <code>repeated string stringData = 3;</code>
+         * <code>repeated string stringData = 2;</code>
          */
         public com.google.protobuf.ProtocolStringList
             getStringDataList() {
           return stringData_.getUnmodifiableView();
         }
         /**
-         * <code>repeated string stringData = 3;</code>
+         * <code>repeated string stringData = 2;</code>
          */
         public int getStringDataCount() {
           return stringData_.size();
         }
         /**
-         * <code>repeated string stringData = 3;</code>
+         * <code>repeated string stringData = 2;</code>
          */
         public java.lang.String getStringData(int index) {
           return stringData_.get(index);
         }
         /**
-         * <code>repeated string stringData = 3;</code>
+         * <code>repeated string stringData = 2;</code>
          */
         public com.google.protobuf.ByteString
             getStringDataBytes(int index) {
           return stringData_.getByteString(index);
         }
         /**
-         * <code>repeated string stringData = 3;</code>
+         * <code>repeated string stringData = 2;</code>
          */
         public Builder setStringData(
             int index, java.lang.String value) {
@@ -10137,7 +10181,7 @@ public final class RblProto {
           return this;
         }
         /**
-         * <code>repeated string stringData = 3;</code>
+         * <code>repeated string stringData = 2;</code>
          */
         public Builder addStringData(
             java.lang.String value) {
@@ -10150,7 +10194,7 @@ public final class RblProto {
           return this;
         }
         /**
-         * <code>repeated string stringData = 3;</code>
+         * <code>repeated string stringData = 2;</code>
          */
         public Builder addAllStringData(
             java.lang.Iterable<java.lang.String> values) {
@@ -10161,16 +10205,16 @@ public final class RblProto {
           return this;
         }
         /**
-         * <code>repeated string stringData = 3;</code>
+         * <code>repeated string stringData = 2;</code>
          */
         public Builder clearStringData() {
           stringData_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
           return this;
         }
         /**
-         * <code>repeated string stringData = 3;</code>
+         * <code>repeated string stringData = 2;</code>
          */
         public Builder addStringDataBytes(
             com.google.protobuf.ByteString value) {
@@ -10185,32 +10229,32 @@ public final class RblProto {
 
         private java.util.List<java.lang.Integer> int32Data_ = java.util.Collections.emptyList();
         private void ensureInt32DataIsMutable() {
-          if (!((bitField0_ & 0x00000008) == 0x00000008)) {
+          if (!((bitField0_ & 0x00000004) == 0x00000004)) {
             int32Data_ = new java.util.ArrayList<java.lang.Integer>(int32Data_);
-            bitField0_ |= 0x00000008;
+            bitField0_ |= 0x00000004;
            }
         }
         /**
-         * <code>repeated int32 int32Data = 4;</code>
+         * <code>repeated int32 int32Data = 3;</code>
          */
         public java.util.List<java.lang.Integer>
             getInt32DataList() {
           return java.util.Collections.unmodifiableList(int32Data_);
         }
         /**
-         * <code>repeated int32 int32Data = 4;</code>
+         * <code>repeated int32 int32Data = 3;</code>
          */
         public int getInt32DataCount() {
           return int32Data_.size();
         }
         /**
-         * <code>repeated int32 int32Data = 4;</code>
+         * <code>repeated int32 int32Data = 3;</code>
          */
         public int getInt32Data(int index) {
           return int32Data_.get(index);
         }
         /**
-         * <code>repeated int32 int32Data = 4;</code>
+         * <code>repeated int32 int32Data = 3;</code>
          */
         public Builder setInt32Data(
             int index, int value) {
@@ -10220,7 +10264,7 @@ public final class RblProto {
           return this;
         }
         /**
-         * <code>repeated int32 int32Data = 4;</code>
+         * <code>repeated int32 int32Data = 3;</code>
          */
         public Builder addInt32Data(int value) {
           ensureInt32DataIsMutable();
@@ -10229,7 +10273,7 @@ public final class RblProto {
           return this;
         }
         /**
-         * <code>repeated int32 int32Data = 4;</code>
+         * <code>repeated int32 int32Data = 3;</code>
          */
         public Builder addAllInt32Data(
             java.lang.Iterable<? extends java.lang.Integer> values) {
@@ -10240,43 +10284,43 @@ public final class RblProto {
           return this;
         }
         /**
-         * <code>repeated int32 int32Data = 4;</code>
+         * <code>repeated int32 int32Data = 3;</code>
          */
         public Builder clearInt32Data() {
           int32Data_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000004);
           onChanged();
           return this;
         }
 
         private java.util.List<java.lang.Float> floatData_ = java.util.Collections.emptyList();
         private void ensureFloatDataIsMutable() {
-          if (!((bitField0_ & 0x00000010) == 0x00000010)) {
+          if (!((bitField0_ & 0x00000008) == 0x00000008)) {
             floatData_ = new java.util.ArrayList<java.lang.Float>(floatData_);
-            bitField0_ |= 0x00000010;
+            bitField0_ |= 0x00000008;
            }
         }
         /**
-         * <code>repeated float floatData = 5;</code>
+         * <code>repeated float floatData = 4;</code>
          */
         public java.util.List<java.lang.Float>
             getFloatDataList() {
           return java.util.Collections.unmodifiableList(floatData_);
         }
         /**
-         * <code>repeated float floatData = 5;</code>
+         * <code>repeated float floatData = 4;</code>
          */
         public int getFloatDataCount() {
           return floatData_.size();
         }
         /**
-         * <code>repeated float floatData = 5;</code>
+         * <code>repeated float floatData = 4;</code>
          */
         public float getFloatData(int index) {
           return floatData_.get(index);
         }
         /**
-         * <code>repeated float floatData = 5;</code>
+         * <code>repeated float floatData = 4;</code>
          */
         public Builder setFloatData(
             int index, float value) {
@@ -10286,7 +10330,7 @@ public final class RblProto {
           return this;
         }
         /**
-         * <code>repeated float floatData = 5;</code>
+         * <code>repeated float floatData = 4;</code>
          */
         public Builder addFloatData(float value) {
           ensureFloatDataIsMutable();
@@ -10295,7 +10339,7 @@ public final class RblProto {
           return this;
         }
         /**
-         * <code>repeated float floatData = 5;</code>
+         * <code>repeated float floatData = 4;</code>
          */
         public Builder addAllFloatData(
             java.lang.Iterable<? extends java.lang.Float> values) {
@@ -10306,11 +10350,11 @@ public final class RblProto {
           return this;
         }
         /**
-         * <code>repeated float floatData = 5;</code>
+         * <code>repeated float floatData = 4;</code>
          */
         public Builder clearFloatData() {
           floatData_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000008);
           onChanged();
           return this;
         }
@@ -10513,79 +10557,37 @@ public final class RblProto {
       return logic_;
     }
 
-    public static final int GETDATA_FIELD_NUMBER = 51;
-    private protobuf.RblProto.RBLMessage.GetData getData_;
+    public static final int DATASET_FIELD_NUMBER = 51;
+    private protobuf.RblProto.RBLMessage.DataSet dataSet_;
     /**
-     * <code>optional .RBLMessage.GetData getData = 51;</code>
+     * <code>optional .RBLMessage.DataSet dataSet = 51;</code>
      *
      * <pre>
      * Range 51 - 70 : Data operation messages
      * </pre>
      */
-    public boolean hasGetData() {
+    public boolean hasDataSet() {
       return ((bitField0_ & 0x00000080) == 0x00000080);
     }
     /**
-     * <code>optional .RBLMessage.GetData getData = 51;</code>
+     * <code>optional .RBLMessage.DataSet dataSet = 51;</code>
      *
      * <pre>
      * Range 51 - 70 : Data operation messages
      * </pre>
      */
-    public protobuf.RblProto.RBLMessage.GetData getGetData() {
-      return getData_;
+    public protobuf.RblProto.RBLMessage.DataSet getDataSet() {
+      return dataSet_;
     }
     /**
-     * <code>optional .RBLMessage.GetData getData = 51;</code>
+     * <code>optional .RBLMessage.DataSet dataSet = 51;</code>
      *
      * <pre>
      * Range 51 - 70 : Data operation messages
      * </pre>
      */
-    public protobuf.RblProto.RBLMessage.GetDataOrBuilder getGetDataOrBuilder() {
-      return getData_;
-    }
-
-    public static final int SETDATA_FIELD_NUMBER = 52;
-    private protobuf.RblProto.RBLMessage.SetData setData_;
-    /**
-     * <code>optional .RBLMessage.SetData setData = 52;</code>
-     */
-    public boolean hasSetData() {
-      return ((bitField0_ & 0x00000100) == 0x00000100);
-    }
-    /**
-     * <code>optional .RBLMessage.SetData setData = 52;</code>
-     */
-    public protobuf.RblProto.RBLMessage.SetData getSetData() {
-      return setData_;
-    }
-    /**
-     * <code>optional .RBLMessage.SetData setData = 52;</code>
-     */
-    public protobuf.RblProto.RBLMessage.SetDataOrBuilder getSetDataOrBuilder() {
-      return setData_;
-    }
-
-    public static final int DATA_FIELD_NUMBER = 53;
-    private protobuf.RblProto.RBLMessage.Data data_;
-    /**
-     * <code>optional .RBLMessage.Data data = 53;</code>
-     */
-    public boolean hasData() {
-      return ((bitField0_ & 0x00000200) == 0x00000200);
-    }
-    /**
-     * <code>optional .RBLMessage.Data data = 53;</code>
-     */
-    public protobuf.RblProto.RBLMessage.Data getData() {
-      return data_;
-    }
-    /**
-     * <code>optional .RBLMessage.Data data = 53;</code>
-     */
-    public protobuf.RblProto.RBLMessage.DataOrBuilder getDataOrBuilder() {
-      return data_;
+    public protobuf.RblProto.RBLMessage.DataSetOrBuilder getDataSetOrBuilder() {
+      return dataSet_;
     }
 
     private void initFields() {
@@ -10596,9 +10598,7 @@ public final class RblProto {
       plainText_ = protobuf.RblProto.RBLMessage.PlainText.getDefaultInstance();
       runInstruction_ = protobuf.RblProto.RBLMessage.RunInstruction.getDefaultInstance();
       logic_ = protobuf.RblProto.RBLMessage.Logic.getDefaultInstance();
-      getData_ = protobuf.RblProto.RBLMessage.GetData.getDefaultInstance();
-      setData_ = protobuf.RblProto.RBLMessage.SetData.getDefaultInstance();
-      data_ = protobuf.RblProto.RBLMessage.Data.getDefaultInstance();
+      dataSet_ = protobuf.RblProto.RBLMessage.DataSet.getDefaultInstance();
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -10636,20 +10636,8 @@ public final class RblProto {
           return false;
         }
       }
-      if (hasGetData()) {
-        if (!getGetData().isInitialized()) {
-          memoizedIsInitialized = 0;
-          return false;
-        }
-      }
-      if (hasSetData()) {
-        if (!getSetData().isInitialized()) {
-          memoizedIsInitialized = 0;
-          return false;
-        }
-      }
-      if (hasData()) {
-        if (!getData().isInitialized()) {
+      if (hasDataSet()) {
+        if (!getDataSet().isInitialized()) {
           memoizedIsInitialized = 0;
           return false;
         }
@@ -10683,13 +10671,7 @@ public final class RblProto {
         output.writeMessage(32, logic_);
       }
       if (((bitField0_ & 0x00000080) == 0x00000080)) {
-        output.writeMessage(51, getData_);
-      }
-      if (((bitField0_ & 0x00000100) == 0x00000100)) {
-        output.writeMessage(52, setData_);
-      }
-      if (((bitField0_ & 0x00000200) == 0x00000200)) {
-        output.writeMessage(53, data_);
+        output.writeMessage(51, dataSet_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -10730,15 +10712,7 @@ public final class RblProto {
       }
       if (((bitField0_ & 0x00000080) == 0x00000080)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(51, getData_);
-      }
-      if (((bitField0_ & 0x00000100) == 0x00000100)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(52, setData_);
-      }
-      if (((bitField0_ & 0x00000200) == 0x00000200)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(53, data_);
+          .computeMessageSize(51, dataSet_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -10858,9 +10832,7 @@ public final class RblProto {
           getPlainTextFieldBuilder();
           getRunInstructionFieldBuilder();
           getLogicFieldBuilder();
-          getGetDataFieldBuilder();
-          getSetDataFieldBuilder();
-          getDataFieldBuilder();
+          getDataSetFieldBuilder();
         }
       }
       private static Builder create() {
@@ -10895,24 +10867,12 @@ public final class RblProto {
           logicBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000040);
-        if (getDataBuilder_ == null) {
-          getData_ = protobuf.RblProto.RBLMessage.GetData.getDefaultInstance();
+        if (dataSetBuilder_ == null) {
+          dataSet_ = protobuf.RblProto.RBLMessage.DataSet.getDefaultInstance();
         } else {
-          getDataBuilder_.clear();
+          dataSetBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000080);
-        if (setDataBuilder_ == null) {
-          setData_ = protobuf.RblProto.RBLMessage.SetData.getDefaultInstance();
-        } else {
-          setDataBuilder_.clear();
-        }
-        bitField0_ = (bitField0_ & ~0x00000100);
-        if (dataBuilder_ == null) {
-          data_ = protobuf.RblProto.RBLMessage.Data.getDefaultInstance();
-        } else {
-          dataBuilder_.clear();
-        }
-        bitField0_ = (bitField0_ & ~0x00000200);
         return this;
       }
 
@@ -10984,26 +10944,10 @@ public final class RblProto {
         if (((from_bitField0_ & 0x00000080) == 0x00000080)) {
           to_bitField0_ |= 0x00000080;
         }
-        if (getDataBuilder_ == null) {
-          result.getData_ = getData_;
+        if (dataSetBuilder_ == null) {
+          result.dataSet_ = dataSet_;
         } else {
-          result.getData_ = getDataBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000100) == 0x00000100)) {
-          to_bitField0_ |= 0x00000100;
-        }
-        if (setDataBuilder_ == null) {
-          result.setData_ = setData_;
-        } else {
-          result.setData_ = setDataBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000200) == 0x00000200)) {
-          to_bitField0_ |= 0x00000200;
-        }
-        if (dataBuilder_ == null) {
-          result.data_ = data_;
-        } else {
-          result.data_ = dataBuilder_.build();
+          result.dataSet_ = dataSetBuilder_.build();
         }
         result.bitField0_ = to_bitField0_;
         onBuilt();
@@ -11044,14 +10988,8 @@ public final class RblProto {
         if (other.hasLogic()) {
           mergeLogic(other.getLogic());
         }
-        if (other.hasGetData()) {
-          mergeGetData(other.getGetData());
-        }
-        if (other.hasSetData()) {
-          mergeSetData(other.getSetData());
-        }
-        if (other.hasData()) {
-          mergeData(other.getData());
+        if (other.hasDataSet()) {
+          mergeDataSet(other.getDataSet());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
@@ -11088,20 +11026,8 @@ public final class RblProto {
             return false;
           }
         }
-        if (hasGetData()) {
-          if (!getGetData().isInitialized()) {
-            
-            return false;
-          }
-        }
-        if (hasSetData()) {
-          if (!getSetData().isInitialized()) {
-            
-            return false;
-          }
-        }
-        if (hasData()) {
-          if (!getData().isInitialized()) {
+        if (hasDataSet()) {
+          if (!getDataSet().isInitialized()) {
             
             return false;
           }
@@ -11750,388 +11676,156 @@ public final class RblProto {
         return logicBuilder_;
       }
 
-      private protobuf.RblProto.RBLMessage.GetData getData_ = protobuf.RblProto.RBLMessage.GetData.getDefaultInstance();
+      private protobuf.RblProto.RBLMessage.DataSet dataSet_ = protobuf.RblProto.RBLMessage.DataSet.getDefaultInstance();
       private com.google.protobuf.SingleFieldBuilder<
-          protobuf.RblProto.RBLMessage.GetData, protobuf.RblProto.RBLMessage.GetData.Builder, protobuf.RblProto.RBLMessage.GetDataOrBuilder> getDataBuilder_;
+          protobuf.RblProto.RBLMessage.DataSet, protobuf.RblProto.RBLMessage.DataSet.Builder, protobuf.RblProto.RBLMessage.DataSetOrBuilder> dataSetBuilder_;
       /**
-       * <code>optional .RBLMessage.GetData getData = 51;</code>
+       * <code>optional .RBLMessage.DataSet dataSet = 51;</code>
        *
        * <pre>
        * Range 51 - 70 : Data operation messages
        * </pre>
        */
-      public boolean hasGetData() {
+      public boolean hasDataSet() {
         return ((bitField0_ & 0x00000080) == 0x00000080);
       }
       /**
-       * <code>optional .RBLMessage.GetData getData = 51;</code>
+       * <code>optional .RBLMessage.DataSet dataSet = 51;</code>
        *
        * <pre>
        * Range 51 - 70 : Data operation messages
        * </pre>
        */
-      public protobuf.RblProto.RBLMessage.GetData getGetData() {
-        if (getDataBuilder_ == null) {
-          return getData_;
+      public protobuf.RblProto.RBLMessage.DataSet getDataSet() {
+        if (dataSetBuilder_ == null) {
+          return dataSet_;
         } else {
-          return getDataBuilder_.getMessage();
+          return dataSetBuilder_.getMessage();
         }
       }
       /**
-       * <code>optional .RBLMessage.GetData getData = 51;</code>
+       * <code>optional .RBLMessage.DataSet dataSet = 51;</code>
        *
        * <pre>
        * Range 51 - 70 : Data operation messages
        * </pre>
        */
-      public Builder setGetData(protobuf.RblProto.RBLMessage.GetData value) {
-        if (getDataBuilder_ == null) {
+      public Builder setDataSet(protobuf.RblProto.RBLMessage.DataSet value) {
+        if (dataSetBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          getData_ = value;
+          dataSet_ = value;
           onChanged();
         } else {
-          getDataBuilder_.setMessage(value);
+          dataSetBuilder_.setMessage(value);
         }
         bitField0_ |= 0x00000080;
         return this;
       }
       /**
-       * <code>optional .RBLMessage.GetData getData = 51;</code>
+       * <code>optional .RBLMessage.DataSet dataSet = 51;</code>
        *
        * <pre>
        * Range 51 - 70 : Data operation messages
        * </pre>
        */
-      public Builder setGetData(
-          protobuf.RblProto.RBLMessage.GetData.Builder builderForValue) {
-        if (getDataBuilder_ == null) {
-          getData_ = builderForValue.build();
+      public Builder setDataSet(
+          protobuf.RblProto.RBLMessage.DataSet.Builder builderForValue) {
+        if (dataSetBuilder_ == null) {
+          dataSet_ = builderForValue.build();
           onChanged();
         } else {
-          getDataBuilder_.setMessage(builderForValue.build());
+          dataSetBuilder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000080;
         return this;
       }
       /**
-       * <code>optional .RBLMessage.GetData getData = 51;</code>
+       * <code>optional .RBLMessage.DataSet dataSet = 51;</code>
        *
        * <pre>
        * Range 51 - 70 : Data operation messages
        * </pre>
        */
-      public Builder mergeGetData(protobuf.RblProto.RBLMessage.GetData value) {
-        if (getDataBuilder_ == null) {
+      public Builder mergeDataSet(protobuf.RblProto.RBLMessage.DataSet value) {
+        if (dataSetBuilder_ == null) {
           if (((bitField0_ & 0x00000080) == 0x00000080) &&
-              getData_ != protobuf.RblProto.RBLMessage.GetData.getDefaultInstance()) {
-            getData_ =
-              protobuf.RblProto.RBLMessage.GetData.newBuilder(getData_).mergeFrom(value).buildPartial();
+              dataSet_ != protobuf.RblProto.RBLMessage.DataSet.getDefaultInstance()) {
+            dataSet_ =
+              protobuf.RblProto.RBLMessage.DataSet.newBuilder(dataSet_).mergeFrom(value).buildPartial();
           } else {
-            getData_ = value;
+            dataSet_ = value;
           }
           onChanged();
         } else {
-          getDataBuilder_.mergeFrom(value);
+          dataSetBuilder_.mergeFrom(value);
         }
         bitField0_ |= 0x00000080;
         return this;
       }
       /**
-       * <code>optional .RBLMessage.GetData getData = 51;</code>
+       * <code>optional .RBLMessage.DataSet dataSet = 51;</code>
        *
        * <pre>
        * Range 51 - 70 : Data operation messages
        * </pre>
        */
-      public Builder clearGetData() {
-        if (getDataBuilder_ == null) {
-          getData_ = protobuf.RblProto.RBLMessage.GetData.getDefaultInstance();
+      public Builder clearDataSet() {
+        if (dataSetBuilder_ == null) {
+          dataSet_ = protobuf.RblProto.RBLMessage.DataSet.getDefaultInstance();
           onChanged();
         } else {
-          getDataBuilder_.clear();
+          dataSetBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000080);
         return this;
       }
       /**
-       * <code>optional .RBLMessage.GetData getData = 51;</code>
+       * <code>optional .RBLMessage.DataSet dataSet = 51;</code>
        *
        * <pre>
        * Range 51 - 70 : Data operation messages
        * </pre>
        */
-      public protobuf.RblProto.RBLMessage.GetData.Builder getGetDataBuilder() {
+      public protobuf.RblProto.RBLMessage.DataSet.Builder getDataSetBuilder() {
         bitField0_ |= 0x00000080;
         onChanged();
-        return getGetDataFieldBuilder().getBuilder();
+        return getDataSetFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .RBLMessage.GetData getData = 51;</code>
+       * <code>optional .RBLMessage.DataSet dataSet = 51;</code>
        *
        * <pre>
        * Range 51 - 70 : Data operation messages
        * </pre>
        */
-      public protobuf.RblProto.RBLMessage.GetDataOrBuilder getGetDataOrBuilder() {
-        if (getDataBuilder_ != null) {
-          return getDataBuilder_.getMessageOrBuilder();
+      public protobuf.RblProto.RBLMessage.DataSetOrBuilder getDataSetOrBuilder() {
+        if (dataSetBuilder_ != null) {
+          return dataSetBuilder_.getMessageOrBuilder();
         } else {
-          return getData_;
+          return dataSet_;
         }
       }
       /**
-       * <code>optional .RBLMessage.GetData getData = 51;</code>
+       * <code>optional .RBLMessage.DataSet dataSet = 51;</code>
        *
        * <pre>
        * Range 51 - 70 : Data operation messages
        * </pre>
        */
       private com.google.protobuf.SingleFieldBuilder<
-          protobuf.RblProto.RBLMessage.GetData, protobuf.RblProto.RBLMessage.GetData.Builder, protobuf.RblProto.RBLMessage.GetDataOrBuilder> 
-          getGetDataFieldBuilder() {
-        if (getDataBuilder_ == null) {
-          getDataBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              protobuf.RblProto.RBLMessage.GetData, protobuf.RblProto.RBLMessage.GetData.Builder, protobuf.RblProto.RBLMessage.GetDataOrBuilder>(
-                  getGetData(),
+          protobuf.RblProto.RBLMessage.DataSet, protobuf.RblProto.RBLMessage.DataSet.Builder, protobuf.RblProto.RBLMessage.DataSetOrBuilder> 
+          getDataSetFieldBuilder() {
+        if (dataSetBuilder_ == null) {
+          dataSetBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              protobuf.RblProto.RBLMessage.DataSet, protobuf.RblProto.RBLMessage.DataSet.Builder, protobuf.RblProto.RBLMessage.DataSetOrBuilder>(
+                  getDataSet(),
                   getParentForChildren(),
                   isClean());
-          getData_ = null;
+          dataSet_ = null;
         }
-        return getDataBuilder_;
-      }
-
-      private protobuf.RblProto.RBLMessage.SetData setData_ = protobuf.RblProto.RBLMessage.SetData.getDefaultInstance();
-      private com.google.protobuf.SingleFieldBuilder<
-          protobuf.RblProto.RBLMessage.SetData, protobuf.RblProto.RBLMessage.SetData.Builder, protobuf.RblProto.RBLMessage.SetDataOrBuilder> setDataBuilder_;
-      /**
-       * <code>optional .RBLMessage.SetData setData = 52;</code>
-       */
-      public boolean hasSetData() {
-        return ((bitField0_ & 0x00000100) == 0x00000100);
-      }
-      /**
-       * <code>optional .RBLMessage.SetData setData = 52;</code>
-       */
-      public protobuf.RblProto.RBLMessage.SetData getSetData() {
-        if (setDataBuilder_ == null) {
-          return setData_;
-        } else {
-          return setDataBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>optional .RBLMessage.SetData setData = 52;</code>
-       */
-      public Builder setSetData(protobuf.RblProto.RBLMessage.SetData value) {
-        if (setDataBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          setData_ = value;
-          onChanged();
-        } else {
-          setDataBuilder_.setMessage(value);
-        }
-        bitField0_ |= 0x00000100;
-        return this;
-      }
-      /**
-       * <code>optional .RBLMessage.SetData setData = 52;</code>
-       */
-      public Builder setSetData(
-          protobuf.RblProto.RBLMessage.SetData.Builder builderForValue) {
-        if (setDataBuilder_ == null) {
-          setData_ = builderForValue.build();
-          onChanged();
-        } else {
-          setDataBuilder_.setMessage(builderForValue.build());
-        }
-        bitField0_ |= 0x00000100;
-        return this;
-      }
-      /**
-       * <code>optional .RBLMessage.SetData setData = 52;</code>
-       */
-      public Builder mergeSetData(protobuf.RblProto.RBLMessage.SetData value) {
-        if (setDataBuilder_ == null) {
-          if (((bitField0_ & 0x00000100) == 0x00000100) &&
-              setData_ != protobuf.RblProto.RBLMessage.SetData.getDefaultInstance()) {
-            setData_ =
-              protobuf.RblProto.RBLMessage.SetData.newBuilder(setData_).mergeFrom(value).buildPartial();
-          } else {
-            setData_ = value;
-          }
-          onChanged();
-        } else {
-          setDataBuilder_.mergeFrom(value);
-        }
-        bitField0_ |= 0x00000100;
-        return this;
-      }
-      /**
-       * <code>optional .RBLMessage.SetData setData = 52;</code>
-       */
-      public Builder clearSetData() {
-        if (setDataBuilder_ == null) {
-          setData_ = protobuf.RblProto.RBLMessage.SetData.getDefaultInstance();
-          onChanged();
-        } else {
-          setDataBuilder_.clear();
-        }
-        bitField0_ = (bitField0_ & ~0x00000100);
-        return this;
-      }
-      /**
-       * <code>optional .RBLMessage.SetData setData = 52;</code>
-       */
-      public protobuf.RblProto.RBLMessage.SetData.Builder getSetDataBuilder() {
-        bitField0_ |= 0x00000100;
-        onChanged();
-        return getSetDataFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>optional .RBLMessage.SetData setData = 52;</code>
-       */
-      public protobuf.RblProto.RBLMessage.SetDataOrBuilder getSetDataOrBuilder() {
-        if (setDataBuilder_ != null) {
-          return setDataBuilder_.getMessageOrBuilder();
-        } else {
-          return setData_;
-        }
-      }
-      /**
-       * <code>optional .RBLMessage.SetData setData = 52;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilder<
-          protobuf.RblProto.RBLMessage.SetData, protobuf.RblProto.RBLMessage.SetData.Builder, protobuf.RblProto.RBLMessage.SetDataOrBuilder> 
-          getSetDataFieldBuilder() {
-        if (setDataBuilder_ == null) {
-          setDataBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              protobuf.RblProto.RBLMessage.SetData, protobuf.RblProto.RBLMessage.SetData.Builder, protobuf.RblProto.RBLMessage.SetDataOrBuilder>(
-                  getSetData(),
-                  getParentForChildren(),
-                  isClean());
-          setData_ = null;
-        }
-        return setDataBuilder_;
-      }
-
-      private protobuf.RblProto.RBLMessage.Data data_ = protobuf.RblProto.RBLMessage.Data.getDefaultInstance();
-      private com.google.protobuf.SingleFieldBuilder<
-          protobuf.RblProto.RBLMessage.Data, protobuf.RblProto.RBLMessage.Data.Builder, protobuf.RblProto.RBLMessage.DataOrBuilder> dataBuilder_;
-      /**
-       * <code>optional .RBLMessage.Data data = 53;</code>
-       */
-      public boolean hasData() {
-        return ((bitField0_ & 0x00000200) == 0x00000200);
-      }
-      /**
-       * <code>optional .RBLMessage.Data data = 53;</code>
-       */
-      public protobuf.RblProto.RBLMessage.Data getData() {
-        if (dataBuilder_ == null) {
-          return data_;
-        } else {
-          return dataBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>optional .RBLMessage.Data data = 53;</code>
-       */
-      public Builder setData(protobuf.RblProto.RBLMessage.Data value) {
-        if (dataBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          data_ = value;
-          onChanged();
-        } else {
-          dataBuilder_.setMessage(value);
-        }
-        bitField0_ |= 0x00000200;
-        return this;
-      }
-      /**
-       * <code>optional .RBLMessage.Data data = 53;</code>
-       */
-      public Builder setData(
-          protobuf.RblProto.RBLMessage.Data.Builder builderForValue) {
-        if (dataBuilder_ == null) {
-          data_ = builderForValue.build();
-          onChanged();
-        } else {
-          dataBuilder_.setMessage(builderForValue.build());
-        }
-        bitField0_ |= 0x00000200;
-        return this;
-      }
-      /**
-       * <code>optional .RBLMessage.Data data = 53;</code>
-       */
-      public Builder mergeData(protobuf.RblProto.RBLMessage.Data value) {
-        if (dataBuilder_ == null) {
-          if (((bitField0_ & 0x00000200) == 0x00000200) &&
-              data_ != protobuf.RblProto.RBLMessage.Data.getDefaultInstance()) {
-            data_ =
-              protobuf.RblProto.RBLMessage.Data.newBuilder(data_).mergeFrom(value).buildPartial();
-          } else {
-            data_ = value;
-          }
-          onChanged();
-        } else {
-          dataBuilder_.mergeFrom(value);
-        }
-        bitField0_ |= 0x00000200;
-        return this;
-      }
-      /**
-       * <code>optional .RBLMessage.Data data = 53;</code>
-       */
-      public Builder clearData() {
-        if (dataBuilder_ == null) {
-          data_ = protobuf.RblProto.RBLMessage.Data.getDefaultInstance();
-          onChanged();
-        } else {
-          dataBuilder_.clear();
-        }
-        bitField0_ = (bitField0_ & ~0x00000200);
-        return this;
-      }
-      /**
-       * <code>optional .RBLMessage.Data data = 53;</code>
-       */
-      public protobuf.RblProto.RBLMessage.Data.Builder getDataBuilder() {
-        bitField0_ |= 0x00000200;
-        onChanged();
-        return getDataFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>optional .RBLMessage.Data data = 53;</code>
-       */
-      public protobuf.RblProto.RBLMessage.DataOrBuilder getDataOrBuilder() {
-        if (dataBuilder_ != null) {
-          return dataBuilder_.getMessageOrBuilder();
-        } else {
-          return data_;
-        }
-      }
-      /**
-       * <code>optional .RBLMessage.Data data = 53;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilder<
-          protobuf.RblProto.RBLMessage.Data, protobuf.RblProto.RBLMessage.Data.Builder, protobuf.RblProto.RBLMessage.DataOrBuilder> 
-          getDataFieldBuilder() {
-        if (dataBuilder_ == null) {
-          dataBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              protobuf.RblProto.RBLMessage.Data, protobuf.RblProto.RBLMessage.Data.Builder, protobuf.RblProto.RBLMessage.DataOrBuilder>(
-                  getData(),
-                  getParentForChildren(),
-                  isClean());
-          data_ = null;
-        }
-        return dataBuilder_;
+        return dataSetBuilder_;
       }
 
       // @@protoc_insertion_point(builder_scope:RBLMessage)
@@ -12186,20 +11880,15 @@ public final class RblProto {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_RBLMessage_Trigger_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_RBLMessage_SetData_descriptor;
-  private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_RBLMessage_SetData_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_RBLMessage_GetData_descriptor;
-  private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_RBLMessage_GetData_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_RBLMessage_Range_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_RBLMessage_Range_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_RBLMessage_DataSet_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_RBLMessage_DataSet_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_RBLMessage_Data_descriptor;
   private static
@@ -12214,54 +11903,56 @@ public final class RblProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\023raspberrylife.proto\"\301\016\n\nRBLMessage\022\n\n\002" +
+      "\n\023raspberrylife.proto\"\204\017\n\nRBLMessage\022\n\n\002" +
       "id\030\001 \002(\t\0228\n\013messageType\030\002 \002(\0162\027.RBLMessa" +
       "ge.MessageType:\nPLAIN_TEXT\022,\n\013messageFla" +
       "g\030\003 \002(\0162\027.RBLMessage.MessageFlag\022\025\n\rmess" +
       "ageNumber\030\004 \001(\005\022(\n\tplainText\030\025 \001(\0132\025.RBL" +
       "Message.PlainText\0222\n\016runInstruction\030\037 \001(" +
       "\0132\032.RBLMessage.RunInstruction\022 \n\005logic\030 " +
-      " \001(\0132\021.RBLMessage.Logic\022$\n\007getData\0303 \001(\013" +
-      "2\023.RBLMessage.GetData\022$\n\007setData\0304 \001(\0132\023" +
-      ".RBLMessage.SetData\022\036\n\004data\0305 \001(\0132\020.RBLM",
-      "essage.Data\032\031\n\tPlainText\022\014\n\004text\030\001 \002(\t\032N" +
-      "\n\010Actuator\022.\n\014actuatorType\030\001 \002(\0162\030.RBLMe" +
-      "ssage.ActuatorType\022\022\n\nactuatorId\030\002 \002(\005\032v" +
-      "\n\013Instruction\022\025\n\rinstructionId\030\001 \002(\005\022\022\n\n" +
-      "parameters\030\002 \003(\t\022*\n\nmoduleType\030\024 \001(\0162\026.R" +
-      "BLMessage.ModuleType\022\020\n\010moduleId\030\025 \001(\005\032f" +
-      "\n\016RunInstruction\022&\n\010actuator\030\001 \002(\0132\024.RBL" +
-      "Message.Actuator\022,\n\013instruction\030\002 \002(\0132\027." +
-      "RBLMessage.Instruction\032\266\001\n\005Logic\022\014\n\004name" +
-      "\030\001 \002(\t\022\'\n\tinitiator\030\002 \003(\0132\024.RBLMessage.A",
-      "ctuator\022(\n\tcondition\030\004 \003(\0132\025.RBLMessage." +
-      "Condition\022&\n\010receiver\030\003 \003(\0132\024.RBLMessage" +
-      ".Actuator\022$\n\007trigger\030\005 \003(\0132\023.RBLMessage." +
-      "Trigger\032Z\n\tCondition\022\017\n\007fieldId\030\001 \002(\005\022\025\n" +
-      "\rthresholdOver\030\002 \001(\005\022\026\n\016thresholdUnder\030\003" +
-      " \001(\005\022\r\n\005state\030\004 \001(\010\0324\n\007Trigger\022\025\n\rinstru" +
-      "ctionId\030\001 \002(\005\022\022\n\nparameters\030\002 \003(\t\032b\n\007Set" +
-      "Data\022&\n\010actuator\030\001 \002(\0132\024.RBLMessage.Actu" +
-      "ator\022\017\n\007fieldId\030\002 \002(\005\022\036\n\004data\030\003 \002(\0132\020.RB" +
-      "LMessage.Data\032d\n\007GetData\022&\n\010actuator\030\001 \002",
-      "(\0132\024.RBLMessage.Actuator\022\017\n\007fieldId\030\002 \002(" +
-      "\005\022 \n\005range\030\003 \001(\0132\021.RBLMessage.Range\032B\n\005R" +
-      "ange\022\r\n\005count\030\001 \001(\005\022\025\n\rstartDateTime\030\002 \001" +
-      "(\t\022\023\n\013endDateTime\030\003 \001(\t\032y\n\004Data\022\017\n\007field" +
-      "Id\030\001 \002(\005\022&\n\010dataType\030\002 \002(\0162\024.RBLMessage." +
-      "DataType\022\022\n\nstringData\030\003 \003(\t\022\021\n\tint32Dat" +
-      "a\030\004 \003(\005\022\021\n\tfloatData\030\005 \003(\002\"3\n\013MessageFla" +
-      "g\022\013\n\007REQUEST\020\000\022\014\n\010RESPONSE\020\001\022\t\n\005DEBUG\020c\"" +
-      "m\n\013MessageType\022\016\n\nPLAIN_TEXT\020\000\022\023\n\017RUN_IN" +
-      "STRUCTION\020\001\022\014\n\010GET_DATA\020\002\022\014\n\010SET_DATA\020\003\022",
-      "\010\n\004DATA\020\004\022\t\n\005LOGIC\020\005\022\010\n\004AUTH\020\006\"\224\001\n\nModul" +
-      "eType\022\021\n\rMODULE_OUTLET\020\000\022\017\n\013MODULE_TEMP\020" +
-      "\001\022\016\n\nMODULE_PIR\020\003\022\017\n\013MODULE_REED\020\002\022\025\n\021MO" +
-      "DULE_LUMINOSITY\020\004\022\020\n\014MODULE_RELAY\020\005\022\030\n\024M" +
-      "ODULE_PIR_AND_RELAY\020\006\"2\n\014ActuatorType\022\n\n" +
-      "\006SYSTEM\020\000\022\n\n\006CLIENT\020\001\022\n\n\006MODULE\020\002\".\n\010Dat" +
-      "aType\022\013\n\007INTEGER\020\000\022\t\n\005FLOAT\020\001\022\n\n\006STRING\020" +
-      "\002B\024\n\010protobufB\010RblProto"
+      " \001(\0132\021.RBLMessage.Logic\022$\n\007dataSet\0303 \001(\013" +
+      "2\023.RBLMessage.DataSet\032\031\n\tPlainText\022\014\n\004te" +
+      "xt\030\001 \002(\t\032\\\n\010Actuator\022.\n\014actuatorType\030\001 \002",
+      "(\0162\030.RBLMessage.ActuatorType\022\022\n\nactuator" +
+      "Id\030\002 \002(\005\022\014\n\004name\030\003 \001(\t\032v\n\013Instruction\022\025\n" +
+      "\rinstructionId\030\001 \002(\005\022\022\n\nparameters\030\002 \003(\t" +
+      "\022*\n\nmoduleType\030\024 \001(\0162\026.RBLMessage.Module" +
+      "Type\022\020\n\010moduleId\030\025 \001(\005\032f\n\016RunInstruction" +
+      "\022&\n\010actuator\030\001 \002(\0132\024.RBLMessage.Actuator" +
+      "\022,\n\013instruction\030\002 \002(\0132\027.RBLMessage.Instr" +
+      "uction\032\336\001\n\005Logic\022&\n\010crudType\030\001 \002(\0162\024.RBL" +
+      "Message.CrudType\022\014\n\004name\030\002 \002(\t\022\'\n\tinitia" +
+      "tor\030\003 \003(\0132\024.RBLMessage.Actuator\022(\n\tcondi",
+      "tion\030\004 \003(\0132\025.RBLMessage.Condition\022&\n\010rec" +
+      "eiver\030\005 \003(\0132\024.RBLMessage.Actuator\022$\n\007tri" +
+      "gger\030\006 \003(\0132\023.RBLMessage.Trigger\032Z\n\tCondi" +
+      "tion\022\017\n\007fieldId\030\001 \002(\005\022\025\n\rthresholdOver\030\002" +
+      " \001(\005\022\026\n\016thresholdUnder\030\003 \001(\005\022\r\n\005state\030\004 " +
+      "\001(\010\0324\n\007Trigger\022\025\n\rinstructionId\030\001 \002(\005\022\022\n" +
+      "\nparameters\030\002 \003(\t\032B\n\005Range\022\r\n\005count\030\001 \001(" +
+      "\005\022\025\n\rstartDateTime\030\002 \001(\t\022\023\n\013endDateTime\030" +
+      "\003 \001(\t\032\324\001\n\007DataSet\022&\n\010crudType\030\001 \002(\0162\024.RB" +
+      "LMessage.CrudType\022&\n\010dataType\030\002 \002(\0162\024.RB",
+      "LMessage.DataType\022&\n\010actuator\030\003 \001(\0132\024.RB" +
+      "LMessage.Actuator\022\017\n\007fieldId\030\004 \001(\005\022 \n\005ra" +
+      "nge\030\005 \001(\0132\021.RBLMessage.Range\022\036\n\004data\030\006 \001" +
+      "(\0132\020.RBLMessage.Data\032i\n\004Data\022\'\n\tactuator" +
+      "s\030\001 \003(\0132\024.RBLMessage.Actuator\022\022\n\nstringD" +
+      "ata\030\002 \003(\t\022\021\n\tint32Data\030\003 \003(\005\022\021\n\tfloatDat" +
+      "a\030\004 \003(\002\"3\n\013MessageFlag\022\013\n\007REQUEST\020\000\022\014\n\010R" +
+      "ESPONSE\020\001\022\t\n\005DEBUG\020c\"T\n\013MessageType\022\010\n\004A" +
+      "UTH\020\000\022\016\n\nPLAIN_TEXT\020\001\022\023\n\017RUN_INSTRUCTION" +
+      "\020\002\022\013\n\007DATASET\020\003\022\t\n\005LOGIC\020\004\"\224\001\n\nModuleTyp",
+      "e\022\021\n\rMODULE_OUTLET\020\000\022\017\n\013MODULE_TEMP\020\001\022\016\n" +
+      "\nMODULE_PIR\020\003\022\017\n\013MODULE_REED\020\002\022\025\n\021MODULE" +
+      "_LUMINOSITY\020\004\022\020\n\014MODULE_RELAY\020\005\022\030\n\024MODUL" +
+      "E_PIR_AND_RELAY\020\006\"<\n\010CrudType\022\n\n\006CREATE\020" +
+      "\000\022\014\n\010RETRIEVE\020\001\022\n\n\006UPDATE\020\002\022\n\n\006DELETE\020\003\"" +
+      "2\n\014ActuatorType\022\n\n\006SYSTEM\020\000\022\n\n\006CLIENT\020\001\022" +
+      "\n\n\006MODULE\020\002\"_\n\010DataType\022\017\n\013MODULE_LIST\020\000" +
+      "\022\017\n\013MODULE_DATA\020\001\022\017\n\013SYSTEM_DATA\020\002\022\017\n\013CL" +
+      "IENT_LIST\020\003\022\017\n\013CLIENT_DATA\020\004B\024\n\010protobuf" +
+      "B\010RblProto"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -12280,7 +11971,7 @@ public final class RblProto {
     internal_static_RBLMessage_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_RBLMessage_descriptor,
-        new java.lang.String[] { "Id", "MessageType", "MessageFlag", "MessageNumber", "PlainText", "RunInstruction", "Logic", "GetData", "SetData", "Data", });
+        new java.lang.String[] { "Id", "MessageType", "MessageFlag", "MessageNumber", "PlainText", "RunInstruction", "Logic", "DataSet", });
     internal_static_RBLMessage_PlainText_descriptor =
       internal_static_RBLMessage_descriptor.getNestedTypes().get(0);
     internal_static_RBLMessage_PlainText_fieldAccessorTable = new
@@ -12292,7 +11983,7 @@ public final class RblProto {
     internal_static_RBLMessage_Actuator_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_RBLMessage_Actuator_descriptor,
-        new java.lang.String[] { "ActuatorType", "ActuatorId", });
+        new java.lang.String[] { "ActuatorType", "ActuatorId", "Name", });
     internal_static_RBLMessage_Instruction_descriptor =
       internal_static_RBLMessage_descriptor.getNestedTypes().get(2);
     internal_static_RBLMessage_Instruction_fieldAccessorTable = new
@@ -12310,7 +12001,7 @@ public final class RblProto {
     internal_static_RBLMessage_Logic_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_RBLMessage_Logic_descriptor,
-        new java.lang.String[] { "Name", "Initiator", "Condition", "Receiver", "Trigger", });
+        new java.lang.String[] { "CrudType", "Name", "Initiator", "Condition", "Receiver", "Trigger", });
     internal_static_RBLMessage_Condition_descriptor =
       internal_static_RBLMessage_descriptor.getNestedTypes().get(5);
     internal_static_RBLMessage_Condition_fieldAccessorTable = new
@@ -12323,30 +12014,24 @@ public final class RblProto {
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_RBLMessage_Trigger_descriptor,
         new java.lang.String[] { "InstructionId", "Parameters", });
-    internal_static_RBLMessage_SetData_descriptor =
-      internal_static_RBLMessage_descriptor.getNestedTypes().get(7);
-    internal_static_RBLMessage_SetData_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_RBLMessage_SetData_descriptor,
-        new java.lang.String[] { "Actuator", "FieldId", "Data", });
-    internal_static_RBLMessage_GetData_descriptor =
-      internal_static_RBLMessage_descriptor.getNestedTypes().get(8);
-    internal_static_RBLMessage_GetData_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_RBLMessage_GetData_descriptor,
-        new java.lang.String[] { "Actuator", "FieldId", "Range", });
     internal_static_RBLMessage_Range_descriptor =
-      internal_static_RBLMessage_descriptor.getNestedTypes().get(9);
+      internal_static_RBLMessage_descriptor.getNestedTypes().get(7);
     internal_static_RBLMessage_Range_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_RBLMessage_Range_descriptor,
         new java.lang.String[] { "Count", "StartDateTime", "EndDateTime", });
+    internal_static_RBLMessage_DataSet_descriptor =
+      internal_static_RBLMessage_descriptor.getNestedTypes().get(8);
+    internal_static_RBLMessage_DataSet_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_RBLMessage_DataSet_descriptor,
+        new java.lang.String[] { "CrudType", "DataType", "Actuator", "FieldId", "Range", "Data", });
     internal_static_RBLMessage_Data_descriptor =
-      internal_static_RBLMessage_descriptor.getNestedTypes().get(10);
+      internal_static_RBLMessage_descriptor.getNestedTypes().get(9);
     internal_static_RBLMessage_Data_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_RBLMessage_Data_descriptor,
-        new java.lang.String[] { "FieldId", "DataType", "StringData", "Int32Data", "FloatData", });
+        new java.lang.String[] { "Actuators", "StringData", "Int32Data", "FloatData", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
