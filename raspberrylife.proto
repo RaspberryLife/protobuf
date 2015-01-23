@@ -86,6 +86,12 @@ message RBLMessage {
 		MONTHLY = 5;
 	}
 
+	enum ExecutionRequirement {
+		SINGLE = 0;
+		MAJORITY = 1;
+		ALL = 2;
+	}
+
 	// =============================================================================
 	// General
 	// =============================================================================
@@ -129,26 +135,27 @@ message RBLMessage {
 		required int32 id = 2;
 		required string name = 3;
 		required ExecutionFrequency exeFrequency = 4;
-
-		// Every condition will be mapped to an initiator
-		repeated Actuator initiator = 5;
-		repeated Condition condition = 6;
-
-		// Every trigger will be mapped to a receiver
-		repeated Actuator receiver = 7;
-		repeated Trigger trigger = 8;
+		required ExecutionRequirement exeRequirement = 5 [default = SINGLE];
+		repeated LogicInitiator logicInitiator = 6;
+		repeated LogicReceiver logicReceiver = 7;
 	}
+
+	message LogicInitiator {
+		required Actuator initiator = 1;
+		required Condition condition = 2;
+	}
+
+	message LogicReceiver {
+		repeated Actuator receiver = 1;
+		required Instruction instruction = 2;
+	}
+
 
 	message Condition {
 		required int32 fieldId = 1;
 		optional int32 thresholdOver = 2;
 		optional int32 thresholdUnder = 3;
 		optional bool state = 4;
-	}
-
-	message Trigger {
-		required int32 instructionId = 1;
-		repeated string parameters = 2;
 	}
 
 	message ExecutionFrequency {
