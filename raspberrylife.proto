@@ -17,15 +17,15 @@ message RBLMessage {
 	optional int32 messageNumber = 4;
 
 	// Range 21 - 30 : Basic messages
-	optional PlainText plainText = 21;
+	repeated PlainText plainText = 21;
 
 	// Range 31 - 50 : Functional messages
-	optional RunInstruction runInstruction = 31;
-	optional Logic logic = 32;
+	repeated RunInstruction runInstruction = 31;
+	repeated Logic logic = 32;
 
 	// Range 51 - 70 : Data operation messages
-	optional DataSet dataSet = 51;
-	optional User user = 52;
+	repeated DataSet dataSet = 51;
+	repeated User user = 52;
 
 
 	// =============================================================================
@@ -134,6 +134,8 @@ message RBLMessage {
 		required CrudType crudType = 1;
 		required int32 id = 2;
 		optional string name = 3;
+		optional string email = 4;
+		optional string password = 5;
 	}
 
 	// =============================================================================
@@ -142,7 +144,7 @@ message RBLMessage {
 
 	message Logic {
 		required CrudType crudType = 1;
-		required int32 id = 2;
+		optional int32 id = 2;
 		required string name = 3;
 		required ExecutionFrequency exeFrequency = 4;
 		required ExecutionRequirement exeRequirement = 5 [default = SINGLE];
@@ -199,8 +201,6 @@ message RBLMessage {
 		optional Data data = 6;
 	}
 
-
-
 	message Data {
 		repeated Actuator actuators = 1;
 		repeated string stringData = 2;
@@ -208,4 +208,4 @@ message RBLMessage {
 		repeated float floatData = 4;
 	}
 
-	} // Close RBLMessage
+} // Close RBLMessage
