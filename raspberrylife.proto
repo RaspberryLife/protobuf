@@ -200,7 +200,7 @@ message RBLMessage {
 	}
 
 	message Data {
-		optional Actuator actuators = 1;
+		optional Actuator actuator = 1;
 		optional string stringData = 2;
 		optional int32 int32Data = 3;
 		optional float floatData = 4;
