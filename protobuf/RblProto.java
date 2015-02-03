@@ -552,6 +552,10 @@ public final class RblProto {
        * <code>LOGIC = 4;</code>
        */
       LOGIC(4, 4),
+      /**
+       * <code>USER = 5;</code>
+       */
+      USER(5, 5),
       ;
 
       /**
@@ -574,6 +578,10 @@ public final class RblProto {
        * <code>LOGIC = 4;</code>
        */
       public static final int LOGIC_VALUE = 4;
+      /**
+       * <code>USER = 5;</code>
+       */
+      public static final int USER_VALUE = 5;
 
 
       public final int getNumber() { return value; }
@@ -585,6 +593,7 @@ public final class RblProto {
           case 2: return RUN_INSTRUCTION;
           case 3: return DATASET;
           case 4: return LOGIC;
+          case 5: return USER;
           default: return null;
         }
       }
@@ -15304,7 +15313,7 @@ public final class RblProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\023raspberrylife.proto\"\204\024\n\nRBLMessage\022\n\n\002" +
+      "\n\023raspberrylife.proto\"\216\024\n\nRBLMessage\022\n\n\002" +
       "id\030\001 \002(\t\0228\n\013messageType\030\002 \002(\0162\027.RBLMessa" +
       "ge.MessageType:\nPLAIN_TEXT\022,\n\013messageFla" +
       "g\030\003 \002(\0162\027.RBLMessage.MessageFlag\022\025\n\rmess" +
@@ -15353,23 +15362,23 @@ public final class RblProto {
       "tuator\030\001 \001(\0132\024.RBLMessage.Actuator\022\022\n\nst" +
       "ringData\030\002 \001(\t\022\021\n\tint32Data\030\003 \001(\005\022\021\n\tflo" +
       "atData\030\004 \001(\002\"3\n\013MessageFlag\022\013\n\007REQUEST\020\000" +
-      "\022\014\n\010RESPONSE\020\001\022\t\n\005DEBUG\020c\"T\n\013MessageType",
+      "\022\014\n\010RESPONSE\020\001\022\t\n\005DEBUG\020c\"^\n\013MessageType",
       "\022\010\n\004AUTH\020\000\022\016\n\nPLAIN_TEXT\020\001\022\023\n\017RUN_INSTRU" +
-      "CTION\020\002\022\013\n\007DATASET\020\003\022\t\n\005LOGIC\020\004\"\224\001\n\nModu" +
-      "leType\022\021\n\rMODULE_OUTLET\020\000\022\017\n\013MODULE_TEMP" +
-      "\020\001\022\016\n\nMODULE_PIR\020\003\022\017\n\013MODULE_REED\020\002\022\025\n\021M" +
-      "ODULE_LUMINOSITY\020\004\022\020\n\014MODULE_RELAY\020\005\022\030\n\024" +
-      "MODULE_PIR_AND_RELAY\020\006\"<\n\010CrudType\022\n\n\006CR" +
-      "EATE\020\000\022\014\n\010RETRIEVE\020\001\022\n\n\006UPDATE\020\002\022\n\n\006DELE" +
-      "TE\020\003\"2\n\014ActuatorType\022\n\n\006SYSTEM\020\000\022\n\n\006CLIE" +
-      "NT\020\001\022\n\n\006MODULE\020\002\"_\n\010DataType\022\017\n\013MODULE_L" +
-      "IST\020\000\022\017\n\013MODULE_DATA\020\001\022\017\n\013SYSTEM_DATA\020\002\022",
-      "\017\n\013CLIENT_LIST\020\003\022\017\n\013CLIENT_DATA\020\004\"^\n\rExe" +
-      "cutionType\022\017\n\013IMMEDIATELY\020\000\022\014\n\010MINUTELY\020" +
-      "\001\022\n\n\006HOURLY\020\002\022\t\n\005DAILY\020\003\022\n\n\006WEEKLY\020\004\022\013\n\007" +
-      "MONTHLY\020\005\"9\n\024ExecutionRequirement\022\n\n\006SIN" +
-      "GLE\020\000\022\014\n\010MAJORITY\020\001\022\007\n\003ALL\020\002B\024\n\010protobuf" +
-      "B\010RblProto"
+      "CTION\020\002\022\013\n\007DATASET\020\003\022\t\n\005LOGIC\020\004\022\010\n\004USER\020" +
+      "\005\"\224\001\n\nModuleType\022\021\n\rMODULE_OUTLET\020\000\022\017\n\013M" +
+      "ODULE_TEMP\020\001\022\016\n\nMODULE_PIR\020\003\022\017\n\013MODULE_R" +
+      "EED\020\002\022\025\n\021MODULE_LUMINOSITY\020\004\022\020\n\014MODULE_R" +
+      "ELAY\020\005\022\030\n\024MODULE_PIR_AND_RELAY\020\006\"<\n\010Crud" +
+      "Type\022\n\n\006CREATE\020\000\022\014\n\010RETRIEVE\020\001\022\n\n\006UPDATE" +
+      "\020\002\022\n\n\006DELETE\020\003\"2\n\014ActuatorType\022\n\n\006SYSTEM" +
+      "\020\000\022\n\n\006CLIENT\020\001\022\n\n\006MODULE\020\002\"_\n\010DataType\022\017" +
+      "\n\013MODULE_LIST\020\000\022\017\n\013MODULE_DATA\020\001\022\017\n\013SYST",
+      "EM_DATA\020\002\022\017\n\013CLIENT_LIST\020\003\022\017\n\013CLIENT_DAT" +
+      "A\020\004\"^\n\rExecutionType\022\017\n\013IMMEDIATELY\020\000\022\014\n" +
+      "\010MINUTELY\020\001\022\n\n\006HOURLY\020\002\022\t\n\005DAILY\020\003\022\n\n\006WE" +
+      "EKLY\020\004\022\013\n\007MONTHLY\020\005\"9\n\024ExecutionRequirem" +
+      "ent\022\n\n\006SINGLE\020\000\022\014\n\010MAJORITY\020\001\022\007\n\003ALL\020\002B\024" +
+      "\n\010protobufB\010RblProto"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
       new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {

@@ -44,6 +44,7 @@ message RBLMessage {
 		RUN_INSTRUCTION = 2;
 		DATASET = 3;
 		LOGIC = 4;
+		USER = 5;
 	}
 
 	enum ModuleType{
