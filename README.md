@@ -1,3 +1,5 @@
+Repository ist veraltet, da RaspberryLife nicht mehr mit Protobuf weiterentwickelt wird.
+
 Protobuf
 =========
 Repository für die RaspberryLife Protobuf implementation.
